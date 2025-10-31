@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej complementarios</title>
+</head>
+
+<body>
+
+    <script>
+        // 1- Desarrolla un programa que permita calcular la remuneración total que recibirá un vendedor al finalizar el mes.
+        //  El vendedor recibe un salario base más un 10% adicional por comisión sobre sus ventas.
+        //  El programa debe solicitar al usuario el salario base del vendedor y luego pedir el valor de cada una de las ventas realizadas en el mes.
+        //  Después, calculará y mostrará el monto total que recibirá el vendedor, considerando tanto su salario base como las comisiones por las
+        //  ventas realizadas en el período.
+
+        function calcularNeto() {
+
+            let salarioBase = parseFloat(prompt("Porfavor ingrese su salario base."));
+
+            if (isNaN(salarioBase)) {
+                alert("Error, debe ingresar un numero valido como salario base.");
+                return;
+            };
+
+            let ventas = parseFloat(prompt("Porfavor ingrese el valor de la primera venta.\nO no ingrese nada para calcular y salir."));
+
+            let suma = 0;
+            let contador = 1;
+
+            while (!isNaN(ventas)) {
+
+                suma = ventas + suma;
+                contador++
+                ventas = parseFloat(prompt("Porfavor ingrese el valor de la venta N°: " + contador + ".\nO no ingrese nada para calcular y salir."));
+            }
+
+            let total = salarioBase + (suma * 0.10);
+            alert("Su salario total es de: $" + total);
+        }
+
+        calcularNeto();
+
+        // 2- Diseña un algoritmo que permita obtener el número invertido de un número de dos cifras. Ejemplo, si se introduce 23 que muestre 32.
+
+
+        // 3- A partir de una conocida cantidad de días que el usuario ingresa a través del teclado, escribe un programa para convertir los días en horas,
+        //  en minutos y en segundos. Por ejemplo: 1 día = 24 horas = 1440 minutos = 86400 segundos.
+
+
+        // 4- Escribe un programa que calcule cuántos litros de combustible consumió un automóvil.
+        // El usuario ingresará una cantidad de litros de combustible cargados en la estación y una cantidad de kilómetros recorridos, después,
+        // el programa calculará el consumo (km/lt) y se lo mostrará al usuario.
+
+
+        // 5- Escribe un programa que permita calcular la edad de una persona en meses. Para ello, deberás solicitar la edad actual al usuario y
+        //  realizar el cálculo correspondiente. Muestra en pantalla un mensaje con la equivalencia. 
+
+    </script>
+</body>
+
+</html>
