@@ -97,6 +97,30 @@
         alert("mm: " + milimetros);
         alert("inch: " + pulgada);
 
+        //EJERCICIO 4
+
+        // Objetivo: Calcular el consumo promedio de combustible de un automóvil en kilómetros por litro (km/lt).
+
+        // Escribe un programa que calcule el consumo promedio de combustible de un automóvil.
+        //  Para ello, el usuario ingresará la cantidad de litros de combustible cargados y la cantidad de kilómetros recorridos. 
+        // El programa deberá calcular y mostrar el consumo promedio en kilómetros por litro. El consumo promedio se calcula
+        //  dividiendo los kilómetros recorridos por los litros de combustible cargados.
+
+        // Recuerda nombrar y guardar tu algoritmo.
+
+
+        function calculateFuelAverage() {
+            let litros = parseFloat(prompt("Porfavor ingrese la cantidad de combustible cargados!"));
+            let km = parseFloat(prompt("Porfavor ingrese la cantidad de Km recorridos!"));
+
+            let promedio = km / litros;
+
+            alert("El promedio de Km/lt es: " + promedio + " km/lt");
+        }
+
+        calculateFuelAverage();
+
+
 
     </script>
 </body>
