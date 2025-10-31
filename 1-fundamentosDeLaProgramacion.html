@@ -10,21 +10,14 @@
 <body>
     <script>
         //EJERCICIO 1
-
         // Objetivo: Crear un algoritmo que permita calcular y mostrar el área y perímetro de una circunferencia
         //  a partir del radio ingresado por el usuario.
-
         // Instrucciones
-
         // Crea un nuevo algoritmo que permita contemplar el siguiente flujo: Solicita al usuario que ingrese el valor del radio
         // de una circunferencia y, utilizando las fórmulas correspondientes, calcula y muestra el área y el perímetro:
-
         // Área = π * radio  * radio
-
         // Perímetro = π * radio * 2
-
         // En matemáticas, π (PI) es el símbolo que representa el número aproximado de 3.14.
-
         // Al realizar cálculos en tu programa, podés optar por almacenar el resultado en una variable para reutilizarlo más adelante,
         //  o bien realizar el cálculo directamente dentro de una instrucción de salida, como al mostrarlo en pantalla.
         // Ambas opciones son válidas y dependerán del propósito de tu algoritmo.
@@ -61,19 +54,12 @@
         //EJERCICIO 2
 
         // Objetivo: Practicar la declaración de variables, lectura de datos ingresados por el usuario y uso de operaciones matemáticas simples.
-
         // Escribe un algoritmo que calcule el precio promedio de un producto, a partir del precio registrado en tres establecimientos distintos.
-
         // Instrucciones
-
         // 1-Solicita al usuario que ingrese tres precios distintos para un mismo producto.
-
         // 2-Almacena cada precio en una variable diferente, previamente declarada.
-
         // 3-Calcula el precio promedio utilizando una operación matemática.
-
         // 4-Muestra el resultado por pantalla.
-
         // 5-Guarda el archivo con un nombre adecuado en la carpeta que creaste para tus actividades.
 
         let priceA = parseFloat(prompt("Please enter the firt price"));
@@ -86,6 +72,30 @@
 
         const priceAverage = calculateAverage(priceA, priceB, priceC);
         alert("Price Average: " + priceAverage);
+
+
+        //EJERCICIO 3
+
+        // Objetivo: Crear un algoritmo que convierta una cantidad de metros a centímetros, milímetros y pulgadas.
+        // A partir de un valor en metros que se ingresa por teclado, el programa debe calcular y mostrar su equivalencia en otras unidades de medida.
+        // Equivalencias utilizadas:
+        // 1 metro = 100 centímetros
+        // 1 metro = 1000 milímetros
+        // 1 pulgada = 2.54 centímetros
+        // Ingresa el valor, realiza los cálculos correspondientes y muestra los resultados por pantalla.
+        // Recuerda nombrar y guardar tu algoritmo en la carpeta que creaste para organizar tus actividades
+
+        let metersInput = parseFloat(prompt("Please enter the number of meters to calculate (only number) "))
+
+        const centimetros = metersInput * 100;
+
+        const milimetros = metersInput * 1000;
+
+        const pulgada = metersInput * (100 / 2.54);
+
+        alert("cm: " + centimetros);
+        alert("mm: " + milimetros);
+        alert("inch: " + pulgada);
 
 
     </script>
