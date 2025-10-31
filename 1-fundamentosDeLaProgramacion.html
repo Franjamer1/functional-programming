@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises</title>
+</head>
+
+<body>
+    <script>
+        //EJERCICIO 1
+
+        // Objetivo: Crear un algoritmo que permita calcular y mostrar el área y perímetro de una circunferencia
+        //  a partir del radio ingresado por el usuario.
+
+        // Instrucciones
+
+        // Crea un nuevo algoritmo que permita contemplar el siguiente flujo: Solicita al usuario que ingrese el valor del radio
+        // de una circunferencia y, utilizando las fórmulas correspondientes, calcula y muestra el área y el perímetro:
+
+        // Área = π * radio  * radio
+
+        // Perímetro = π * radio * 2
+
+        // En matemáticas, π (PI) es el símbolo que representa el número aproximado de 3.14.
+
+        // Al realizar cálculos en tu programa, podés optar por almacenar el resultado en una variable para reutilizarlo más adelante,
+        //  o bien realizar el cálculo directamente dentro de una instrucción de salida, como al mostrarlo en pantalla.
+        // Ambas opciones son válidas y dependerán del propósito de tu algoritmo.
+
+        let radio = parseInt(prompt("Please enter a number"));
+        let resultArea = 0;
+        let resultPerimeter = 0;
+        const pi = 3.14;
+
+        if (isNaN(radio)) {
+            alert("your radio is not a number");
+        } else {
+            //AREA
+            function calculateArea() {
+
+                resultArea = pi * (radio ** 2);
+
+                return resultArea;
+            };
+            calculateArea();
+
+            alert("The area of your circle is: " + resultArea);
+
+            //PERIMETER
+            function calculatePerimeter() {
+                resultPerimeter = pi * radio * 2;
+                return resultPerimeter;
+            };
+            calculatePerimeter();
+            alert("Perimeter: " + resultPerimeter)
+        }
+    </script>
+</body>
+
+</html>
