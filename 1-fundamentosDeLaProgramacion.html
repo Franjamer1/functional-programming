@@ -56,6 +56,38 @@
             calculatePerimeter();
             alert("Perimeter: " + resultPerimeter)
         }
+
+
+        //EJERCICIO 2
+
+        // Objetivo: Practicar la declaración de variables, lectura de datos ingresados por el usuario y uso de operaciones matemáticas simples.
+
+        // Escribe un algoritmo que calcule el precio promedio de un producto, a partir del precio registrado en tres establecimientos distintos.
+
+        // Instrucciones
+
+        // 1-Solicita al usuario que ingrese tres precios distintos para un mismo producto.
+
+        // 2-Almacena cada precio en una variable diferente, previamente declarada.
+
+        // 3-Calcula el precio promedio utilizando una operación matemática.
+
+        // 4-Muestra el resultado por pantalla.
+
+        // 5-Guarda el archivo con un nombre adecuado en la carpeta que creaste para tus actividades.
+
+        let priceA = parseFloat(prompt("Please enter the firt price"));
+        let priceB = parseFloat(prompt("Please enter the second price"));
+        let priceC = parseFloat(prompt("Please enter the third price"));
+
+        function calculateAverage(a, b, c,) {
+            return (a + b + c) / 3;
+        }
+
+        const priceAverage = calculateAverage(priceA, priceB, priceC);
+        alert("Price Average: " + priceAverage);
+
+
     </script>
 </body>
 
