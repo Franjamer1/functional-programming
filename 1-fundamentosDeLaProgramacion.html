@@ -100,12 +100,10 @@
         //EJERCICIO 4
 
         // Objetivo: Calcular el consumo promedio de combustible de un automóvil en kilómetros por litro (km/lt).
-
         // Escribe un programa que calcule el consumo promedio de combustible de un automóvil.
         //  Para ello, el usuario ingresará la cantidad de litros de combustible cargados y la cantidad de kilómetros recorridos. 
         // El programa deberá calcular y mostrar el consumo promedio en kilómetros por litro. El consumo promedio se calcula
         //  dividiendo los kilómetros recorridos por los litros de combustible cargados.
-
         // Recuerda nombrar y guardar tu algoritmo.
 
 
@@ -120,6 +118,37 @@
 
         calculateFuelAverage();
 
+        //EJERCICIO 5
+        // Objetivo: Aplicar el uso de variables y el concepto de variable auxiliar para intercambiar valores numéricos ingresados por el usuario.
+        // Escribí un programa que permita al usuario ingresar el valor de dos variables numéricas de tipo entero. Luego, 
+        // el programa debe intercambiar sus valores utilizando una tercera variable (auxiliar) y mostrar el resultado final por pantalla.
+        // Por ejemplo, si el usuario ingresa los valores num1 = 9 y num2 = 3, la salida a del programa deberá mostrar: num1 = 3 y num2 = 9.
+        // Ayuda: Para intercambiar los valores correctamente, deberás guardar temporalmente uno de los valores en una variable auxiliar,
+        //  de esta forma evitarás perder datos durante el proceso.
+
+
+        function intercambiarNumeros() {
+
+            let fisrtNumber = parseInt(prompt("Ingrese el primer numero"));
+            let secondNumber = parseInt(prompt("Ingrese el segundo numero"));
+            let auxiliarVar;
+
+            alert("El primer numero es: " + fisrtNumber + "\n El segundo numero es:  " + secondNumber);
+            console.log(fisrtNumber, secondNumber);
+
+            alert("Cambiando posiciones de los numeros(...)");
+
+            auxiliarVar = fisrtNumber;
+            fisrtNumber = secondNumber;
+            secondNumber = auxiliarVar;
+            auxiliarVar = 0;
+
+            alert("Ahora el primer numero es: " + fisrtNumber + "\n Ahora el segundo numero es: " + secondNumber);
+
+            console.log(fisrtNumber, secondNumber);
+        }
+
+        intercambiarNumeros();
 
 
     </script>
