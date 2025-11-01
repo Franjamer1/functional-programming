@@ -59,16 +59,14 @@
             alert("Su salario total es de: $" + total);
         };
 
-        // calcularNeto();
-
         // 2- Diseña un algoritmo que permita obtener el número invertido de un número de dos cifras. Ejemplo, si se introduce 23 que muestre 32.
 
         function invertirNumero() {
             let numeroDosCifras = parseInt(prompt("Porfavor ingrese un numero de dos cifras"));
 
             //validacion
-            if (String(numeroDosCifras).length != 2) {
-                alert("Error: El numero ingresado debe ser de 2 cifras");
+            if (String(numeroDosCifras).length != 2 || isNaN(numeroDosCifras)) {
+                alert("Error: Por favor ingrese un numero de 2 cifras.");
                 return;
             };
 
@@ -79,8 +77,6 @@
 
             alert("Su numero ingresado es: " + numeroDosCifras + "\nSu numero invertido es: " + numeroInvertido);
         };
-
-
 
         // 3- A partir de una conocida cantidad de días que el usuario ingresa a través del teclado, escribe un programa para convertir los días en horas,
         //  en minutos y en segundos. Por ejemplo: 1 día = 24 horas = 1440 minutos = 86400 segundos.
