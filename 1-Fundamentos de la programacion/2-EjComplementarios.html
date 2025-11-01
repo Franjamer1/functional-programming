@@ -26,12 +26,17 @@
 
         <button onclick="invertirNumero()">Ejecutar ejercicio 2</button> <br><br>
 
-
         3- A partir de una conocida cantidad de días que el usuario ingresa a través del teclado, escribe un programa
         para convertir los días en horas,
         en minutos y en segundos. Por ejemplo: 1 día = 24 horas = 1440 minutos = 86400 segundos. <br><br>
 
-        <button onclick="convertirDias()">Ejecutar ejercicio 3</button>
+        <button onclick="convertirDias()">Ejecutar ejercicio 3</button> <br><br>
+
+        4- Escribe un programa que calcule cuántos litros de combustible consumió un automóvil. <br>
+        El usuario ingresará una cantidad de litros de combustible cargados en la estación y una cantidad de kilómetros
+        recorridos, después, el programa calculará el consumo (km/lt) y se lo mostrará al usuario. <br><br>
+
+        <button onclick="calcularConsumo()">Ejecutar ejercicio 4</button>
     </p>
     <script>
         // 1- Desarrolla un programa que permita calcular la remuneración total que recibirá un vendedor al finalizar el mes.
@@ -92,7 +97,7 @@
             let cantDias = parseInt(prompt("Ingrese la cantidad de dias que quiere convertir."));
 
             if (isNaN(cantDias)) {
-                alert("Error: profavor ingrese un numero.")
+                alert("Error: porfavor ingrese un numero.")
                 return;
             };
 
@@ -108,6 +113,21 @@
         // El usuario ingresará una cantidad de litros de combustible cargados en la estación y una cantidad de kilómetros recorridos, después,
         // el programa calculará el consumo (km/lt) y se lo mostrará al usuario.
 
+        function calcularConsumo() {
+            let cantLitros = parseFloat(prompt("Ingrese la cantidad de litros que cargo de combustible."));
+
+            let cantKm = parseFloat(prompt("Ingrese la cantidad de km recorridos"));
+
+            if (isNaN(cantLitros) || isNaN(cantKm)) {
+                alert("Error: los litros y km deben ser ingresados como digitos numericos");
+
+                return;
+            };
+
+            let consumo = cantLitros / cantKm;
+
+            alert("Usted consume: " + consumo + "km/lt");
+        };
 
         // 5- Escribe un programa que permita calcular la edad de una persona en meses. Para ello, deberás solicitar la edad actual al usuario y
         //  realizar el cálculo correspondiente. Muestra en pantalla un mensaje con la equivalencia. 
