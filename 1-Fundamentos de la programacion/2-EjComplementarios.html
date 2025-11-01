@@ -36,7 +36,13 @@
         El usuario ingresará una cantidad de litros de combustible cargados en la estación y una cantidad de kilómetros
         recorridos, después, el programa calculará el consumo (km/lt) y se lo mostrará al usuario. <br><br>
 
-        <button onclick="calcularConsumo()">Ejecutar ejercicio 4</button>
+        <button onclick="calcularConsumo()">Ejecutar ejercicio 4</button> <br><br>
+
+        5- Escribe un programa que permita calcular la edad de una persona en meses. Para ello, deberás solicitar la
+        edad actual al usuario y
+        realizar el cálculo correspondiente. Muestra en pantalla un mensaje con la equivalencia. <br><br>
+
+        <button onclick="calcularEdad()">Ejecutar ejercicio 5</button> <br><br>
     </p>
     <script>
         // 1- Desarrolla un programa que permita calcular la remuneración total que recibirá un vendedor al finalizar el mes.
@@ -118,7 +124,7 @@
 
             let cantKm = parseFloat(prompt("Ingrese la cantidad de km recorridos"));
 
-            if (isNaN(cantLitros) || isNaN(cantKm)) {
+            if (isNaN(cantLitros) || isNaN(cantKm) || cantKm < 0 || cantLitros < 1) {
                 alert("Error: los litros y km deben ser ingresados como digitos numericos");
 
                 return;
@@ -131,6 +137,18 @@
 
         // 5- Escribe un programa que permita calcular la edad de una persona en meses. Para ello, deberás solicitar la edad actual al usuario y
         //  realizar el cálculo correspondiente. Muestra en pantalla un mensaje con la equivalencia. 
+
+        function calcularEdad() {
+            let edad = parseInt(prompt("Ingrese su edad"));
+            if (isNaN(edad) || edad < 0) {
+                alert("Error: debe ingresar un numero valido.");
+                return;
+            }
+
+            let meses = edad * 12;
+
+            alert("Usted ha vivido: " + meses + " meses.");
+        };
 
     </script>
 </body>
