@@ -9,6 +9,24 @@
 
 <body>
 
+    <p>
+        1- Desarrolla un programa que permita calcular la remuneración total que recibirá un vendedor al finalizar el
+        mes. <br>
+        El vendedor recibe un salario base más un 10% adicional por comisión sobre sus ventas. <br>
+        El programa debe solicitar al usuario el salario base del vendedor y luego pedir el valor de cada una de las
+        ventas realizadas en el mes. <br>
+        Después, calculará y mostrará el monto total que recibirá el vendedor, considerando tanto su salario base como
+        las comisiones por las
+        ventas realizadas en el período. <br><br>
+
+        <button onclick="calcularNeto()">Ejecutar ejercicio 1</button> <br><br>
+
+        2- Diseña un algoritmo que permita obtener el número invertido de un número de dos cifras. Ejemplo, si se
+        introduce 23 que muestre 32. <br><br>
+
+        <button onclick="invertirNumero()">Ejecutar ejercicio 2</button>
+
+    </p>
     <script>
         // 1- Desarrolla un programa que permita calcular la remuneración total que recibirá un vendedor al finalizar el mes.
         //  El vendedor recibe un salario base más un 10% adicional por comisión sobre sus ventas.
@@ -39,11 +57,29 @@
 
             let total = salarioBase + (suma * 0.10);
             alert("Su salario total es de: $" + total);
-        }
+        };
 
-        calcularNeto();
+        // calcularNeto();
 
         // 2- Diseña un algoritmo que permita obtener el número invertido de un número de dos cifras. Ejemplo, si se introduce 23 que muestre 32.
+
+        function invertirNumero() {
+            let numeroDosCifras = parseInt(prompt("Porfavor ingrese un numero de dos cifras"));
+
+            //validacion
+            if (String(numeroDosCifras).length != 2) {
+                alert("Error: El numero ingresado debe ser de 2 cifras");
+                return;
+            };
+
+            let unidad = numeroDosCifras % 10;
+            let decena = Math.floor(numeroDosCifras / 10);
+
+            let numeroInvertido = unidad * 10 + decena;
+
+            alert("Su numero ingresado es: " + numeroDosCifras + "\nSu numero invertido es: " + numeroInvertido);
+        };
+
 
 
         // 3- A partir de una conocida cantidad de días que el usuario ingresa a través del teclado, escribe un programa para convertir los días en horas,
