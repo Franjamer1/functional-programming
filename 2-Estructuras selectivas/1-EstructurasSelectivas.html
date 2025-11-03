@@ -23,21 +23,30 @@
         Importante: Por el momento, no es necesario validar el formato de entrada. Se asume que el usuario ingresará el
         carácter en mayúsculas. <br><br>
 
-        <button type="submit" onclick="validateChar()">Ejecutar ejercicio 1</button>
+        <button type="submit" onclick="validateChar()">Ejecutar ejercicio 1</button> <br><br>
+
+        Actividad 2: Clasificación de días según condición
+        Objetivo: Diseñar un algoritmo que analice un valor textual ingresado por el usuario y lo clasifique según una
+        condición específica, utilizando una estructura condicional doble.
+
+        Elabora un programa que solicite al usuario ingresar un día de la semana. Luego, el algoritmo deberá determinar
+        si ese día corresponde a una jornada de entrenamiento o no. Considerar que los días de entrenamiento son: LUNES,
+        MARTES, MIÉRCOLES y JUEVES.
+
+        Importante: Por el momento, no es necesario validar el formato de entrada (como uso de mayúsculas o tildes). Se
+        asume que el usuario ingresará el nombre del día completo y en mayúsculas. <br><br>
+
+        <button type="submit" onclick="clasificarDia()"> Ejecutar ejercicio 2</button> <br><br>
     </p>
     <script>
 
         // Actividad 1: Validación de caracteres
         // Objetivo: Desarrollar un algoritmo que utilice una estructura condicional para verificar si un carácter
         // ingresado pertenece a un conjunto determinado de valores válidos, y mostrar un mensaje en función del resultado.
-
         // Crea un programa que solicite al usuario el ingreso de un carácter.El algoritmo debe verificar si el carácter
         // ingresado es 'S' o 'N'.
-
         // Si el carácter corresponde a alguno de esos dos valores, se debe mostrar en pantalla el mensaje “CORRECTO”.
-
         // En caso contrario, el mensaje deberá ser “INCORRECTO”.
-
         // Importante: Por el momento, no es necesario validar el formato de entrada.Se asume que el usuario ingresará el
         // carácter en mayúsculas.
 
@@ -50,6 +59,34 @@
                 alert("INCORRECTO");
             };
         }
+
+
+        // Actividad 2: Clasificación de días según condición
+        // Objetivo: Diseñar un algoritmo que analice un valor textual ingresado por el usuario y lo clasifique según una
+        // condición específica, utilizando una estructura condicional doble.
+
+        // Elabora un programa que solicite al usuario ingresar un día de la semana. Luego, el algoritmo deberá determinar
+        // si ese día corresponde a una jornada de entrenamiento o no. Considerar que los días de entrenamiento son: LUNES,
+        // MARTES, MIÉRCOLES y JUEVES.
+
+        // Importante: Por el momento, no es necesario validar el formato de entrada (como uso de mayúsculas o tildes). Se
+        // asume que el usuario ingresará el nombre del día completo y en mayúsculas.
+
+        function clasificarDia() {
+            let inputDay = (String(prompt("Ingrese un dia de la semana en mayusc, para verificar si entrena"))).toUpperCase();
+
+            const trainingDay = ["LUNES", "MARTES", "MIERCOLES", "JUEVES"];
+
+            const noTrainingDay = ["DOMINGO", "VIERNES", "SABADO"];
+
+            if (trainingDay.includes(inputDay)) {
+                alert(`Hoy ${inputDay} si debe entrenar.`);
+            } else if (noTrainingDay.includes(inputDay)) {
+                alert(`Hoy ${inputDay} no debe entrenar.`);
+            } else {
+                alert(`Error: "${inputDay}" no es un dia valido.`);
+            };
+        }        
     </script>
 </body>
 
