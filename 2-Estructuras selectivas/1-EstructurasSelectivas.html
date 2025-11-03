@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras Selectivas</title>
+</head>
+
+<body>
+    <p>
+        Actividad 1: Validación de caracteres
+        Objetivo: Desarrollar un algoritmo que utilice una estructura condicional para verificar si un carácter
+        ingresado pertenece a un conjunto determinado de valores válidos, y mostrar un mensaje en función del resultado.
+
+        Crea un programa que solicite al usuario el ingreso de un carácter. El algoritmo debe verificar si el carácter
+        ingresado es 'S' o 'N'.
+
+        Si el carácter corresponde a alguno de esos dos valores, se debe mostrar en pantalla el mensaje “CORRECTO”.
+
+        En caso contrario, el mensaje deberá ser “INCORRECTO”.
+
+        Importante: Por el momento, no es necesario validar el formato de entrada. Se asume que el usuario ingresará el
+        carácter en mayúsculas. <br><br>
+
+        <button type="submit" onclick="validateChar()">Ejecutar ejercicio 1</button>
+    </p>
+    <script>
+
+        // Actividad 1: Validación de caracteres
+        // Objetivo: Desarrollar un algoritmo que utilice una estructura condicional para verificar si un carácter
+        // ingresado pertenece a un conjunto determinado de valores válidos, y mostrar un mensaje en función del resultado.
+
+        // Crea un programa que solicite al usuario el ingreso de un carácter.El algoritmo debe verificar si el carácter
+        // ingresado es 'S' o 'N'.
+
+        // Si el carácter corresponde a alguno de esos dos valores, se debe mostrar en pantalla el mensaje “CORRECTO”.
+
+        // En caso contrario, el mensaje deberá ser “INCORRECTO”.
+
+        // Importante: Por el momento, no es necesario validar el formato de entrada.Se asume que el usuario ingresará el
+        // carácter en mayúsculas.
+
+        function validateChar() {
+            let charInput = String(prompt('Ingrese un caracter!'));
+
+            if (charInput == "S" || charInput == "N") {
+                alert("CORRECTO")
+            } else {
+                alert("INCORRECTO");
+            };
+        }
+    </script>
+</body>
+
+</html>
