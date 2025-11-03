@@ -37,6 +37,21 @@
         asume que el usuario ingresará el nombre del día completo y en mayúsculas. <br><br>
 
         <button type="submit" onclick="clasificarDia()"> Ejecutar ejercicio 2</button> <br><br>
+
+        Actividad 3: Determinar si un número es par o impar
+        Objetivo: Desarrollar un algoritmo que utilice una estructura condicional junto con una función matemática para
+        analizar un número y clasificarlo como par o impar.
+
+        Crea un programa que solicite al usuario ingresar un número entero. El algoritmo debe determinar si dicho número
+        es par o impar, y mostrar un mensaje en pantalla indicando el resultado del análisis.
+
+        Pista: Un número es par si al dividirlo por 2, el resto de la división es igual a 0. Para realizar esta
+        verificación de forma eficiente, se recomienda investigar el uso de la función mod en PSeInt, que permite
+        obtener el resto de una división entera. <br><br>
+
+        <button type="submit" onclick="parOImpar()">Ejecutar ejercicio 3</button>
+
+
     </p>
     <script>
 
@@ -60,15 +75,12 @@
             };
         }
 
-
         // Actividad 2: Clasificación de días según condición
         // Objetivo: Diseñar un algoritmo que analice un valor textual ingresado por el usuario y lo clasifique según una
         // condición específica, utilizando una estructura condicional doble.
-
         // Elabora un programa que solicite al usuario ingresar un día de la semana. Luego, el algoritmo deberá determinar
         // si ese día corresponde a una jornada de entrenamiento o no. Considerar que los días de entrenamiento son: LUNES,
         // MARTES, MIÉRCOLES y JUEVES.
-
         // Importante: Por el momento, no es necesario validar el formato de entrada (como uso de mayúsculas o tildes). Se
         // asume que el usuario ingresará el nombre del día completo y en mayúsculas.
 
@@ -86,7 +98,26 @@
             } else {
                 alert(`Error: "${inputDay}" no es un dia valido.`);
             };
-        }        
+        };
+
+        // Actividad 3: Determinar si un número es par o impar
+        // Objetivo: Desarrollar un algoritmo que utilice una estructura condicional junto con una función matemática para
+        // analizar un número y clasificarlo como par o impar.
+        // Crea un programa que solicite al usuario ingresar un número entero. El algoritmo debe determinar si dicho número
+        // es par o impar, y mostrar un mensaje en pantalla indicando el resultado del análisis.
+        // Pista: Un número es par si al dividirlo por 2, el resto de la división es igual a 0. Para realizar esta
+        // verificación de forma eficiente, se recomienda investigar el uso de la función mod en PSeInt, que permite
+        // obtener el resto de una división entera.
+
+        function parOImpar() {
+            let numInput = Math.trunc(Number(prompt("Ingrese un numero para verificar si es par o impar")));
+
+            if (numInput % 2 == 0) {
+                alert("El numero ingresado es PAR!");
+            } else {
+                alert("El numero ingresado es IMPAR");
+            };
+        };
     </script>
 </body>
 
