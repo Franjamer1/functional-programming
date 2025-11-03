@@ -49,7 +49,24 @@
         verificación de forma eficiente, se recomienda investigar el uso de la función mod en PSeInt, que permite
         obtener el resto de una división entera. <br><br>
 
-        <button type="submit" onclick="parOImpar()">Ejecutar ejercicio 3</button>
+        <button type="submit" onclick="parOImpar()">Ejecutar ejercicio 3</button> <br><br>
+
+        Actividad 4
+        Objetivo: Implementar un algoritmo que utilice funciones de manejo de cadenas y estructuras condicionales para
+        validar la longitud exacta de una entrada de texto.
+
+        Desarrolla un programa que solicite al usuario ingresar un nombre para una competencia. Este nombre debe
+        consistir en una palabra o frase de exactamente 6 caracteres.
+
+        Si el texto ingresado contiene exactamente 6 caracteres, el programa debe mostrar el mensaje: "LONGITUD
+        CORRECTA"
+
+        En caso contrario, debe mostrar: "LONGITUD INCORRECTA"
+
+        Pista: Se recomienda investigar el uso de la función Longitud() en PSeInt para obtener el número de caracteres
+        ingresados de forma eficiente. <br><br>
+
+        <button type="submit" onclick="calcularLength()">Ejecutar ejercicio 4</button> <br><br>
 
 
     </p>
@@ -119,7 +136,26 @@
             };
         };
 
+        // Actividad 4
+        // Objetivo: Implementar un algoritmo que utilice funciones de manejo de cadenas y estructuras condicionales para
+        // validar la longitud exacta de una entrada de texto.
+        // Desarrolla un programa que solicite al usuario ingresar un nombre para una competencia. Este nombre debe
+        // consistir en una palabra o frase de exactamente 6 caracteres.
+        // Si el texto ingresado contiene exactamente 6 caracteres, el programa debe mostrar el mensaje: "LONGITUD
+        // CORRECTA"
+        // En caso contrario, debe mostrar: "LONGITUD INCORRECTA"
+        // Pista: Se recomienda investigar el uso de la función Longitud() en PSeInt para obtener el número de caracteres
+        // ingresados de forma eficiente.
 
+        function calcularLength() {
+            let challengeNameInput = String(prompt("Ingrese el nombre que desea ponerle a la competencia, el mismo debe tener 6 caracteres!"));
+
+            if (challengeNameInput.length === 6) {
+                alert(`LONGITUD CORRECTA`);
+            } else {
+                alert(`LONGITUD INCORRECTA`);
+            };
+        };
     </script>
 </body>
 
