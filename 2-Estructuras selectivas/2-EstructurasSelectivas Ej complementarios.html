@@ -12,7 +12,9 @@
         1-Diseña un algoritmo que lea un número de tres cifras correspondiente a la posición táctica del equipo (433,
         343,
         253, etc.) y determine si es o no capicúa. Un número es capicúa cuando se lee igual de izquierda a derecha que
-        de derecha a izquierda.Recuerda nombrar y guardar tu algoritmo.
+        de derecha a izquierda.Recuerda nombrar y guardar tu algoritmo. <br><br>
+
+        <button type="submit" onclick="esCapicua()">Ejecutar ejercicio 1</button> <br><br>
 
         La entrada al cine cuesta 5 dólares por persona, sin embargo. Si la edad de la persona es menor a 12 años se le
         aplica un descuento del 30%. Escribir el algoritmo que calcule y muestre lo que pagará la entrada al cine según
@@ -62,6 +64,24 @@
     </p>
 
     <script>
+        // 1 - Diseña un algoritmo que lea un número de tres cifras correspondiente a la posición táctica del equipo(433,
+        //     343,
+        //     253, etc.) y determine si es o no capicúa.Un número es capicúa cuando se lee igual de izquierda a derecha que
+        //     de derecha a izquierda.Recuerda nombrar y guardar tu algoritmo.
+
+        function esCapicua() {
+            let numberInput = prompt("Ingrese un numero de tres cifras")
+
+            if (isNaN(numberInput) || numberInput.length !== 3) {
+                return alert("Error debe ingresar un numero de 3 cifras");
+            };
+
+            if (numberInput[0] === numberInput[2]) {
+                alert("Su numero es capicua");
+            } else {
+                alert("Su numero no es capicua")
+            };
+        };
 
     </script>
 </body>
