@@ -77,7 +77,7 @@
         transcurrido en horas. El programa calculará el total a pagar por el cliente, considerando un costo de $40 por
         litro de nafta y $5,20 por minuto de uso después de las primeras 2 horas.<br><br>
 
-        <button type="submit" onclick="">Ejecutar ejercicio </button><br><br>
+        <button type="submit" onclick="tarifaAlquiler()">Ejecutar ejercicio 10</button><br><br>
     </p>
 
     <script>
@@ -274,6 +274,42 @@
 
         };
 
+        // 10-La empresa "Te llevo a todos lados" tiene un sistema de tarifa para el alquiler de autos por hora. Si el cliente
+        // devuelve el auto dentro de las 2 horas de uso, el costo es de $400 pesos y la nafta es gratuita. Si el cliente
+        // devuelve el auto después de las 2 horas, se ingresa la cantidad de litros de nafta gastados y el tiempo
+        // transcurrido en horas. El programa calculará el total a pagar por el cliente, considerando un costo de $40 por
+        // litro de nafta y $5,20 por minuto de uso después de las primeras 2 horas.
+
+        function tarifaAlquiler() {
+
+            let horasAlquilada = Number(prompt("Ingrese la cantidad de horas que tuvo el auto alquilado."));
+
+            if (isNaN(horasAlquilada) || horasAlquilada <= 0) {
+                return alert("Error, debe ingresar una cantidad de horas valida");
+            };
+
+            //Hasta 2 horas
+
+            if (horasAlquilada <= 2) {
+                alert("El precio de su alquiler es de $200");
+            } else {
+
+                let litrosNafta = Number(prompt("Ingrese la cantidad de litros de nafta usados!"));
+
+                if (litrosNafta <= 0 || isNaN(litrosNafta)) {
+                    return alert("Ingrese una cantidad de litros valida");
+                };
+
+                //calculos de 2 horas
+                let horasExtra = horasAlquilada - 2;
+                let minutosExtra = horasExtra * 60;
+                let precioNafta = litrosNafta * 40;
+                let costoTiempoExtra = horasExtra * 5.20;
+                let total = costoTiempoExtra + precioNafta + 400;
+
+                prompt(`Su precio final es de: ${total}.\nHa gastado un total de: ${litrosNafta} litros de nafta, por un precio de $${precioNafta}.\nHa recorrido un total de: ${minutosExtra} minutos extra, por un precio de $${costoTiempoExtra}`)
+            };
+        }
     </script>
 </body>
 
