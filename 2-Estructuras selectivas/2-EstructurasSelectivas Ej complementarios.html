@@ -27,7 +27,9 @@
         frase o palabra. Si la frase o palabra tiene una longitud de 4 caracteres, el programa concatenará un signo de
         exclamación al final de la cadena; de lo contrario, añadirá un signo de interrogación. Posteriormente, el
         programa mostrará la frase final resultante. Se recomienda investigar las funciones Longitud() y Concatenar() de
-        PSeInt para realizar esta tarea de manera eficiente.
+        PSeInt para realizar esta tarea de manera eficiente. <br><br>
+
+        <button type="submit" onclick="concatenarExclamacion()">Ejecutar ejercicio 3</button><br><br>
 
         4-Escribe un programa que te pida ingresar los resultados de los últimos 3 partidos de tu equipo y valide si la
         suma de las anotaciones está entre 1 y 10. Si se encuentran dentro de estos parámetros, se debe establecer como
@@ -86,7 +88,6 @@
             };
 
             console.log(typeof (numberInput));
-
         };
 
         //2-La entrada al cine cuesta 5 dólares por persona, sin embargo. Si la edad de la persona es menor a 12 años se le
@@ -118,7 +119,21 @@
         // programa mostrará la frase final resultante. Se recomienda investigar las funciones Longitud() y Concatenar() de
         // PSeInt para realizar esta tarea de manera eficiente.
 
+        function concatenarExclamacion() {
 
+            let nombreInput = String(prompt("Ingrese un nombre para su competencia"));
+
+            if (!nombreInput) {
+                alert("Error: debe ingresar un nombre")
+            };
+
+            if (nombreInput.length != 4) {
+                return alert(nombreInput = nombreInput + "?")
+            } else {
+                nombreInput = nombreInput + "!";
+                return alert(nombreInput);
+            };
+        };
     </script>
 </body>
 
