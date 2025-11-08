@@ -34,7 +34,9 @@
         4-Escribe un programa que te pida ingresar los resultados de los últimos 3 partidos de tu equipo y valide si la
         suma de las anotaciones está entre 1 y 10. Si se encuentran dentro de estos parámetros, se debe establecer como
         verdadera una variable lógica y, en caso contrario, como falsa. Al final del programa, se deberá indicar si los
-        3 resultados son correctos utilizando la variable lógica.
+        3 resultados son correctos utilizando la variable lógica. <br><br>
+
+        <button type="submit" onclick="entre1Y10()">Ejecutar ejercicio 4</button><br><br>
 
         5-Escribe un programa que solicite el nombre de un equipo de fútbol y valide si la primera letra de ese nombre
         es
@@ -132,6 +134,39 @@
             } else {
                 nombreInput = nombreInput + "!";
                 return alert(nombreInput);
+            };
+        };
+
+        // 4-Escribe un programa que te pida ingresar los resultados de los últimos 3 partidos de tu equipo y valide si la
+        // suma de las anotaciones está entre 1 y 10. Si se encuentran dentro de estos parámetros, se debe establecer como
+        // verdadera una variable lógica y, en caso contrario, como falsa. Al final del programa, se deberá indicar si los
+        // 3 resultados son correctos utilizando la variable lógica.
+
+        function entre1Y10() {
+
+            let primerPartido = Number(prompt("Ingrese el resultado del primer partido"));
+
+            let segundoPartido = Number(prompt("Ingrese el resultado del segundo partido"));
+
+            let tercerPartido = Number(prompt("Ingrese el resultado del tercer partido"));
+
+            let sumaAnotaciones = primerPartido + segundoPartido + tercerPartido;
+
+            let resultadoCorrecto = false;
+
+            if (isNaN(primerPartido) || isNaN(segundoPartido) || isNaN(tercerPartido)) {
+                alert("Error: Solo puede ingresar numeros");
+            } else if (sumaAnotaciones >= 1 && sumaAnotaciones <= 10) {
+                resultadoCorrecto = true;
+            } else {
+                resultadoCorrecto = false;
+            }
+
+            if (resultadoCorrecto === true) {
+
+                alert("La suma de sus resultados son correctas.");
+            } else {
+                alert("La suma de sus resultados son incorrectas.");
             };
         };
     </script>
