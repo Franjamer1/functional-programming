@@ -44,22 +44,18 @@
         imprimirá "INCORRECTO". Se sugiere investigar la función Subcadena de PSeInt para realizar esta tarea de manera
         eficiente.<br><br>
 
-        <button type="submit" onclick="validarPrimeraLetra()">Ejecutar ejercicio 5</button><br><br>
-
-
-
         6-Continuando con el ejercicio anterior, ahora se solicitará el nombre del equipo y se validará si la primera
         letra del nombre es igual a la última letra del nombre. Si ambas letras son iguales, se imprimirá un mensaje que
         diga "CORRECTO"; de lo contrario, se imprimirá "INCORRECTO".<br><br>
 
-        <button type="submit" onclick="">Ejecutar ejercicio </button><br><br>
+        <button type="submit" onclick="validarPrimeraLetra()">Ejecutar ejercicio 5</button><br><br>
 
         7-Escribe un programa que solicite al usuario ingresar tres notas y determine si un alumno aprueba o reprueba un
         curso. El criterio para aprobar es que el promedio de las tres notas sea igual o mayor a 70. Si el promedio
         cumple con este criterio, el programa imprimirá "El alumno aprueba el curso"; de lo contrario, imprimirá "El
         alumno reprueba el curso".<br><br>
 
-        <button type="submit" onclick="">Ejecutar ejercicio </button><br><br>
+        <button type="submit" onclick="aprobadoONo()">Ejecutar ejercicio 7</button><br><br>
 
         8-Una tienda ofrece un descuento del 10% sobre el total de la compra realizada por un cliente en los meses de
         septiembre, octubre y noviembre. El programa solicitará al usuario que ingrese el mes y el importe de la compra.
@@ -208,6 +204,28 @@
             };
         };
 
+        // 7-Escribe un programa que solicite al usuario ingresar tres notas y determine si un alumno aprueba o reprueba un
+        // curso. El criterio para aprobar es que el promedio de las tres notas sea igual o mayor a 70. Si el promedio
+        // cumple con este criterio, el programa imprimirá "El alumno aprueba el curso"; de lo contrario, imprimirá "El
+        // alumno reprueba el curso".
+
+        function aprobadoONo() {
+            let primerNota = Number(prompt("Ingrese la primer nota"));
+            let segundaNota = Number(prompt("Ingrese la segunda nota"));
+            let tercerNota = Number(prompt("Ingrese la tercer nota"));
+
+            let promedio = (primerNota + segundaNota + tercerNota) / 3;
+
+            if (isNaN(primerNota) || isNaN(segundaNota) || isNaN(tercerNota)) {
+                return alert("Error: debe ingresar solo numeros");
+            };
+
+            if (promedio >= 70) {
+                alert("El alumno aprueba el curso");
+            } else {
+                alert("El alumno reprueba el curso")
+            };
+        }
     </script>
 </body>
 
