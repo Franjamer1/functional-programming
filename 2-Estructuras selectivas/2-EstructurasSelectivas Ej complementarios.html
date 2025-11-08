@@ -68,7 +68,7 @@
         pares, el programa imprimirá "Ambos números son pares"; de lo contrario, imprimirá "Los números no son pares, o
         uno de ellos no es par".<br><br>
 
-        <button type="submit" onclick="">Ejecutar ejercicio </button><br><br>
+        <button type="submit" onclick="ambosPares()">Ejecutar ejercicio 9</button><br><br>
 
         10-La empresa "Te llevo a todos lados" tiene un sistema de tarifa para el alquiler de autos por hora. Si el
         cliente
@@ -259,6 +259,20 @@
         // pares, el programa imprimirá "Ambos números son pares"; de lo contrario, imprimirá "Los números no son pares, o
         // uno de ellos no es par"
 
+        function ambosPares() {
+
+            let primerNumero = Number(prompt("Ingrese el primer numero!"));
+            let segundoNumero = Number(prompt("Ingrese el segundo numero!"));
+
+            if (isNaN(primerNumero) || isNaN(segundoNumero)) {
+                return alert("Error, ambos numeros deben ser validos.");
+            } else if (primerNumero % 2 === 0 && segundoNumero % 2 === 0) {
+                alert("Ambos numeros son pares");
+            } else {
+                alert("Los numeros no son pares, o uno de ellos no es par");
+            };
+
+        };
 
     </script>
 </body>
