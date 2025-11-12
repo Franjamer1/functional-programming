@@ -90,7 +90,7 @@
     Al finalizar, el programa debe mostrar en pantalla un mensaje claro y completo que indique la bebida seleccionada
     junto con sus características, según las respuestas del usuario. <br><br>
 
-    <button type="submit" onclick="">Ejecutar ej 3</button>
+    <button type="submit" onclick="elegirBebida()">Ejecutar ej 3</button> <br><br>
 
 
 
@@ -226,6 +226,80 @@
 
             return alert("Resultado: " + resultado);
         };
+
+
+        //     Actividad 3: Condicionales Anidados
+        // Objetivo: Aplicar estructuras de condicionales anidados para resolver un caso práctico que requiere múltiples
+        // decisiones encadenadas según las elecciones del usuario.
+
+        // Diseña un algoritmo que utilice condicionales anidados para gestionar la selección de una bebida durante un
+        // desayuno. El programa debe guiar al usuario a través de distintas opciones según sus preferencias.
+
+        // El algoritmo debe contemplar lo siguiente:
+
+        // Preguntar al usuario si desea té o café.
+
+        // Si elige café:
+
+        // Consultar si lo desea solo o cortado.
+
+        // Si prefiere cortado, preguntar si desea leche animal o leche vegetal.
+
+        // Si elige té:
+
+        // Preguntar si desea agregar rodajas de limón.
+
+        // Al finalizar, el programa debe mostrar en pantalla un mensaje claro y completo que indique la bebida seleccionada
+        // junto con sus características, según las respuestas del usuario.
+
+        function elegirBebida() {
+
+            // Preguntar al usuario si desea té o café.
+            let teoCafe = Number(prompt("Ingrese que opcion desea:\n1-Te\n2-Cafe"));
+
+            switch (teoCafe) {
+                case 1:
+                    let conLimon = prompt("Desea su te con limon?\n1-Si\n2-No");
+
+                    if (conLimon == 1) {
+                        alert("Ha seleccionado te con limon");
+                    } else if (conLimon == 2) {
+                        alert("Ha seleccionado te solo");
+                    } else {
+                        return manejoError();
+                    }
+                    break;
+                case 2:
+
+                    let soloOcortado = prompt("Desea su cafe:\n1-Solo\n2-Cortado");
+
+                    if (soloOcortado == 2) {
+                        let tipoLeche = prompt("Desea su cafe con:\n1-Leche animal\n2-Leche vegetal");
+
+                        if (tipoLeche == 1) {
+                            alert("Ha seleccionado cafe cortado con leche animal!");
+                        } else if (tipoLeche == 2) {
+                            alert("Ha seleccionado cafe cortado con leche vegetal!");
+                        } else {
+                            return manejoError();
+                        };
+                    } else if (soloOcortado == 1) {
+                        alert("Ha seleccionado cafe solo!");
+                    } else {
+                        return manejoError();
+                    };
+
+                    break;
+                default:
+                    manejoError();
+                    break;
+            }
+        };
+
+        function manejoError() {
+            return alert("Error: ingrese solo opciones validas");
+        }
+
     </script>
 </body>
 
