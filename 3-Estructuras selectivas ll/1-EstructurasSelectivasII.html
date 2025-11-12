@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Actividad 1: Día de la Semana
+    Objetivo: Diseñar un algoritmo que identifique el día de la semana según un valor numérico ingresado por el usuario.
+
+    Instrucciones:
+
+    Solicita al usuario que ingrese un valor del 1 al 7. El programa deberá mostrar un mensaje indicando a qué día de la
+    semana corresponde el número ingresado. Por ejemplo:
+
+    1 → Lunes
+
+    2 → Martes
+
+    …
+
+    7 → Domingo <br><br>
+
+    <button type="submit" onclick="diaDeLaSemana()">Ejecutar ej 1</button>
+
+    Actividad 2: Calculadora
+    Objetivo: Crear un programa que permita realizar operaciones aritméticas básicas entre dos números enteros, a partir
+    de una opción seleccionada por el usuario.
+
+
+    Desarrollar un programa que simule un menú de opciones para realizar las cuatro operaciones aritméticas básicas:
+    suma, resta, multiplicación y división
+
+    El usuario deberá ingresar dos valores numéricos enteros e indicar la operación deseada utilizando la inicial
+    correspondiente:
+
+    'S' para suma (adición)
+
+    'R' para resta (sustracción)
+
+    'M' para multiplicación
+
+    'D' para división
+
+    Importante : Por el momento, no es necesario contemplar errores relacionados con el ingreso de datos inválidos, como
+    una división por cero u otros valores fuera de lo esperado.<br><br>
+
+    <button type="submit" onclick="calculadora()">Ejecutar ej 2</button>
+
+
+    <script>
+        //     Actividad 1: Día de la Semana
+        // Objetivo: Diseñar un algoritmo que identifique el día de la semana según un valor numérico ingresado por el usuario.
+        // Instrucciones:
+        // Solicita al usuario que ingrese un valor del 1 al 7. El programa deberá mostrar un mensaje indicando a qué día de la
+        // semana corresponde el número ingresado. Por ejemplo:
+        // 1 → Lunes
+        // 2 → Martes
+        // …
+        // 7 → Domingo
+
+        function diaDeLaSemana() {
+            let numeroIngresado = Number(prompt("Ingrese un valor numerico del 1 al 7 y le diremos a que dia de la semana corresponde."));
+
+            switch (numeroIngresado) {
+                case 1: alert(`El numero ${numeroIngresado} equivale al dia LUNES`)
+
+                    break;
+                case 2: alert(`El numero ${numeroIngresado} equivale al dia MARTES`)
+
+                    break;
+                case 3: alert(`El numero ${numeroIngresado} equivale al dia MIERCOLES`)
+
+                    break;
+                case 4: alert(`El numero ${numeroIngresado} equivale al dia JUEVES`)
+
+                    break;
+                case 5: alert(`El numero ${numeroIngresado} equivale al dia VIERNES`)
+
+                    break;
+                case 6: alert(`El numero ${numeroIngresado} equivale al dia SABADO`)
+
+                    break;
+                case 7: alert(`El numero ${numeroIngresado} equivale al dia DOMINGO`)
+
+                    break;
+
+                default: alert("Error, debe ingresar un numero del 1 al 7")
+                    break;
+            }
+        }
+
+        //     Actividad 2: Calculadora
+        // Objetivo: Crear un programa que permita realizar operaciones aritméticas básicas entre dos números enteros, a partir
+        // de una opción seleccionada por el usuario.
+
+
+        // Desarrollar un programa que simule un menú de opciones para realizar las cuatro operaciones aritméticas básicas:
+        // suma, resta, multiplicación y división
+
+        // El usuario deberá ingresar dos valores numéricos enteros e indicar la operación deseada utilizando la inicial
+        // correspondiente:
+
+        // 'S' para suma (adición)
+
+        // 'R' para resta (sustracción)
+
+        // 'M' para multiplicación
+
+        // 'D' para división
+
+        // Importante : Por el momento, no es necesario contemplar errores relacionados con el ingreso de datos inválidos, como
+        // una división por cero u otros valores fuera de lo esperado
+
+        function calculadora() {
+
+
+            let opcion = Number(prompt("Elija una opcion\n1-Suma\n2-Resta\n3-Multiplicacion\n4-Division"));
+
+            let primerNumero = Number(prompt("Ingrese el primer numero para realizar la operacion."));
+            let segundoNumero = Number(prompt("Ingrese el segundo numero para realizar la operacion."));
+
+            let resultado;
+
+            switch (opcion) {
+                case 1: resultado = primerNumero + segundoNumero;
+
+                    break;
+                case 2: resultado = primerNumero - segundoNumero;
+
+                    break;
+                case 3: resultado = primerNumero * segundoNumero;
+
+                    break;
+                case 4: resultado = primerNumero / segundoNumero;
+
+                    break;
+                default: alert("Error, debe ingresar un numero entre 1 y 4");
+
+                    break;
+            };
+
+            return alert("Resultado: " + resultado);
+        };
+    </script>
+</body>
+
+</html>
