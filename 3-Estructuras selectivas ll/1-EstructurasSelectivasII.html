@@ -303,25 +303,15 @@
         //     Actividad 4: Evaluación de Eficiencia
         // Objetivo: Aplicar estructuras condicionales para evaluar múltiples criterios y determinar un resultado en función
         // del cumplimiento parcial o total de dichas condiciones.
-
         // Escribe un programa que determine el grado de eficiencia de un operario en una fábrica de tornillos, basándose en el
         // cumplimiento de dos condiciones durante un período de prueba:
-
         // Producir menos de 200 tornillos defectuosos.
-
         // Producir más de 10000 tornillos sin defectos.
-
         // El grado de eficiencia se asignará según la siguiente escala:
-
         // GRADO 5: No cumple ninguna de las condiciones.
-
         // GRADO 6: Solo cumple la primera condición.
-
         // GRADO 7: Solo cumple la segunda condición.
-
         // GRADO 8: Cumple ambas condiciones.
-
-
         // El programa debe solicitar los datos al usuario, evaluar ambas condiciones, y luego mostrar un mensaje claro con el
         // grado de eficiencia asignado al operario.
 
@@ -333,18 +323,18 @@
                 return manejoError();
             };
 
-            const condicionDefectuosos = 200;
-            const condicionSinDefectos = 10000;
+            const cumplePrimera = tornillosDefectuosos < 200;
+            const cumpleSegunda = tornillosSinDefectos > 10000;
 
-            if (tornillosDefectuosos >= condicionDefectuosos && tornillosSinDefectos <= condicionSinDefectos) {
+            if (!cumplePrimera && !cumpleSegunda) {
                 alert("EFICIENCIA GRADO 5. No cumple ninguna de las condiciones!");
-            } else if (tornillosDefectuosos < condicionDefectuosos && tornillosSinDefectos <= condicionSinDefectos) {
+            } else if (cumplePrimera && !cumpleSegunda) {
                 alert("EFICIENCIA GRADO 6. Solo cumple la condicion de tornillos defectuosos");
-            } else if (tornillosDefectuosos >= condicionDefectuosos && tornillosSinDefectos > condicionSinDefectos) {
+            } else if (!cumplePrimera && cumpleSegunda) {
                 alert("EFICIENCIA GRADO 7. Solo cumple la condicion de tornillos sin defectos");
-            } else if (tornillosDefectuosos < condicionDefectuosos && tornillosSinDefectos > condicionSinDefectos) {
+            } else if (cumplePrimera && cumpleSegunda) {
                 alert("EFICIENCIA GRADO 8. Cumple ambas condiciones!");
-            }
+            };
         };
 
     </script>
