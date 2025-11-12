@@ -24,7 +24,7 @@
 
     7 → Domingo <br><br>
 
-    <button type="submit" onclick="diaDeLaSemana()">Ejecutar ej 1</button>
+    <button type="submit" onclick="diaDeLaSemana()">Ejecutar ej 1</button> <br><br>
 
     Actividad 2: Calculadora
     Objetivo: Crear un programa que permita realizar operaciones aritméticas básicas entre dos números enteros, a partir
@@ -48,7 +48,85 @@
     Importante : Por el momento, no es necesario contemplar errores relacionados con el ingreso de datos inválidos, como
     una división por cero u otros valores fuera de lo esperado.<br><br>
 
-    <button type="submit" onclick="calculadora()">Ejecutar ej 2</button>
+    <button type="submit" onclick="calculadora()">Ejecutar ej 2</button> <br><br>
+
+    <h1>
+        Condicionales Anidados
+    </h1>
+    Los condicionales anidados son estructuras de control que permiten evaluar múltiples condiciones dentro de una
+    estructura condicional principal. Por ejemplo, dentro de una instrucción Si...Entonces, puede incluirse otra u otras
+    instrucciones condicionales que se evaluarán únicamente si la condición principal es verdadera.
+
+    Esta técnica resulta especialmente útil cuando es necesario tomar decisiones más complejas, que dependen de la
+    verificación de varias condiciones encadenadas o relacionadas.
+
+    Además, es importante destacar que no solo pueden anidarse estructuras condicionales, sino cualquier tipo de
+    estructura de control, según lo requiera la lógica del problema.
+
+    A continuación, desarrollarás actividades que te permitirán aplicar y afianzar este concepto en la práctica.
+    <br>--------------------------------------------------------------------------------------------------------<br>
+
+    Actividad 3: Condicionales Anidados
+    Objetivo: Aplicar estructuras de condicionales anidados para resolver un caso práctico que requiere múltiples
+    decisiones encadenadas según las elecciones del usuario.
+
+    Diseña un algoritmo que utilice condicionales anidados para gestionar la selección de una bebida durante un
+    desayuno. El programa debe guiar al usuario a través de distintas opciones según sus preferencias.
+
+    El algoritmo debe contemplar lo siguiente:
+
+    Preguntar al usuario si desea té o café.
+
+    Si elige café:
+
+    Consultar si lo desea solo o cortado.
+
+    Si prefiere cortado, preguntar si desea leche animal o leche vegetal.
+
+    Si elige té:
+
+    Preguntar si desea agregar rodajas de limón.
+
+    Al finalizar, el programa debe mostrar en pantalla un mensaje claro y completo que indique la bebida seleccionada
+    junto con sus características, según las respuestas del usuario. <br><br>
+
+    <button type="submit" onclick="">Ejecutar ej 3</button>
+
+
+
+    ✏️ Actividad 4: Evaluación de Eficiencia
+    Objetivo: Aplicar estructuras condicionales para evaluar múltiples criterios y determinar un resultado en función
+    del cumplimiento parcial o total de dichas condiciones.
+
+    Escribe un programa que determine el grado de eficiencia de un operario en una fábrica de tornillos, basándose en el
+    cumplimiento de dos condiciones durante un período de prueba:
+
+    Producir menos de 200 tornillos defectuosos.
+
+    Producir más de 10000 tornillos sin defectos.
+
+    El grado de eficiencia se asignará según la siguiente escala:
+
+    GRADO 5: No cumple ninguna de las condiciones.
+
+    GRADO 6: Solo cumple la primera condición.
+
+    GRADO 7: Solo cumple la segunda condición.
+
+    GRADO 8: Cumple ambas condiciones.
+
+
+    El programa debe solicitar los datos al usuario, evaluar ambas condiciones, y luego mostrar un mensaje claro con el
+    grado de eficiencia asignado al operario.
+
+
+    Sugerencia: Para resolver el problema de forma eficiente, se recomienda probar cada condición por separado. Abordar
+    todos los casos a la vez puede dificultar la detección de errores, mientras que trabajar paso a paso facilita el
+    desarrollo ordenado y el control de resultados parciales.
+
+    <br><br>
+
+    <button type="submit" onclick="">Ejecutar ej 4</button>
 
 
     <script>
@@ -96,32 +174,31 @@
         //     Actividad 2: Calculadora
         // Objetivo: Crear un programa que permita realizar operaciones aritméticas básicas entre dos números enteros, a partir
         // de una opción seleccionada por el usuario.
-
-
         // Desarrollar un programa que simule un menú de opciones para realizar las cuatro operaciones aritméticas básicas:
         // suma, resta, multiplicación y división
-
         // El usuario deberá ingresar dos valores numéricos enteros e indicar la operación deseada utilizando la inicial
         // correspondiente:
-
-        // 'S' para suma (adición)
-
-        // 'R' para resta (sustracción)
-
-        // 'M' para multiplicación
-
-        // 'D' para división
-
+        // '1' para suma (adición)
+        // '2' para resta (sustracción)
+        // '3' para multiplicación
+        // '4' para división
         // Importante : Por el momento, no es necesario contemplar errores relacionados con el ingreso de datos inválidos, como
         // una división por cero u otros valores fuera de lo esperado
 
         function calculadora() {
 
-
             let opcion = Number(prompt("Elija una opcion\n1-Suma\n2-Resta\n3-Multiplicacion\n4-Division"));
+
+            if (opcion < 1 || opcion > 4) {
+                return alert("Error: ingrese una opcion valida");
+            };
 
             let primerNumero = Number(prompt("Ingrese el primer numero para realizar la operacion."));
             let segundoNumero = Number(prompt("Ingrese el segundo numero para realizar la operacion."));
+
+            if (isNaN(primerNumero) || isNaN(segundoNumero)) {
+                return alert("Error: debe ingresar solo numeros");
+            };
 
             let resultado;
 
@@ -135,7 +212,11 @@
                 case 3: resultado = primerNumero * segundoNumero;
 
                     break;
-                case 4: resultado = primerNumero / segundoNumero;
+                case 4:
+                    if (primerNumero === 0 || segundoNumero === 0) {
+                        return alert("Error: No se puede dividir por 0");
+                    };
+                    resultado = primerNumero / segundoNumero;
 
                     break;
                 default: alert("Error, debe ingresar un numero entre 1 y 4");
