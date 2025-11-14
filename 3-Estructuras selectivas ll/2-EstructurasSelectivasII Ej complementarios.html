@@ -16,7 +16,9 @@
     <button type="submit" onclick="validarFecha()">Ejecutar ej 1</button> <br><br>
 
 
-    Crea un algoritmo que lea un número desde el teclado y determine si tiene tres dígitos.
+    Crea un algoritmo que lea un número desde el teclado y determine si tiene tres dígitos.<br><br>
+
+    <button type="submit" onclick="validarDigitos()">Ejecutar ej 2</button> <br><br>
 
     Desarrolla un programa que, dado un año, determine si es bisiesto o no. Un año es bisiesto si cumple las siguientes
     condiciones: debe ser divisible por 4 pero no por 100, a menos que también sea divisible por 400. Utiliza la función
@@ -111,6 +113,24 @@
             return alert(`${dayInput} de ${nombreMeses[monthInput - 1]} de ${yearInput}`);
         };
 
+
+        // Crea un algoritmo que lea un número desde el teclado y determine si tiene tres dígitos
+
+        function validarDigitos() {
+            let numberInput = Number(prompt("Ingrese un numero"));
+
+            if (isNaN(numberInput)) {
+                return prompt("Error: Solo se admiten numeros");
+            };
+
+            let cantDigitos = numberInput.toString().length;
+
+            if (cantDigitos === 3) {
+                return alert("Su numero tiene 3 digitos");
+            } else {
+                return alert(`Error: su numero tiene ${cantDigitos} digitos`);
+            };
+        }
     </script>
 </body>
 
