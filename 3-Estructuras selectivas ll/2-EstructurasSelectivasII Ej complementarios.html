@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Lee tres números que representen una fecha (día, mes, año) y verifica si es una fecha válida. Si la fecha no es
+    válida, muestra un mensaje de error en pantalla. Si la fecha es válida, imprime la fecha cambiando el número que
+    representa el mes por su nombre. Por ejemplo, si se introduce 1 2 2006, se imprimirá "1 de febrero de 2006".
+    <br><br>
+    <button type="submit" onclick="validarFecha()">Ejecutar ej 1</button> <br><br>
+
+
+    Crea un algoritmo que lea un número desde el teclado y determine si tiene tres dígitos.
+
+    Desarrolla un programa que, dado un año, determine si es bisiesto o no. Un año es bisiesto si cumple las siguientes
+    condiciones: debe ser divisible por 4 pero no por 100, a menos que también sea divisible por 400. Utiliza la función
+    mod de PseInt para esta tarea.
+
+    En una verdulería, el precio de las manzanas varía según la cantidad comprada, siguiendo una tabla de descuentos.
+    Calcula el monto total que una persona debe pagar por las manzanas que compre en esta verdulería.
+
+    En un curso, el promedio de los trabajos prácticos se obtiene eliminando la nota más baja de cuatro y promediando
+    las tres más altas. Desarrolla un programa que determine cuál es la nota eliminada y el promedio de los trabajos
+    prácticos de un estudiante.
+
+    En una empresa, el departamento de contabilidad necesita calcular los sueldos semanales del personal, que varían
+    según tres modalidades de sueldo:
+
+    Salario por Comisión
+
+    Salario Fijo + Comisión
+
+    Salario Fijo.
+
+    Desarrolla un menú de opciones que permita calcular el sueldo semanal de un empleado según el tipo de contrato que
+    tenga considerando:
+
+    Para la modalidad de salario por comisión, se requiere ingresar el monto total de las ventas realizadas en la
+    semana. El 40% de ese monto total corresponde al salario del empleado.
+
+    En cuanto a la modalidad de salario fijo + comisión, se debe proporcionar el valor que se paga por hora, la cantidad
+    de horas trabajadas semanalmente y el monto total de las ventas en esa semana. En este tipo de contrato, no se
+    consideran las horas extras y el máximo de horas laborales permitidas es de 40 horas por semana. La comisión por las
+    ventas se calcula como el 25% del valor total de las ventas.
+
+    Finalmente, para la modalidad de salario fijo, se debe ingresar el valor que se paga por hora y la cantidad de horas
+    trabajadas en la semana. Si se excede las 40 horas semanales, las horas extras se deben pagar con un adicional del
+    50% sobre el valor de la hora.
+
+    Realice un programa que, dado un año, nos diga si es bisiesto o no. Un año es bisiesto bajo las siguientes
+    condiciones: Un año divisible por 4 es bisiesto y no debe ser divisible por 100. Si un año es divisible por 100 y
+    además es divisible por 400, también resulta bisiesto.
+
+    Escribe un programa que solicite al usuario su edad y determine su categoría: niño, adolescente, adulto o adulto
+    mayor, según los siguientes rangos:
+
+    Niño: menor de 13 años. Si el usuario es niño, pregúntale si le gusta hacer deportes o jugar a los videojuegos.
+
+    Adolescente: entre 13 y 17 años
+
+    Adulto: entre 18 y 64 años. Si el usuario es adulto, pregúntale si es estudiante o trabajador.
+
+    Adulto mayor: 65 años o más.
+
+    <script>
+
+        // Lee tres números que representen una fecha (día, mes, año) y verifica si es una fecha válida. Si la fecha no es
+        // válida, muestra un mensaje de error en pantalla. Si la fecha es válida, imprime la fecha cambiando el número que
+        // representa el mes por su nombre. Por ejemplo, si se introduce 1 2 2006, se imprimirá "1 de febrero de 2006". 
+
+        function validarFecha() {
+            let dayInput = Number(prompt("Ingrese el dia del mes (1/31)"));
+            let monthInput = Number(prompt("Ingrese el mes (1/12)"));
+            let yearInput = Number(prompt("Ingrese el año en 4 digitos"));
+
+            if (isNaN(dayInput) || isNaN(monthInput) || isNaN(yearInput)) {
+                return alert("Error: solo puede ingresar numeros, respetando este formato 13 13 2000");
+            };
+
+            if (dayInput < 1 || dayInput > 31) {
+                return alert("Error: seleccione un dia entre 1 y 31");
+            };
+
+            if (monthInput < 1 || monthInput > 12) {
+                return alert("Error: Ingrese un numero entre 1 y 12 para seleccionar el mes");
+            };
+
+            if (yearInput < 1000 || yearInput > 9999) {
+                return alert("Error: el año debe tener 4 digitos")
+            };
+
+            const nombreMeses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+            const diasMes = {
+                1: 31, 2: 29, 3: 31, 4: 30,
+                5: 31, 6: 30, 7: 31, 8: 31,
+                9: 30, 10: 31, 11: 30, 12: 31
+            };
+
+            if (dayInput > diasMes[monthInput]) {
+                return alert(`Error: el mes ${nombreMeses[monthInput - 1]} solo tiene ${diasMes[monthInput]} días`);
+            };
+
+            return alert(`${dayInput} de ${nombreMeses[monthInput - 1]} de ${yearInput}`);
+        };
+
+    </script>
+</body>
+
+</html>
