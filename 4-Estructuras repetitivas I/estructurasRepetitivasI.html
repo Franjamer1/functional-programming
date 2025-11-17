@@ -47,8 +47,9 @@
 
     Mientras el usuario no responda "n" o "N", el programa deberá repetir el proceso anterior.
 
-    Al finalizar, mostrará en pantalla la suma total de los números introducidos.
+    Al finalizar, mostrará en pantalla la suma total de los números introducidos. <br><br>
 
+    <button type="submit" onclick="sumaValores()">Ejercicio 3</button> <br><br>
 
 
     Puntos clave de la sección
@@ -156,6 +157,43 @@
             };
 
         };
+
+        //     Actividad 3: Suma de valores
+        // Objetivo: Sumar números ingresados por el usuario hasta que decida detenerse.
+
+        // Desarrolla un programa que realice lo siguiente:
+
+        // Solicite al usuario un número entero positivo.
+
+        // Pregunte si desea ingresar otro número.
+
+        // Mientras el usuario no responda "n" o "N", el programa deberá repetir el proceso anterior.
+
+        // Al finalizar, mostrará en pantalla la suma total de los números introducidos.
+
+        function sumaValores() {
+
+            let continueAdd = "S";
+
+            let suma = 0;
+            do {
+                let numberInput = Number(prompt("Ingrese un numero porfavor"));
+
+                while (isNaN(numberInput)) {
+                    alert("Debe ingresar un numero");
+                    numberInput = Number(prompt("Ingrese un numero valido por favor!"));
+                };
+
+                suma = numberInput + suma;
+
+                continueAdd = String(prompt("Desea salir: S para salir / N para continuar").toUpperCase());
+
+            } while (continueAdd !== "S");
+
+            alert("Ha salido con exito");
+            alert(`Suma total: ${suma}`)
+        }
+
     </script>
 </body>
 
