@@ -22,10 +22,15 @@
 
     Desarrolla un programa que, dado un año, determine si es bisiesto o no. Un año es bisiesto si cumple las siguientes
     condiciones: debe ser divisible por 4 pero no por 100, a menos que también sea divisible por 400. Utiliza la función
-    mod de PseInt para esta tarea.
+    mod de PseInt para esta tarea. <br><br>
+
+    <button type="submit" onclick="esBisiesto()">Ejecutar ej 3</button> <br><br>
 
     En una verdulería, el precio de las manzanas varía según la cantidad comprada, siguiendo una tabla de descuentos.
-    Calcula el monto total que una persona debe pagar por las manzanas que compre en esta verdulería.
+    Calcula el monto total que una persona debe pagar por las manzanas que compre en esta verdulería. <br><br>
+
+    <button type="submit" onclick="">Ejecutar ej 4</button> <br><br>
+
 
     En un curso, el promedio de los trabajos prácticos se obtiene eliminando la nota más baja de cuatro y promediando
     las tres más altas. Desarrolla un programa que determine cuál es la nota eliminada y el promedio de los trabajos
@@ -130,7 +135,25 @@
             } else {
                 return alert(`Error: su numero tiene ${cantDigitos} digitos`);
             };
-        }
+        };
+
+        // Desarrolla un programa que, dado un año, determine si es bisiesto o no. Un año es bisiesto si cumple las siguientes
+        // condiciones: debe ser divisible por 4 pero no por 100, a menos que también sea divisible por 400. Utiliza la función
+        // mod de PseInt para esta tarea.
+
+        function esBisiesto() {
+            let yearInput = Number(prompt("Por favor ingrese un año."));
+
+            if (isNaN(yearInput) || yearInput > 9999) {
+                return alert("Error, ingrese un año valido en numeros");
+            };
+
+            if ((yearInput % 4 == 0 && yearInput % 100 != 0) || (yearInput % 400 == 0)) {
+                alert("Su año es bisiesto");
+            } else {
+                alert("Su año no es bisiesto.");
+            };
+        };
     </script>
 </body>
 
