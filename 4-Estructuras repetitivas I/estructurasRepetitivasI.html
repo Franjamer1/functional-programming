@@ -18,7 +18,7 @@
 
     Si se fallan los tres intentos, se mostrará un mensaje indicando que se han agotado los intentos. <br><br>
 
-    <button type="submit" onclick="validatePassword()">Ejercicio 1</button>
+    <button type="submit" onclick="validatePassword()">Ejercicio 1</button> <br><br>
 
     ✏️ Actividad 2: Control de acceso
     Objetivo: Validar el ingreso de un código de usuario y una contraseña numérica.
@@ -31,7 +31,9 @@
 
     El programa no debe permitir continuar hasta que se ingrese correctamente el código 1024 y la contraseña 4567.
     Cuando ambos datos coinciden con los valores esperados, se mostrará un mensaje indicando que el acceso ha sido
-    concedido.
+    concedido. <br><br>
+
+    <button type="submit" onclick="accesControl()">Ejercicio 2</button> <br><br>
 
 
     ✏️ Actividad 3: Suma de valores
@@ -96,7 +98,6 @@
 
             let passwordInput = String(prompt("Ingrese su contraseña porfavor"));
 
-
             while (password != passwordInput && cont < 3) {
                 alert(`Error su contraseña es incorrecta, le quedan ${3 - cont} intentos`);
                 passwordInput = String(prompt("Ingrese su contraseña porfavor"));
@@ -110,6 +111,50 @@
             if (password === passwordInput) {
                 alert("Login exitoso");
             };
+        };
+
+        //     Actividad 2: Control de acceso
+        // Objetivo: Validar el ingreso de un código de usuario y una contraseña numérica.
+
+        // Crea un programa que solicite al usuario ingresar dos datos:
+
+        // un código de usuario (entero positivo),
+
+        // y una contraseña numérica (también entera y positiva).
+
+        // El programa no debe permitir continuar hasta que se ingrese correctamente el código 1024 y la contraseña 4567.
+        // Cuando ambos datos coinciden con los valores esperados, se mostrará un mensaje indicando que el acceso ha sido
+        // concedido.
+
+        function accesControl() {
+            const userCode = 1024;
+            const numericPassword = 4567;
+
+            let userCodeInput = Number(prompt("Ingrese su codigo de usuario"));
+            let numericPasswordInput = Number(prompt("Ingrese su contraseña numerica"));
+
+            while (
+                isNaN(userCodeInput) ||
+                isNaN(numericPasswordInput) ||
+                userCodeInput < 0 ||
+                numericPasswordInput < 0 ||
+                !Number.isInteger(userCodeInput) ||
+                !Number.isInteger(numericPasswordInput)) {
+                alert("Error debe ingresar un numero valido (num. entero y positivo)")
+                userCodeInput = Number(prompt("Ingrese su codigo de usuario"));
+                numericPasswordInput = Number(prompt("Ingrese su contraseña numerica"));
+            };
+
+            while (userCode != userCodeInput || numericPassword != numericPasswordInput) {
+                alert("Error el codigo de usuario o la contraseña numerica son incorrectas");
+                userCodeInput = Number(prompt("Ingrese su codigo de usuario"));
+                numericPasswordInput = Number(prompt("Ingrese su contraseña numerica"));
+            };
+
+            if (userCode === userCodeInput && numericPassword === numericPasswordInput) {
+                alert("Ingreso concedido");
+            };
+
         };
     </script>
 </body>
