@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Actividad 1: Clave Secreta
+    Objetivo: Validar el ingreso correcto de una clave en un número limitado de intentos.
+
+    Desarrolla un programa que solicite al usuario ingresar una contraseña. La clave correcta es "EUREKA" y el usuario
+    contará con tres intentos para adivinarla.
+
+    Si la clave es correcta, se mostrará un mensaje de acceso exitoso.
+
+    Si se fallan los tres intentos, se mostrará un mensaje indicando que se han agotado los intentos. <br><br>
+
+    <button type="submit" onclick="validatePassword()">Ejercicio 1</button>
+
+    ✏️ Actividad 2: Control de acceso
+    Objetivo: Validar el ingreso de un código de usuario y una contraseña numérica.
+
+    Crea un programa que solicite al usuario ingresar dos datos:
+
+    un código de usuario (entero positivo),
+
+    y una contraseña numérica (también entera y positiva).
+
+    El programa no debe permitir continuar hasta que se ingrese correctamente el código 1024 y la contraseña 4567.
+    Cuando ambos datos coinciden con los valores esperados, se mostrará un mensaje indicando que el acceso ha sido
+    concedido.
+
+
+    ✏️ Actividad 3: Suma de valores
+    Objetivo: Sumar números ingresados por el usuario hasta que decida detenerse.
+
+    Desarrolla un programa que realice lo siguiente:
+
+    Solicite al usuario un número entero positivo.
+
+    Pregunte si desea ingresar otro número.
+
+    Mientras el usuario no responda "n" o "N", el programa deberá repetir el proceso anterior.
+
+    Al finalizar, mostrará en pantalla la suma total de los números introducidos.
+
+
+
+    Puntos clave de la sección
+    Las estructuras repetitivas permiten ejecutar un conjunto de instrucciones múltiples veces dentro de un programa.
+
+    Son esenciales para procesar grandes volúmenes de datos, realizar cálculos iterativos y evitar la repetición
+    innecesaria de código.
+
+    Tipos de Bucles
+
+    Bucle Mientras: Repite una secuencia de instrucciones siempre que una condición lógica sea verdadera. Si la
+    condición es falsa desde el inicio, el cuerpo del bucle no se ejecuta.
+
+    Bucle Hacer Mientras (o Repetir Mientras que): Ejecuta el cuerpo del bucle al menos una vez, ya que la condición se
+    evalúa al final. Si la condición resulta falsa después de la primera ejecución, el bucle finaliza.
+
+    Bucle Para: Estructura que ejecuta un bloque de instrucciones un número determinado de veces, controlado por un
+    contador.
+
+    Características Clave
+
+    Iteración: Cada ejecución repetida del conjunto de instrucciones dentro del bucle.
+
+    Condición de Terminación: Expresión que determina cuándo debe finalizar el ciclo.
+
+    Ventajas
+
+    Automatiza tareas repetitivas sin necesidad de duplicar código
+
+    Permite ejecutar acciones de forma eficiente y con control sobre la cantidad de repeticiones
+
+    <script>
+
+        // Actividad 1: Clave Secreta
+        //     Objetivo: Validar el ingreso correcto de una clave en un número limitado de intentos.
+
+        //     Desarrolla un programa que solicite al usuario ingresar una contraseña. La clave correcta es "EUREKA" y el usuario
+        //     contará con tres intentos para adivinarla.
+
+        //     Si la clave es correcta, se mostrará un mensaje de acceso exitoso.
+
+        //     Si se fallan los tres intentos, se mostrará un mensaje indicando que se han agotado los intentos.
+        function validatePassword() {
+            let cont = 1;
+
+            const password = "EUREKA";
+
+            let passwordInput = String(prompt("Ingrese su contraseña porfavor"));
+
+
+            while (password != passwordInput && cont < 3) {
+                alert(`Error su contraseña es incorrecta, le quedan ${3 - cont} intentos`);
+                passwordInput = String(prompt("Ingrese su contraseña porfavor"));
+                cont = cont + 1;
+            };
+
+            if (password !== passwordInput) {
+                return alert("No lo quedan mas intentos");
+            };
+
+            if (password === passwordInput) {
+                alert("Login exitoso");
+            };
+        };
+    </script>
+</body>
+
+
+</html>
