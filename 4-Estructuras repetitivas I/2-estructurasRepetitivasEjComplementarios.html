@@ -11,6 +11,9 @@
     Desarrolla un programa que calcule el promedio de una secuencia de números ingresados por el usuario a través del
     teclado. La secuencia finaliza con un -1. Por ejemplo: 5, 3, 0, 2, 4, 4, 0, 0, 2, 3, 6, 0, ..., -1. Se asume que el
     usuario no ingresará números negativos. Utiliza la estructura repetitiva mientras para resolver esta actividad.
+    <br><br>
+
+    <button type="submit" onclick="calcularPromedio()">Ejercicio 1</button> <br><br>
 
     Escribe un programa que solicite al usuario ingresar un número. Mientras ese número sea mayor que 10, se le pedirá
     al usuario que ingrese el número nuevamente. Utiliza la estructura repetitiva mientras para resolver esta actividad.
@@ -77,6 +80,33 @@
     usuario hasta que adivine el número.
 
     Utiliza la estructura repetitiva repetir-mientras para resolver esta actividad.
+
+    <script>
+
+        //  Desarrolla un programa que calcule el promedio de una secuencia de números ingresados por el usuario a través del
+        //  teclado. La secuencia finaliza con un -1. Por ejemplo: 5, 3, 0, 2, 4, 4, 0, 0, 2, 3, 6, 0, ..., -1. Se asume que el
+        //  usuario no ingresará números negativos. Utiliza la estructura repetitiva mientras para resolver esta actividad.
+
+        function calcularPromedio() {
+
+            let number = Number(prompt("Ingrese un numero entero positivo"));
+            let suma = 0;
+            let count = 0;
+
+            while (number !== -1) {
+                suma = suma + number;
+                count++
+
+                number = Number(prompt("Ingrese un numero positivo entero, o -1 para salir"));
+                console.log(number, count, suma);
+            };
+
+
+            let promedio = suma / count;
+
+            return alert("Promedio: " + promedio);
+        };
+    </script>
 </body>
 
 </html>
