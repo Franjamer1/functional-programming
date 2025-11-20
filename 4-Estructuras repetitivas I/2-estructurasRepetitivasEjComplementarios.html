@@ -17,6 +17,9 @@
 
     Escribe un programa que solicite al usuario ingresar un número. Mientras ese número sea mayor que 10, se le pedirá
     al usuario que ingrese el número nuevamente. Utiliza la estructura repetitiva mientras para resolver esta actividad.
+    <br><br>
+
+    <button type="submit" onclick="mayorQueDiez()">Ejercicio 2</button> <br><br>
 
     Crea un programa que solicite al usuario dos números enteros, mínimo y máximo. Luego, solicita al usuario que
     ingrese números enteros que estén dentro del intervalo entre el máximo y el mínimo. Por cada número ingresado dentro
@@ -105,6 +108,20 @@
             let promedio = suma / count;
 
             return alert("Promedio: " + promedio);
+        };
+
+        // Escribe un programa que solicite al usuario ingresar un número. Mientras ese número sea mayor que 10, se le pedirá
+        // al usuario que ingrese el número nuevamente. Utiliza la estructura repetitiva mientras para resolver esta actividad.
+
+        function mayorQueDiez() {
+
+            let numero;
+            do {
+                numero = Number(prompt("Ingrese un numero"));
+
+            } while (numero >= 10);
+
+            alert("Ha ingresado un numero menor que 10");
         };
     </script>
 </body>
