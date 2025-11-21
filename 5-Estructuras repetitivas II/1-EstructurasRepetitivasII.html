@@ -20,7 +20,9 @@
 
     ✏️ Actividad 2: Separación de caracteres
     Diseña un programa que solicite al usuario ingresar una frase y, posteriormente, muestre dicha frase en pantalla con
-    un espacio entre cada letra.
+    un espacio entre cada letra. <br><br>
+
+    <button type="submit" onclick="separacionDeCaracteres()">Ejercicio 2</button> <br><br>
 
     Es fundamental que almacenes la nueva cadena, con los espacios incluidos, en una variable destinada específicamente
     para este propósito. Por ejemplo:
@@ -37,9 +39,7 @@
         // Actividad 1: Cálculo de cuadrados
         // Diseña un programa que calcule el cuadrado de los primeros nueve números naturales e imprima en pantalla cada número
         // junto con su resultado, siguiendo el formato:
-
         // “2 elevado al cuadrado es igual a 4”, y así sucesivamente para cada número.
-
         // Nota: Los primeros nueve números naturales son: 1, 2, 3, 4, 5, 6, 7, 8 y 9.
 
         function calculoDeCuadrados() {
@@ -50,6 +50,22 @@
             return;
         };
 
+        // Actividad 2: Separación de caracteres
+        // Diseña un programa que solicite al usuario ingresar una frase y, posteriormente, muestre dicha frase en pantalla con
+        // un espacio entre cada letra.
+
+        function separacionDeCaracteres() {
+            let fraseinput = String(prompt("Ingrese una frase"));
+
+            let fraseConEspacios = "";
+
+            for (let i = 0; i < fraseinput.length; i++) {
+                fraseConEspacios = fraseConEspacios + fraseinput.charAt(i) + " ";
+            };
+
+            alert(`${fraseConEspacios}`)
+
+        };
     </script>
 
 </body>
