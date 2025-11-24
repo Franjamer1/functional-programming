@@ -34,26 +34,22 @@
 
     <button type="submit" onclick="generarEscalera()">Ejercicio 2</button> <br><br>
 
-    💡Recordatorio: Para mostrar caracteres o texto en pantalla sin avanzar a una nueva línea, utiliza la instrucción
-    “Escribir sin saltar”. Esto te permite imprimir múltiples caracteres en la misma línea, facilitando la creación de
-    estructuras como filas de asteriscos.
-
-
     ✏️ Actividad 3: Generación de cuadrado
     Diseña un programa que solicite al usuario ingresar un número entero que represente el tamaño del lado de un
     cuadrado. El programa debe generar y mostrar en pantalla un cuadrado formado por asteriscos (*), en el que los
     asteriscos se ubiquen únicamente en el borde del cuadrado, dejando el interior vacío.
 
-    Por ejemplo, si se ingresa el número 4, la salida esperada es:
+    Por ejemplo, si se ingresa el número 4, la salida esperada es: <br><br>
 
 
-    * * * *
+    * * * * <br>
 
-    * *
+    * * <br>
 
-    * *
+    * * <br>
 
-    * * * *
+    * * * * <br><br>
+    <button type="submit" onclick="generarCuadrado()">Ejercicio 3</button> <br><br>
 
     <script>
 
@@ -109,6 +105,51 @@
                 };
                 console.log(line);
             }
+        };
+
+
+        // Actividad 3: Generación de cuadrado
+        // Diseña un programa que solicite al usuario ingresar un número entero que represente el tamaño del lado de un
+        // cuadrado. El programa debe generar y mostrar en pantalla un cuadrado formado por asteriscos (*), en el que los
+        // asteriscos se ubiquen únicamente en el borde del cuadrado, dejando el interior vacío.
+
+        // Por ejemplo, si se ingresa el número 4, la salida esperada es: 
+
+        // * * * * 
+
+        // *     * 
+
+        // *     * 
+
+        // * * * *
+
+        function generarCuadrado() {
+            let ladoCuadrado = Number(prompt("Ingrese un numero para generar un cuadrado"));
+
+            while (isNaN(ladoCuadrado) || ladoCuadrado <= 0) {
+                alert("Error: Ingrese un numero positivo mayor a 0");
+                ladoCuadrado = Number(prompt("Ingrese un numero para generar un cuadrado"));
+            };
+
+            for (let i = 0; i < ladoCuadrado; i++) {
+
+                let renglon = "";
+
+                for (let j = 0; j < ladoCuadrado; j++) {
+
+                    if (i === 0 || i === ladoCuadrado - 1 || j === 0 || j === ladoCuadrado - 1) {
+                        renglon = renglon + "* ";
+                    } else {
+                        renglon = renglon + "  ";
+                    }
+
+                };
+
+                console.log(renglon);
+
+            };
+
+
         };
     </script>
 </body>
