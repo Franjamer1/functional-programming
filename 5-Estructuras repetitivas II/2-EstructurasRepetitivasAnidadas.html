@@ -13,24 +13,26 @@
     pantalla muestre cada tabla con el formato siguiente: <br><br>
 
     <img src="https://images.ctfassets.net/lg4qnzuw6s7g/5QdflnbER6wZ0LUJ61YMcI/5cdc2849051d553a5ddb276aee44a913/image1.png"
-        alt="">
+        alt=""> <br><br>
 
     <button type="submit" onclick="generarTablas()">Ejercicio 1</button> <br><br>
 
     ✏️ Actividad 2: Generación de escalera invertida de asteriscos
     Crear un programa que lea un número entero (que represente la altura) y que genere una escalera invertida de
-    asteriscos con esa altura. Por ejemplo, si ingresamos una altura de 5, se deberá mostrar:
+    asteriscos con esa altura. Por ejemplo, si ingresamos una altura de 5, se deberá mostrar: <br><br>
 
 
-    *****
+    ***** <br>
 
-    ****
+    **** <br>
 
-    ***
+    *** <br>
 
-    **
+    ** <br>
 
-    *
+    * <br>
+
+    <button type="submit" onclick="generarEscalera()">Ejercicio 2</button> <br><br>
 
     💡Recordatorio: Para mostrar caracteres o texto en pantalla sin avanzar a una nueva línea, utiliza la instrucción
     “Escribir sin saltar”. Esto te permite imprimir múltiples caracteres en la misma línea, facilitando la creación de
@@ -74,6 +76,40 @@
             };
         };
 
+
+        // Actividad 2: Generación de escalera invertida de asteriscos
+        // Crear un programa que lea un número entero (que represente la altura) y que genere una escalera invertida de
+        // asteriscos con esa altura. Por ejemplo, si ingresamos una altura de 5, se deberá mostrar: <br><br>
+
+
+        // *****
+
+        // ****
+
+        // ***
+
+        // **
+
+        // * 
+
+        function generarEscalera() {
+
+            let alturaEscalera = Number(prompt("Ingrese un numero positivo para generar una escalera de dicha altura"));
+
+            while (isNaN(alturaEscalera) || alturaEscalera <= 0) {
+                alert("Error: debe ingresar un número positivo");
+                alturaEscalera = Number(prompt("Ingrese un numero para generar una escalera de esa altura"));
+            }
+
+            for (let i = alturaEscalera; i > 0; i--) {
+                let line = "";
+
+                for (let j = 0; j < i; j++) {
+                    line = line + "*"
+                };
+                console.log(line);
+            }
+        };
     </script>
 </body>
 
