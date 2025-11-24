@@ -22,18 +22,18 @@
     Diseña un programa que solicite al usuario ingresar una frase y, posteriormente, muestre dicha frase en pantalla con
     un espacio entre cada letra. <br><br>
 
+    Es fundamental que almacenes la nueva cadena, con los espacios incluidos, en una variable destinada específicamente
+    para este propósito.
+
     <button type="submit" onclick="separacionDeCaracteres()">Ejercicio 2</button> <br><br>
 
-    Es fundamental que almacenes la nueva cadena, con los espacios incluidos, en una variable destinada específicamente
-    para este propósito. Por ejemplo:
-
-
-    image9
     ✏️ Actividad 3: Conteo de múltiplos
     Diseña un programa que cuente cuántos números, en el rango del 1 al 100, son múltiplos de 2 o de 3.
 
     Nota: Si un número cumple ambas condiciones, debe ser contabilizado en ambos conteos. Por ejemplo, el número 18 es
-    múltiplo tanto de 2 como de 3 y debe ser considerado en ambos casos.
+    múltiplo tanto de 2 como de 3 y debe ser considerado en ambos casos. <br><br>
+
+    <button type="submit" onclick="conteoDeMultiplos()">Ejercicio 3</button> <br><br>
 
     <script>
         // Actividad 1: Cálculo de cuadrados
@@ -65,6 +65,32 @@
 
             alert(`${fraseConEspacios}`)
 
+        };
+
+        // Actividad 3: Conteo de múltiplos
+        // Diseña un programa que cuente cuántos números, en el rango del 1 al 100, son múltiplos de 2 o de 3.
+
+        // Nota: Si un número cumple ambas condiciones, debe ser contabilizado en ambos conteos. Por ejemplo, el número 18 es
+        // múltiplo tanto de 2 como de 3 y debe ser considerado en ambos casos.
+
+        function conteoDeMultiplos() {
+
+            let multiplosDos = 0;
+            let multiplosTres = 0;
+
+            for (let i = 1; i <= 100; i++) {
+
+                if (i % 2 === 0) {
+                    multiplosDos++;
+                }
+
+                if (i % 3 === 0) {
+                    multiplosTres++
+                }
+
+            };
+
+            alert(`Multiplos de 2: ${multiplosDos}\nMultiplos de 3: ${multiplosTres}`);
         };
     </script>
 
