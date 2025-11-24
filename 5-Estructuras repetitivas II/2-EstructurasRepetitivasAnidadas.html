@@ -129,7 +129,9 @@
             while (isNaN(ladoCuadrado) || ladoCuadrado <= 0) {
                 alert("Error: Ingrese un numero positivo mayor a 0");
                 ladoCuadrado = Number(prompt("Ingrese un numero para generar un cuadrado"));
-            };
+            }
+
+            let resultado = ""; // acá vamos acumulando el cuadrado entero
 
             for (let i = 0; i < ladoCuadrado; i++) {
 
@@ -138,18 +140,17 @@
                 for (let j = 0; j < ladoCuadrado; j++) {
 
                     if (i === 0 || i === ladoCuadrado - 1 || j === 0 || j === ladoCuadrado - 1) {
-                        renglon = renglon + "* ";
+                        renglon += "* ";
                     } else {
-                        renglon = renglon + "  ";
+                        renglon += "  ";
                     }
 
-                };
+                }
 
-                console.log(renglon);
+                resultado += renglon + "\n";
+            }
 
-            };
-
-
+            alert(resultado);
         };
     </script>
 </body>
