@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estr Rep II Ej Complementarios</title>
+</head>
+
+<body>
+    Un docente de Programación necesita informes clave sobre las notas de sus estudiantes. Esto incluye el porcentaje de
+    estudiantes reprobados,
+    el porcentaje de alumnos con un promedio mayor a 7.5,la mayor nota obtenida en el curso, y el total de estudiantes
+    que obtuvieron un promedio entre 4.0 y 7.5. El programa pedirá la cantidad de alumnos que tiene el docente, luego
+    solicitará las 3 notas de cada alumno y calculará los informes requeridos. . Recuerda nombrar y guardar tu
+    algoritmo. <br><br>
+
+    <button type="submit" onclick="calcPromedio()">ejercicio 1</button> <br><br>
+
+    Crea un programa que calcule la suma de los primeros N números naturales, donde el valor de N se lee desde el
+    teclado. Por ejemplo, si el usuario ingresa 4 se deberá calcular y mostrar en pantalla la suma de 1 + 2 + 3 + 4.
+
+    Crea un programa que solicite al usuario ingresar una frase y luego la muestre en pantalla al revés. Por ejemplo, si
+    tenemos la cadena "Hola", se mostrará como "a l o H".
+
+    La función factorial se aplica a números enteros positivos. El factorial de un número entero positivo (!n) es igual
+    al producto de todos los enteros positivos desde 1 hasta n:
+
+    n! = 1 * 2 * 3 * 4 * 5 * ... * (n-1) * n.
+
+    Escribir un programa que calcule el factorial de todos los números enteros desde 1 hasta n
+
+    El programa deberá mostrar la siguiente salida:
+
+    !1 = 1
+
+    !2 = 1*2 = 2
+
+    ...
+
+    !5 = 1*2*3*4*5 = 120
+
+
+    Diseña un programa que permita al usuario ingresar un número entero y determine si es primo o no. Utiliza
+    estructuras anidadas para iterar sobre los posibles divisores del número y determinar si es divisible solo por 1 y
+    por sí mismo. Muestra un mensaje indicando si el número es primo o no.
+
+    Desarrolla un programa que solicite al usuario el número de estudiantes en un curso y para cada estudiante, pida su
+    nombre, edad y tres calificaciones. Luego, calcula el promedio de calificaciones de cada estudiante y muestra un
+    mensaje indicando si aprobaron o reprobaron el curso. Emplea estructuras anidadas para manejar los datos de
+    múltiples estudiantes.
+    <script>
+        //     Un docente de Programación necesita informes clave sobre las notas de sus estudiantes. Esto incluye el porcentaje de estudiantes reprobados,
+        //     el porcentaje de alumnos con un promedio mayor a 7.5,
+        //     la mayor nota obtenida en el curso, y el total de estudiantes que obtuvieron un promedio entre
+        //     4.0 y 7.5. El programa pedirá la cantidad de alumnos que tiene el docente, luego solicitará las 3 notas de cada
+        //     alumno y calculará los informes requeridos. . Recuerda nombrar y guardar tu algoritmo.
+
+        function calcPromedio() {
+
+            let cantAlumnos = Number(prompt("Ingrese la cantidad de alumnos que usted tiene"));
+
+            let notas = 0;
+
+            let promedio;
+            let aprobados = 0;
+            let desaprobados = 0;
+            let categoria2 = 0;
+            let ultimaNota = 0;
+            let mayorNota = 0;
+
+            while (isNaN(cantAlumnos) || cantAlumnos < 1) {
+                cantAlumnos = Number(prompt("Error: Datos invalidos - Ingrese la cantidad de alumnos que usted tiene"));
+            };
+
+            alert("Mire la consola (F12) para ver los resultados!");
+            for (let i = 1; i <= cantAlumnos; i++) {
+                console.log(`Alumno Nº ${i}`);
+
+                for (let j = 1; j <= 3; j++) {
+                    ultimaNota = Number(prompt(`Ingrese la nota N° ${j} del alumno ${i} (solo numeros del 1 al 10)`));
+
+                    while (isNaN(ultimaNota) || ultimaNota > 10 || ultimaNota < 1) {
+                        alert("Error: Solo se reciben numeros del 1 al 10");
+                        ultimaNota = Number(prompt(`Ingrese la nota N° ${j} del alumno ${i} (solo numeros del 1 al 10)`));
+                    };
+
+                    if (ultimaNota > mayorNota) {
+                        mayorNota = ultimaNota;
+                    };
+                    notas = notas + ultimaNota;
+                    // console.log("Actualizacion nota: " + notas);
+
+                };
+
+                // console.log("Actualizacion nota: " + notas);
+
+                promedio = notas / 3
+                console.log("Promedio:" + promedio);
+
+                if (promedio >= 7.5) {
+                    aprobados = aprobados + 1;
+                } else if (promedio < 7.5 && promedio >= 4) {
+                    categoria2 = categoria2 + 1;
+                    desaprobados = desaprobados + 1;
+                } else {
+                    desaprobados = desaprobados + 1;
+                };
+
+                notas = 0;
+            }
+
+            console.log(`-------\nCantidad de promedios mayores a 7.5: ${(aprobados / cantAlumnos) * 100}%\nEstudiantes desaprobados: ${(desaprobados / cantAlumnos) * 100}%\nCantidad de promedios entre 4 y 7.5: ${categoria2}`);
+            console.log(`Nota mas alta: ${mayorNota}`);
+
+        };
+    </script>
+</body>
+
+</html>
