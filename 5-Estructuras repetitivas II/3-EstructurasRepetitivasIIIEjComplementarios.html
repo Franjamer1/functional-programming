@@ -18,7 +18,10 @@
     <button type="submit" onclick="calcPromedio()">ejercicio 1</button> <br><br>
 
     Crea un programa que calcule la suma de los primeros N números naturales, donde el valor de N se lee desde el
-    teclado. Por ejemplo, si el usuario ingresa 4 se deberá calcular y mostrar en pantalla la suma de 1 + 2 + 3 + 4.
+    teclado. Por ejemplo, si el usuario ingresa 4 se deberá calcular y mostrar en pantalla la suma de 1 + 2 + 3 +
+    4.<br><br>
+
+    <button type="submit" onclick="sumarNaturales()">ejercicio 2</button> <br><br>
 
     Crea un programa que solicite al usuario ingresar una frase y luego la muestre en pantalla al revés. Por ejemplo, si
     tenemos la cadena "Hola", se mostrará como "a l o H".
@@ -112,6 +115,27 @@
 
             console.log(`-------\nCantidad de promedios mayores a 7.5: ${(aprobados / cantAlumnos) * 100}%\nEstudiantes desaprobados: ${(desaprobados / cantAlumnos) * 100}%\nCantidad de promedios entre 4 y 7.5: ${categoria2}`);
             console.log(`Nota mas alta: ${mayorNota}`);
+
+        };
+
+        // Crea un programa que calcule la suma de los primeros N números naturales, donde el valor de N se lee desde el
+        // teclado. Por ejemplo, si el usuario ingresa 4 se deberá calcular y mostrar en pantalla la suma de 1 + 2 + 3 +
+        // 4.
+
+        function sumarNaturales() {
+
+            let number = Number(prompt("Ingrese un numero natural!"));
+            let suma = 0;
+
+            while (isNaN(number) || number <= 0) {
+                number = Number(prompt("Ingrese un numero positivo!"));
+            };
+
+            for (let i = 1; i <= number; i++) {
+                suma += i;
+            };
+
+            alert("Suma total:" + suma);
 
         };
     </script>
