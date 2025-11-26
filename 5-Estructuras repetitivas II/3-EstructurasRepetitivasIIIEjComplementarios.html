@@ -24,7 +24,9 @@
     <button type="submit" onclick="sumarNaturales()">ejercicio 2</button> <br><br>
 
     Crea un programa que solicite al usuario ingresar una frase y luego la muestre en pantalla al revés. Por ejemplo, si
-    tenemos la cadena "Hola", se mostrará como "a l o H".
+    tenemos la cadena "Hola", se mostrará como "a l o H". <br><br>
+
+    <button type="submit" onclick="revertFrase()">ejercicio 3</button> <br><br>
 
     La función factorial se aplica a números enteros positivos. El factorial de un número entero positivo (!n) es igual
     al producto de todos los enteros positivos desde 1 hasta n:
@@ -138,6 +140,25 @@
             alert("Suma total:" + suma);
 
         };
+
+        // Crea un programa que solicite al usuario ingresar una frase y luego la muestre en pantalla al revés. Por ejemplo, si
+        // tenemos la cadena "Hola", se mostrará como "a l o H".
+
+        function revertFrase() {
+            let frase = String(prompt("Ingrese una frase"));
+
+            let reversa = "";
+
+            while (!frase) {
+                frase = String(prompt("Error: Ingrese una frase!"));
+            };
+
+            for (let i = frase.length; i >= 0; i--) {
+                reversa = reversa + frase.charAt(i) + " "
+            };
+
+            alert("Frase invertida: " + reversa);
+        }
     </script>
 </body>
 
