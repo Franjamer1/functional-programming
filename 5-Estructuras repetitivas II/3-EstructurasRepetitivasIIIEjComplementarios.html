@@ -43,7 +43,9 @@
 
     ...
 
-    !5 = 1*2*3*4*5 = 120
+    !5 = 1*2*3*4*5 = 120<br><br>
+
+    <button type="submit" onclick="funcFactorial()">ejercicio 4</button> <br><br>
 
 
     Diseña un programa que permita al usuario ingresar un número entero y determine si es primo o no. Utiliza
@@ -158,7 +160,53 @@
             };
 
             alert("Frase invertida: " + reversa);
-        }
+        };
+
+
+        // La función factorial se aplica a números enteros positivos. El factorial de un número entero positivo (!n) es igual
+        // al producto de todos los enteros positivos desde 1 hasta n:
+
+        // n! = 1 * 2 * 3 * 4 * 5 * ... * (n-1) * n.
+
+        // Escribir un programa que calcule el factorial de todos los números enteros desde 1 hasta n
+
+        // El programa deberá mostrar la siguiente salida:
+
+        // !1 = 1
+
+        // !2 = 1*2 = 2
+
+        // ...
+
+        // !5 = 1*2*3*4*5 = 120
+
+        function funcFactorial() {
+
+            let number = Number(prompt("Elija un numero positivo para calcular todos los factoriales hasta ese número:"));
+
+            while (isNaN(number) || number <= 0) {
+                number = Number(prompt("Error: ingrese un número entero positivo:"));
+            };
+
+            for (let n = 1; n <= number; n++) {
+
+                let factorial = 1;
+                let pasos = "";
+
+
+                for (let i = 1; i <= n; i++) {
+                    factorial *= i;
+
+                    pasos += i;
+                    if (i < n) {
+                        pasos += "*";
+                    };
+                };
+
+                console.log(`!${n} = ${pasos} = ${factorial}`);
+            };
+        };
+
     </script>
 </body>
 
