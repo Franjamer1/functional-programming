@@ -50,7 +50,9 @@
 
     Diseña un programa que permita al usuario ingresar un número entero y determine si es primo o no. Utiliza
     estructuras anidadas para iterar sobre los posibles divisores del número y determinar si es divisible solo por 1 y
-    por sí mismo. Muestra un mensaje indicando si el número es primo o no.
+    por sí mismo. Muestra un mensaje indicando si el número es primo o no.<br><br>
+
+    <button type="submit" onclick="esPrimo()">ejercicio 5</button> <br><br>
 
     Desarrolla un programa que solicite al usuario el número de estudiantes en un curso y para cada estudiante, pida su
     nombre, edad y tres calificaciones. Luego, calcula el promedio de calificaciones de cada estudiante y muestra un
@@ -207,6 +209,33 @@
             };
         };
 
+        // Diseña un programa que permita al usuario ingresar un número entero y determine si es primo o no. Utiliza
+        // estructuras anidadas para iterar sobre los posibles divisores del número y determinar si es divisible solo por 1 y
+        // por sí mismo. Muestra un mensaje indicando si el número es primo o no.
+
+        function esPrimo() {
+            let number = Number(prompt("Ingrese un numero para determinar si es primo o no. No se permite el numero 1"));
+
+            let esPrimo = true;
+
+            while (isNaN(number) || number <= 1) {
+
+                number = Number(prompt("Ingrese un numero para determinar si es primo o no."));
+            };
+
+            for (let i = 2; i < number; i++) {
+
+                if (number % i === 0) {
+                    esPrimo = false;
+                };
+            };
+
+            if (!esPrimo) {
+                alert("Su numero no es primo")
+            } else {
+                alert("Su numero es primo")
+            }
+        };
     </script>
 </body>
 
