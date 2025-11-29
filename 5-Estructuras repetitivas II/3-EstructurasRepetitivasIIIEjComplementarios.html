@@ -57,7 +57,9 @@
     Desarrolla un programa que solicite al usuario el número de estudiantes en un curso y para cada estudiante, pida su
     nombre, edad y tres calificaciones. Luego, calcula el promedio de calificaciones de cada estudiante y muestra un
     mensaje indicando si aprobaron o reprobaron el curso. Emplea estructuras anidadas para manejar los datos de
-    múltiples estudiantes.
+    múltiples estudiantes.<br><br>
+
+    <button type="submit" onclick="infoEstudiantes()">ejercicio 6</button> <br><br>
     <script>
         //     Un docente de Programación necesita informes clave sobre las notas de sus estudiantes. Esto incluye el porcentaje de estudiantes reprobados,
         //     el porcentaje de alumnos con un promedio mayor a 7.5,
@@ -235,6 +237,54 @@
             } else {
                 alert("Su numero es primo")
             }
+        };
+
+        // Desarrolla un programa que solicite al usuario el número de estudiantes en un curso y para cada estudiante, pida su
+        // nombre, edad y tres calificaciones. Luego, calcula el promedio de calificaciones de cada estudiante y muestra un
+        // mensaje indicando si aprobaron o reprobaron el curso. Emplea estructuras anidadas para manejar los datos de
+        // múltiples estudiantes.
+
+        function infoEstudiantes() {
+            let cantidadEstudiantes = Number(prompt("Ingrese la cantidad de estudiantes de su curso."));
+
+            while (isNaN(cantidadEstudiantes) || cantidadEstudiantes < 1) {
+                cantidadEstudiantes = Number(prompt("Error: Ingrese la cantidad de estudiantes de su curso."));
+            };
+
+
+            for (let i = 0; i < cantidadEstudiantes; i++) {
+
+                let calificaciones = 0;
+                let suma = 0;
+                let promedio = 0;
+
+                let nombre = String(prompt(`Ingrese el nombre del estudiante n° ${(i + 1)}`));
+                let edad = Number(prompt(`Ingrese la edad de el alumno ${nombre}`));
+
+                while (isNaN(edad) || edad < 1) {
+                    edad = number(prompt(`Ingrese la edad de el alumno ${nombre}`));
+                };
+
+                for (let j = 1; j <= 3; j++) {
+                    calificaciones = Number(prompt(`Ingrese la calificacion n° ${j} del alumno ${nombre}`));
+
+                    while (isNaN(calificaciones) || calificaciones < 1) {
+
+                        calificaciones = Number(prompt(`Erorr: Ingrese la calificacion n° ${j} del alumno ${nombre}`));
+                    };
+
+                    suma = suma + calificaciones;
+                };
+
+                promedio = suma / 3
+
+                if (promedio > 6) {
+                    alert(`El alumno ${nombre} esta aprobado con un promedio de ${promedio}`);
+                } else {
+                    alert(`El alumno ${nombre} esta desaprobado con un promedio de ${promedio}`);
+                };
+
+            };
         };
     </script>
 </body>
