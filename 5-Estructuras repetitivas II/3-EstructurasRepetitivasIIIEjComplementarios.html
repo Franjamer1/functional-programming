@@ -262,7 +262,7 @@
                 let edad = Number(prompt(`Ingrese la edad de el alumno ${nombre}`));
 
                 while (isNaN(edad) || edad < 1) {
-                    edad = number(prompt(`Ingrese la edad de el alumno ${nombre}`));
+                    edad = Number(prompt(`Ingrese la edad de el alumno ${nombre}`));
                 };
 
                 for (let j = 1; j <= 3; j++) {
@@ -278,7 +278,7 @@
 
                 promedio = suma / 3
 
-                if (promedio > 6) {
+                if (promedio >= 6) {
                     alert(`El alumno ${nombre} esta aprobado con un promedio de ${promedio}`);
                 } else {
                     alert(`El alumno ${nombre} esta desaprobado con un promedio de ${promedio}`);
