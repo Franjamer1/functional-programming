@@ -31,7 +31,9 @@
 
     Escribe un programa que lea un número entero y devuelva la cantidad de dígitos que lo componen. Por ejemplo, si
     ingresamos el número 12345, el programa deberá devolver 5. Este cálculo se realizará utilizando operaciones
-    matemáticas, teniendo en cuenta que las variables de tipo entero truncan los números o resultados.
+    matemáticas, teniendo en cuenta que las variables de tipo entero truncan los números o resultados.<br><br>
+
+    <button type="submit" onclick="contDigitos()">Ejercicio 2</button> <br><br>
 
     Elabora un programa que lea un número entero ingresado por el usuario y devuelva la cantidad de dígitos que lo
     componen. Por ejemplo, si se ingresa el número 12345, el programa debe mostrar 5 como resultado.
@@ -78,6 +80,33 @@
 
             };
             alert("Abra la consola para ver los resultados (F12)")
+        };
+
+        // 2. Contador de Dígitos:
+
+        // Escribe un programa que lea un número entero y devuelva la cantidad de dígitos que lo componen. Por ejemplo, si
+        // ingresamos el número 12345, el programa deberá devolver 5. Este cálculo se realizará utilizando operaciones
+        // matemáticas, teniendo en cuenta que las variables de tipo entero truncan los números o resultados.
+
+        function contDigitos() {
+            let numero = Number(prompt("Ingrese un numero entero"));
+
+            while (isNaN(numero) || numero < 0) {
+                numero = Number(prompt("Error: Ingrese un numero entero"));
+            };
+
+            let cont = 0;
+
+            if (numero === 0) {
+                contador = 1;
+            } else {
+                while (numero > 0) {
+                    numero = Math.floor(numero / 10);
+                    cont++;
+                };
+            };
+
+            alert(`cantidad de digitos: ${cont}`);
         };
     </script>
 </body>
