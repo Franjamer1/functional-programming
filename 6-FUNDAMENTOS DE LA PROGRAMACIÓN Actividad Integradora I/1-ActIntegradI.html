@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad Integradora 1</title>
+</head>
+
+<body>
+    1. Visualización de Números y Asteriscos:
+
+    Desarrolla un programa que lea cinco números enteros ingresados por el usuario, cada uno en el rango de 1 a 20, y
+    que imprima cada número seguido de una cantidad de asteriscos igual a su valor. Ejemplo de salida esperada: <br><br>
+
+
+    Para el número 5, imprimir: 5 ***** <br>
+
+    Para el número 3, imprimir: 3 *** <br>
+
+    Para el número 11, imprimir: 11 *********** <br>
+
+    Para el número 2, imprimir: 2 ** <br>
+
+    Para el número 9, imprimir: 9 ********* <br><br>
+
+    <button type="submit" onclick="imprimirAsteriscos()">Ejercicio 1</button> <br><br>
+
+
+    2. Contador de Dígitos:
+
+    Escribe un programa que lea un número entero y devuelva la cantidad de dígitos que lo componen. Por ejemplo, si
+    ingresamos el número 12345, el programa deberá devolver 5. Este cálculo se realizará utilizando operaciones
+    matemáticas, teniendo en cuenta que las variables de tipo entero truncan los números o resultados.
+
+    Elabora un programa que lea un número entero ingresado por el usuario y devuelva la cantidad de dígitos que lo
+    componen. Por ejemplo, si se ingresa el número 12345, el programa debe mostrar 5 como resultado.
+
+    Nota importante: Para contar la cantidad de dígitos, debes utilizar operaciones matemáticas con números enteros,
+    como divisiones sucesivas entre 10. En este proceso, es fundamental entender que las variables enteras truncan los
+    resultados decimales, es decir, descartan la parte decimal y conservan solo la parte entera. Por ejemplo, si divides
+    123 entre 10, el resultado será 12 (no 12.3), porque el valor decimal se elimina automáticamente. Esta propiedad te
+    permite ir reduciendo el número hasta que llegue a cero, facilitando así el conteo de dígitos sin convertir el
+    número a texto.
+    <script>
+        //     1.Visualización de Números y Asteriscos:
+
+        //     Desarrolla un programa que lea cinco números enteros ingresados por el usuario, cada uno en el rango de 1 a 20, y
+        //     que imprima cada número seguido de una cantidad de asteriscos igual a su valor. Ejemplo de salida esperada:
+
+
+        //     Para el número 5, imprimir: 5 *****
+
+        //     Para el número 3, imprimir: 3 ***
+
+        //     Para el número 11, imprimir: 11 ***********
+
+        //     Para el número 2, imprimir: 2 **
+
+        //     Para el número 9, imprimir: 9 *********
+
+        function imprimirAsteriscos() {
+
+            for (let i = 0; i < 5; i++) {
+
+                let asteriscos = "";
+                let numeros = Number(prompt("Ingrese un numero entre 1 y 20"));
+
+                while (isNaN(numeros) || numeros <= 0 || numeros > 20) {
+                    numeros = Number(prompt("Error: Ingrese un numero entre 1 y 20"));
+                };
+
+                for (let j = 1; j <= numeros; j++) {
+                    asteriscos = asteriscos + "*";
+                };
+
+                console.log(`Para el numero ${numeros}, imprimir: ${numeros} ${asteriscos}`);
+
+            };
+            alert("Abra la consola para ver los resultados (F12)")
+        };
+    </script>
+</body>
+
+</html>
