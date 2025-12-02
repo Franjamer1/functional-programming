@@ -38,6 +38,56 @@
 
     <button type="submit" onclick="contDigitos()">Ejercicio 2</button> <br><br>
 
+    Actividad - Desafío integrador grupal
+    Sistema de Reciclaje de Botellas Automático:
+    Se requiere desarrollar un sistema para una máquina de reciclaje que recompense a los usuarios según la cantidad de
+    plástico reciclado. El sistema deberá funcionar de la siguiente manera:
+
+    1. Inicio de sesión con validación
+
+    Verificar el nombre de usuario: si coincide con "Albus_D", proceder a validar la contraseña.
+
+    La contraseña correcta es "caramelosDeLimon".
+
+    Una variable lógica llamada Login se activará (valor verdadero) sólo si el usuario y la contraseña son correctos.
+
+    Se permitirá un máximo de tres intentos para ingresar la contraseña correcta, utilizando un bucle Mientras.
+
+    2. Menú de opciones (accesible solo si Login es verdadero): Dentro de un bucle Repetir (Hacer Mientras), el sistema
+    mostrará el siguiente menú:
+
+    Ingresar Botellas:
+
+    Solicitar la cantidad de botellas a reciclar.
+
+    Para cada botella, generar un peso aleatorio entre 100 y 3000 gramos.
+
+    Según el peso, asignar un valor monetario usando un condicional múltiple:
+
+    Menos de 500 g → $50
+
+    Entre 501 g y 1500 g → $125
+
+    Más de 1501 g → $200
+
+    Informar al usuario el total a recibir por el total de botellas.
+
+    Si acepta, acreditar el monto a su saldo acumulado; si no, mostrar el mensaje “Devolviendo material”. (Usar
+    condicional doble).
+
+    Utilizar un "bucle Para" para procesar cada botella de la sesión.
+
+    Consultar Saldo: Permite mostrar el saldo acumulado al usuario en pantalla.
+
+    Salir: Permitirá al usuario salir del sistema.
+
+    3. Retorno automático al menú: Después de completar cada opción (Ingresar Botellas o Consultar Saldo), el sistema
+    volverá automáticamente al menú principal.
+
+    4. Funcionalidad opcional: Si lo desean, pueden incorporar alguna otra funcionalidad o validación que consideren que
+    optimizará el funcionamiento de su sistema y mejorará la experiencia del usuario. <br><br>
+
+    <button type="submit" onclick="plantaReciclaje()">Ejercicio 3</button>
 
     <script>
         //     1.Visualización de Números y Asteriscos:
@@ -98,6 +148,140 @@
 
             alert(`cantidad de digitos: ${cont}`);
         };
+
+
+        //     Se requiere desarrollar un sistema para una máquina de reciclaje que recompense a los usuarios según la cantidad de
+        // plástico reciclado. El sistema deberá funcionar de la siguiente manera:
+
+        // 1. Inicio de sesión con validación
+
+        // Verificar el nombre de usuario: si coincide con "Albus_D", proceder a validar la contraseña.
+
+        // La contraseña correcta es "caramelosDeLimon".
+
+        // Una variable lógica llamada Login se activará (valor verdadero) sólo si el usuario y la contraseña son correctos.
+
+        // Se permitirá un máximo de tres intentos para ingresar la contraseña correcta, utilizando un bucle Mientras.
+
+        // 2. Menú de opciones (accesible solo si Login es verdadero): Dentro de un bucle Repetir (Hacer Mientras), el sistema
+        // mostrará el siguiente menú:
+
+        // Ingresar Botellas:
+
+        // Solicitar la cantidad de botellas a reciclar.
+
+        // Para cada botella, generar un peso aleatorio entre 100 y 3000 gramos.
+
+        // Según el peso, asignar un valor monetario usando un condicional múltiple:
+
+        // Menos de 500 g → $50
+
+        // Entre 501 g y 1500 g → $125
+
+        // Más de 1501 g → $200
+
+        // Informar al usuario el total a recibir por el total de botellas.
+
+        // Si acepta, acreditar el monto a su saldo acumulado; si no, mostrar el mensaje “Devolviendo material”. (Usar
+        // condicional doble).
+
+        // Utilizar un "bucle Para" para procesar cada botella de la sesión.
+
+        // Consultar Saldo: Permite mostrar el saldo acumulado al usuario en pantalla.
+
+        // Salir: Permitirá al usuario salir del sistema.
+
+        // 3. Retorno automático al menú: Después de completar cada opción (Ingresar Botellas o Consultar Saldo), el sistema
+        // volverá automáticamente al menú principal.
+
+        // 4. Funcionalidad opcional: Si lo desean, pueden incorporar alguna otra funcionalidad o validación que consideren que
+        // optimizará el funcionamiento de su sistema y mejorará la experiencia del usuario.
+
+        function plantaReciclaje() {
+
+            let login = false;
+            let intentos = 0;
+            let saldo = 0;
+
+            while (!login && intentos < 3) {
+                let user = prompt("Ingrese su nombre de usuario");
+                let password = prompt("Ingrese su contraseña");
+
+                if (user === "Albus_D" && password === "caramelosDeLimon") {
+                    login = true;
+                    alert("Inicio de sesión correcto!");
+                } else {
+                    intentos++;
+                    alert(`Usuario o contraseña incorrectos. Intento ${intentos}/3`);
+                };
+            };
+
+            if (!login) {
+                alert("Ha superado el límite de intentos");
+                return;
+            };
+
+
+            let opcion;
+
+            do {
+                opcion = Number(prompt(
+                    "------ MENÚ ------\n" +
+                    "1 - Ingresar botellas\n" +
+                    "2 - Consultar saldo\n" +
+                    "3 - Salir\n" +
+                    "Elija una opción:"
+                ));
+
+                if (opcion === 1) {
+
+                    let cantBotellas = Number(prompt("Ingrese cantidad de botellas a reciclar:"));
+
+                    while (isNaN(cantBotellas) || cantBotellas < 1) {
+                        cantBotellas = Number(prompt("Error: ingrese un número válido:"));
+                    };
+
+                    let pagoTotal = 0;
+
+
+                    for (let i = 0; i < cantBotellas; i++) {
+                        let peso = Math.floor(Math.random() * (3000 - 100 + 1)) + 100;
+
+                        if (peso <= 500) {
+                            pagoTotal += 50;
+                        } else if (peso <= 1500) {
+                            pagoTotal += 125;
+                        } else {
+                            pagoTotal += 200;
+                        };
+                    };
+
+                    alert(`Total a recibir: $${pagoTotal}`);
+
+                    let acreditar = prompt("¿Desea acreditar el monto a su saldo? (si/no)").toLowerCase();
+
+                    while (acreditar !== "si" && acreditar !== "no") {
+                        acreditar = prompt("Error. Escriba 'si' o 'no':").toLowerCase();
+                    };
+
+                    if (acreditar === "si") {
+                        saldo += pagoTotal;
+                        alert("Monto acreditado!");
+                    } else {
+                        alert("Devolviendo material...");
+                    };
+
+                } else if (opcion === 2) {
+
+                    alert(`Su saldo acumulado es: $${saldo}`);
+
+                };
+
+            } while (opcion !== 3);
+
+            alert("Gracias por usar el sistema de reciclaje!");
+        }
+
     </script>
 </body>
 
