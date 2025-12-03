@@ -28,7 +28,9 @@
 
     ✏️ Actividad 3: ¿Es múltiplo?
     Diseña una función llamada EsMultiplo que reciba dos números como parámetros y verifique si el primer número es
-    múltiplo del segundo.
+    múltiplo del segundo.<br><br>
+
+    <button type="submit" onclick="inputNumbersEj3()">Ejercicio 3</button> <br><br>
 
     En el programa principal, solicita al usuario que ingrese ambos números y pásalos como argumentos al invocar la
     función.
@@ -100,6 +102,45 @@
             };
 
             return alert(`${esPar}`);
+        };
+
+        // Actividad 3: ¿Es múltiplo?
+        // Diseña una función llamada EsMultiplo que reciba dos números como parámetros y verifique si el primer número es
+        // múltiplo del segundo.
+
+        // En el programa principal, solicita al usuario que ingrese ambos números y pásalos como argumentos al invocar la
+        // función.
+
+        // La función debe devolver Verdadero si el primer número es múltiplo del segundo, o Falso en caso contrario.
+
+        function inputNumbersEj3() {
+            let primerNumero = Number(prompt("Ingrese el primer numero"));
+
+            while (isNaN(primerNumero)) {
+
+                primerNumero = Number(prompt("Error: Ingrese el primer numero"));
+            };
+
+            let segundoNumero = Number(prompt("Ingrese el segundo numero"));
+
+            while (isNaN(segundoNumero)) {
+                segundoNumero = Number(prompt("Error:Ingrese el segundo numero"));
+            };
+
+            esMultiplo(primerNumero, segundoNumero);
+        };
+
+        function esMultiplo(numA, numB) {
+
+            let esMultiplo = false;
+
+            if (numA % numB === 0) {
+                esMultiplo = true;
+            } else {
+                esMultiplo = false;
+            }
+
+            alert(`${esMultiplo}`);
         };
     </script>
 </body>
