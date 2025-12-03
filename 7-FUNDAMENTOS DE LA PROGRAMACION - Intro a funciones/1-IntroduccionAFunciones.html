@@ -28,18 +28,20 @@
 
     ✏️ Actividad 3: ¿Es múltiplo?
     Diseña una función llamada EsMultiplo que reciba dos números como parámetros y verifique si el primer número es
-    múltiplo del segundo.<br><br>
-
-    <button type="submit" onclick="inputNumbersEj3()">Ejercicio 3</button> <br><br>
+    múltiplo del segundo.
 
     En el programa principal, solicita al usuario que ingrese ambos números y pásalos como argumentos al invocar la
     función.
 
-    La función debe devolver Verdadero si el primer número es múltiplo del segundo, o Falso en caso contrario.
+    La función debe devolver Verdadero si el primer número es múltiplo del segundo, o Falso en caso contrario.<br><br>
+
+    <button type="submit" onclick="inputNumbersEj3()">Ejercicio 3</button> <br><br>
 
     ✏️ Actividad 4: Contador de letras
     Diseña una función que reciba una frase y una letra, ambos ingresados por el usuario, y devuelva la cantidad de
-    veces que dicha letra aparece en la frase.
+    veces que dicha letra aparece en la frase.<br><br>
+
+    <button type="submit" onclick="inputFrase()">Ejercicio 4</button> <br><br>
 
 
     ✏️ Actividad 5: ¿Es primo?
@@ -142,6 +144,37 @@
 
             alert(`${esMultiplo}`);
         };
+
+        // Actividad 4: Contador de letras
+        // Diseña una función que reciba una frase y una letra, ambos ingresados por el usuario, y devuelva la cantidad de
+        // veces que dicha letra aparece en la frase.
+
+        function inputFrase() {
+            let frase = String(prompt("Ingrese una palabra o frase")).toLowerCase();
+            while (!frase) {
+
+                frase = String(prompt("Error: Ingrese una palabra o frase")).toLowerCase();
+            };
+
+            let letra = String(prompt("Ingrese una letra")).toLowerCase();
+
+            while (!letra) {
+
+                letra = String(prompt("Error:Ingrese una letra")).toLowerCase();
+            };
+
+            let contador = 0;
+
+            for (let i = 0; i < frase.length; i++) {
+                if (frase[i] === letra) {
+                    contador++
+                };
+            }
+
+            return alert(`${contador}`);
+        };
+
+
     </script>
 </body>
 
