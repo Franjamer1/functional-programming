@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduccion a funciones</title>
+</head>
+
+<body>
+
+    Actividad 1: Calcular Suma
+    Diseña una función llamada CalcularSuma que reciba dos parámetros numéricos y devuelva la suma de ambos.
+
+    En el programa principal, solicita al usuario que ingrese dos números. Luego, pasa esos valores como argumentos al
+    invocar la función. El resultado devuelto debe ser almacenado en la variable de retorno e impreso por pantalla.
+    <br><br>
+
+    <button type="submit" onclick="numberInput()">Ejercicio 1</button> <br><br>
+
+    ✏️ Actividad 2: ¿Es Impar?
+    Crea una función esImpar que determine si un número es impar. Si es impar, la función debe devolver True; en caso
+    contrario, debe devolver False. Nota: la función no debe incluir mensajes que indiquen si el número es par o impar;
+    esto debe manejarse en el programa principal. Recuerda nombrar y guardar tu algoritmo.
+
+
+    ✏️ Actividad 3: ¿Es múltiplo?
+    Diseña una función llamada EsMultiplo que reciba dos números como parámetros y verifique si el primer número es
+    múltiplo del segundo.
+
+    En el programa principal, solicita al usuario que ingrese ambos números y pásalos como argumentos al invocar la
+    función.
+
+    La función debe devolver Verdadero si el primer número es múltiplo del segundo, o Falso en caso contrario.
+
+    ✏️ Actividad 4: Contador de letras
+    Diseña una función que reciba una frase y una letra, ambos ingresados por el usuario, y devuelva la cantidad de
+    veces que dicha letra aparece en la frase.
+
+
+    ✏️ Actividad 5: ¿Es primo?
+    Diseña una función que reciba un número ingresado por el usuario y determine si dicho número es primo.
+
+    Recuerda que un número es primo cuando solo es divisible por 1 y por sí mismo (por ejemplo: 2, 3, 5, 7, 11, 13, 17,
+    etc.).
+    <script>
+        // Actividad 1: Calcular Suma
+        // Diseña una función llamada CalcularSuma que reciba dos parámetros numéricos y devuelva la suma de ambos.
+
+        // En el programa principal, solicita al usuario que ingrese dos números. Luego, pasa esos valores como argumentos al
+        // invocar la función. El resultado devuelto debe ser almacenado en la variable de retorno e impreso por pantalla.
+
+        function numberInput() {
+            let numberA = Number(prompt("Ingrese el primer numero"));
+
+            while (isNaN(numberA)) {
+
+                numberA = Number(prompt("Error / caracter invalido: Vuelva a ingresar el primer numero"));
+            }
+
+            let numberB = Number(prompt("Ingrese el segundo numero"));
+
+            while (isNaN(numberB)) {
+
+                numberB = Number(prompt("Error/ caracter invalido: Vuelva a ingresar el segundo numero"));
+            }
+
+            calcularSuma(numberA, numberB);
+        };
+
+        function calcularSuma(numA, numB) {
+            resultado = numA + numB;
+            return alert(`${resultado}`);
+        };
+    </script>
+</body>
+
+</html>
