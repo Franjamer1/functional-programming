@@ -21,7 +21,9 @@
     ✏️ Actividad 2: ¿Es Impar?
     Crea una función esImpar que determine si un número es impar. Si es impar, la función debe devolver True; en caso
     contrario, debe devolver False. Nota: la función no debe incluir mensajes que indiquen si el número es par o impar;
-    esto debe manejarse en el programa principal. Recuerda nombrar y guardar tu algoritmo.
+    esto debe manejarse en el programa principal. Recuerda nombrar y guardar tu algoritmo. <br><br>
+
+    <button type="submit" onclick="inputNumero()">Ejercicio 2</button> <br><br>
 
 
     ✏️ Actividad 3: ¿Es múltiplo?
@@ -71,6 +73,33 @@
         function calcularSuma(numA, numB) {
             resultado = numA + numB;
             return alert(`${resultado}`);
+        };
+
+
+        //  Actividad 2: ¿Es Impar?
+        // Crea una función esImpar que determine si un número es impar. Si es impar, la función debe devolver True; en caso
+        // contrario, debe devolver False. Nota: la función no debe incluir mensajes que indiquen si el número es par o impar;
+        // esto debe manejarse en el programa principal. Recuerda nombrar y guardar tu algoritmo.
+
+        function inputNumero() {
+
+            let numero = Number(prompt("Ingrese un numero para validar si es par o impar"));
+
+            while (isNaN(numero)) {
+                numero = Number(prompt("Error / caracter invalido: Ingrese un numero para validar si es par o impar"))
+            };
+
+            esPar(numero);
+        };
+
+        function esPar(numA) {
+            let esPar = false;
+
+            if (numA % 2 === 0) {
+                esPar = true;
+            };
+
+            return alert(`${esPar}`);
         };
     </script>
 </body>
