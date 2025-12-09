@@ -17,7 +17,9 @@
     Crea una función llamada Login que reciba un nombre de usuario y una contraseña, devolviendo True si el nombre de
     usuario es "usuario1" y la contraseña es "asdasd". La función también debe contar los intentos de inicio de sesión,
     permitiendo solo 3 intentos. Si se superan los intentos permitidos, la función debe devolver False. Recuerda nombrar
-    y guardar tu algoritmo.
+    y guardar tu algoritmo.<br><br>
+
+    <button type="submit" onclick="login()">Ejercicio 2</button> <br><br>
 
     Crea una función que calcule la suma de los dígitos de un número. Ejemplo: 25 = 2 + 5 = 7. Nota: para obtener el
     último dígito de un número de 2 cifras o más, utiliza el resto de una división entre 10. Recuerda el uso de las
@@ -85,6 +87,49 @@
 
             };
 
+            // Crea una función llamada Login que reciba un nombre de usuario y una contraseña, devolviendo True si el nombre de
+            // usuario es "usuario1" y la contraseña es "asdasd". La función también debe contar los intentos de inicio de sesión,
+            // permitiendo solo 3 intentos. Si se superan los intentos permitidos, la función debe devolver False. Recuerda nombrar
+            // y guardar tu algoritmo.
+
+            function login() {
+                const userName = "usuario1";
+                const passWord = "asdasd";
+
+                let loginOk = false;
+                let intentos = 0;
+
+                while (intentos < 3) {
+                    let userNameInput = String(prompt("Ingrese su nombre de usuario."));
+
+                    while (!userNameInput) {
+                        userNameInput = String(prompt("Error (debe ingresar un nombre de usuario)\n-Ingrese su nombre de usuario."));
+                    };
+
+                    let passWordInput = String(prompt("Ingrese su contraseña"));
+
+                    while (!passWordInput) {
+                        passWordInput = String(prompt("Error(debe ingresar una contraseña)\n-Ingrese su contraseña"));
+                    };
+
+                    intentos++
+
+                    //loginTrue
+                    if (userNameInput === userName && passWordInput === passWord) {
+                        alert("Ha sido logeado con Exito!");
+                        return loginOk = true;
+                    };
+
+                    //loginFalse
+                    if (intentos < 3) {
+                        alert(`Le quedan ${intentos}/3 intentos`);
+                        alert("Credenciales invalidas. Vuelva a intentarlo")
+                    };
+                };
+
+                alert("Creenciales invalidas!. No le quedan mas intentos, vuelva mas tarde.")
+                return loginOk = false;
+            };
         </script>
 </body>
 
