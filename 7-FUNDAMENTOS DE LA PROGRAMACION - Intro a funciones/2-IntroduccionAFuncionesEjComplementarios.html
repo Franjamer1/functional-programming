@@ -29,7 +29,9 @@
 
     Diseña una función que determine si todos los dígitos de un número ingresado por el usuario son impares (por
     ejemplo: 333, 55, etc.). Para ello, separa el número en dígitos y verifica si cada uno es par o impar. Nota:
-    recuerda el uso de las funciones Mod y Trunc. No conviertas el número a cadena para realizar el ejercicio.
+    recuerda el uso de las funciones Mod y Trunc. No conviertas el número a cadena para realizar el ejercicio.<br><br>
+
+    <button type="submit" onclick="digitosParesOImpares()">Ejercicio 4</button> <br><br>
 
     Crea una función que devuelva el término n de la sucesión de Fibonacci. La sucesión de Fibonacci es: 1, 1, 2, 3, 5,
     8, 13, 21, 34, ... donde cada número se calcula sumando los dos anteriores. Por ejemplo:
@@ -165,7 +167,44 @@
                 alert(`Suma de los digitos: ${suma}`);
             };
 
+            //  Diseña una función que determine si todos los dígitos de un número ingresado por el usuario son impares (por
+            //     ejemplo: 333, 55, etc.). Para ello, separa el número en dígitos y verifica si cada uno es par o impar. Nota:
+            //     recuerda el uso de las funciones Mod y Trunc. No conviertas el número a cadena para realizar el ejercicio.
 
+            function digitosParesOImpares() {
+
+                let numberInput = Number(prompt("Ingrese un numero para verificar si sus digitos son pares o no"));
+
+                let pares = 0;
+                let impares = 0;
+                // let cantidadDeDigitos = (numberInput.toString()).length;
+                let ultimoNumero = 0;
+
+                while (numberInput > 0) {
+                    ultimoNumero = numberInput % 10;
+                    if (ultimoNumero % 2 === 0) {
+                        pares = pares + 1;
+                    } else {
+                        impares = impares + 1;
+                    };
+
+                    numberInput = Math.trunc(numberInput / 10);
+                };
+
+
+                // for (let i = 0; i < cantidadDeDigitos; i++) {
+                //     ultimoNumero = numberInput % 10;
+                //     if (ultimoNumero % 2 === 0) {
+                //         pares = pares + 1;
+                //     } else {
+                //         impares = impares + 1;
+                //     };
+
+                //     numberInput = Math.trunc(numberInput / 10);
+                // };
+
+                alert(`su numero tiene: ${pares} numeros pares. Y ${impares} numeros impares`);
+            }
         </script>
 </body>
 
