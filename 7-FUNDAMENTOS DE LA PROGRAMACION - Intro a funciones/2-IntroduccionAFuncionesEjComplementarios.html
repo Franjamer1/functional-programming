@@ -23,7 +23,9 @@
 
     Crea una función que calcule la suma de los dígitos de un número. Ejemplo: 25 = 2 + 5 = 7. Nota: para obtener el
     último dígito de un número de 2 cifras o más, utiliza el resto de una división entre 10. Recuerda el uso de las
-    funciones Mod y Trunc.
+    funciones Mod y Trunc.<br><br>
+
+    <button type="submit" onclick="sumaDigitos()">Ejercicio 3</button> <br><br>
 
     Diseña una función que determine si todos los dígitos de un número ingresado por el usuario son impares (por
     ejemplo: 333, 55, etc.). Para ello, separa el número en dígitos y verifica si cada uno es par o impar. Nota:
@@ -130,6 +132,40 @@
                 alert("Creenciales invalidas!. No le quedan mas intentos, vuelva mas tarde.")
                 return loginOk = false;
             };
+
+
+            // Crea una función que calcule la suma de los dígitos de un número. Ejemplo: 25 = 2 + 5 = 7. Nota: para obtener el
+            // último dígito de un número de 2 cifras o más, utiliza el resto de una división entre 10. Recuerda el uso de las
+            // funciones Mod y Trunc.
+
+            function sumaDigitos() {
+
+                let numberInput = Number(prompt("Ingrese un numero para sumar sus digitos"));
+
+                while (isNaN(numberInput) || numberInput < 0) {
+                    numberInput = Number(prompt("Ingrese un numero para sumar sus digitos"));
+
+                };
+
+                let suma = 0;
+                let lastNumber = 0;
+                let cantidadDeDdigitos = (numberInput.toString()).length
+                console.log(cantidadDeDdigitos);
+
+
+                for (let i = 0; i < cantidadDeDdigitos; i++) {
+
+                    lastNumber = (numberInput % 10);
+
+                    suma = suma + lastNumber;
+
+                    numberInput = Math.trunc(numberInput / 10);
+                };
+
+                alert(`Suma de los digitos: ${suma}`);
+            };
+
+
         </script>
 </body>
 
