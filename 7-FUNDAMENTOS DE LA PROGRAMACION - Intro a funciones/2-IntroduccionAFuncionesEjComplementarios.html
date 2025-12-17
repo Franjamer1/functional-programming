@@ -47,7 +47,14 @@
     Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2) para todo n > 1
 
     Fibonacci(n) = 1 para todo n <= 1 Crea una función que reciba el valor de n y calcule la serie hasta llegar a ese
-        valor. Para más información sobre la sucesión de Fibonacci, consulta el siguiente enlace Diseña una función que
+        valor. Para más información sobre la sucesión de Fibonacci, consulta el siguiente enlace<br><br>
+
+        <button type="submit" onclick="secuenciaFibonacci()">Ejercicio 5</button>
+
+
+
+
+        Diseña una función que
         determine si un número ingresado por el usuario es capicúa (por ejemplo: 12321). Nota: recuerda el uso de MOD y
         Trunc. No conviertas el número a cadena para realizar el ejercicio. Los empleados de una fábrica trabajan en dos
         turnos: diurno y nocturno. Diseña una función para calcular el jornal diario según las siguientes reglas: La
@@ -192,6 +199,48 @@
 
                 alert(`su numero tiene: ${pares} numeros pares. Y ${impares} numeros impares`);
             }
+
+            // Crea una función que devuelva el término n de la sucesión de Fibonacci. La sucesión de Fibonacci es: 1, 1, 2, 3, 5,
+            // 8, 13, 21, 34, ... donde cada número se calcula sumando los dos anteriores. Por ejemplo:
+
+            // Fibonacci(2) = 1 + 1
+
+            // Fibonacci(3) = 1 + 2
+
+            // Fibonacci(5) = 2 + 3
+
+            // La sucesión de Fibonacci se define como:
+
+            // Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2) para todo n > 1
+
+            // Fibonacci(n) = 1 para todo n <= 1 Crea una función que reciba el valor de n y calcule la serie hasta llegar a ese
+            //     valor. Para más información sobre la sucesión de Fibonacci, consulta el siguiente enlace 
+
+            function secuenciaFibonacci() {
+                let numberInput = Number(prompt("Ingrese un numero mayor que 1"));
+
+                while (isNaN(numberInput) || numberInput < 1) {
+                    numberInput = Number(prompt("Error: Ingrese un numero mayor que 1"));
+                };
+
+                alert("Abra la consola para ver los resultados (F12)");
+
+                let prevNumber = 1;
+                let currentNumber = 1
+
+                console.log(prevNumber);
+                if (numberInput > 1) {
+                    console.log(currentNumber);
+                }
+                for (let i = 2; i < numberInput; i++) {
+                    let nextNumber = prevNumber + currentNumber;
+
+                    prevNumber = currentNumber;
+                    currentNumber = nextNumber;
+
+                    console.log(currentNumber);
+                };
+            };
         </script>
 </body>
 
