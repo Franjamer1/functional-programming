@@ -51,12 +51,13 @@
 
         <button type="submit" onclick="secuenciaFibonacci()">Ejercicio 5</button>
 
-
-
-
         Diseña una función que
         determine si un número ingresado por el usuario es capicúa (por ejemplo: 12321). Nota: recuerda el uso de MOD y
-        Trunc. No conviertas el número a cadena para realizar el ejercicio. Los empleados de una fábrica trabajan en dos
+        Trunc. No conviertas el número a cadena para realizar el ejercicio. <br><br>
+        <button type="submit" onclick="esCapicua()">Ejercicio 6</button>
+
+
+        Los empleados de una fábrica trabajan en dos
         turnos: diurno y nocturno. Diseña una función para calcular el jornal diario según las siguientes reglas: La
         tarifa de horas diurnas es de $90. La tarifa de horas nocturnas es de $125. En días festivos, la tarifa se
         incrementa en un 10% para el turno diurno y en un 15% para el turno nocturno. El programa debe solicitar al
@@ -239,6 +240,34 @@
                     currentNumber = nextNumber;
 
                     console.log(currentNumber);
+                };
+            };
+
+            //        Diseña una función que
+            //        determine si un número ingresado por el usuario es capicúa (por ejemplo: 12321). Nota: recuerda el uso de MOD y
+            //        Trunc. No conviertas el número a cadena para realizar el ejercicio.
+
+            function esCapicua() {
+
+                let numberInput = Number(prompt("Ingrese un numero para verificar si es capicua"));
+
+                while (isNaN(numberInput) || numberInput < 1) {
+                    numberInput = Number(prompt("Error: Ingrese un numero para verificar si es capicua"));
+                };
+
+                let numOriginal = numberInput;
+                let numInvertido = 0
+
+                while (numberInput > 0) {
+                    let lastNumber = numberInput % 10;
+                    numInvertido = numInvertido * 10 + lastNumber;
+                    numberInput = Math.trunc(numberInput / 10);
+                }
+
+                if (numOriginal === numInvertido) {
+                    return alert("Su numero es capicua");
+                } else {
+                    return alert("Su numero no es capicua");
                 };
             };
         </script>
