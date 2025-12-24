@@ -62,10 +62,18 @@
         tarifa de horas diurnas es de $90. La tarifa de horas nocturnas es de $125. En días festivos, la tarifa se
         incrementa en un 10% para el turno diurno y en un 15% para el turno nocturno. El programa debe solicitar al
         usuario: el nombre del trabajador, el día de la semana, el turno (diurno o nocturno), y la cantidad de horas
-        trabajadas. Además, debe preguntar si el día era festivo para calcular el jornal diario. Crea una función que
+        trabajadas. Además, debe preguntar si el día era festivo para calcular el jornal diario. <br><br>
+
+        <button type="submit" onclick="calcularJornal()">Ejercicio 7</button>
+
+
+        Crea una función que
         convierta una temperatura de grados Celsius a grados Fahrenheit. Luego, en el programa principal, solicita al
         usuario una temperatura en Celsius y utiliza la función para convertirla y mostrar el resultado. Fórmula de
-        conversión: F=C * 9/5 + 32 Crea una función que calcule el promedio de una lista de números. En el programa
+        conversión: F=C * 9/5 + 32
+
+
+        Crea una función que calcule el promedio de una lista de números. En el programa
         principal, solicita al usuario una serie de números , usa la función para calcular el promedio y muestra el
         resultado. Crea dos funciones: una para calcular el área y otra para calcular el perímetro de un rectángulo dado
         su ancho y su alto. En el programa principal, solicita al usuario el ancho y el alto del rectángulo, utiliza las
@@ -270,6 +278,56 @@
                     return alert("Su numero no es capicua");
                 };
             };
+
+
+            //     Los empleados de una fábrica trabajan en dos
+            // turnos: diurno y nocturno. Diseña una función para calcular el jornal diario según las siguientes reglas: La
+            // tarifa de horas diurnas es de $90. La tarifa de horas nocturnas es de $125. En días festivos, la tarifa se
+            // incrementa en un 10% para el turno diurno y en un 15% para el turno nocturno. El programa debe solicitar al
+            // usuario: el nombre del trabajador, el día de la semana, el turno (diurno o nocturno), y la cantidad de horas
+            // trabajadas. Además, debe preguntar si el día era festivo para calcular el jornal diario.
+
+            function calcularJornal() {
+                const horaDiurna = 90;
+                const horaNocturna = 125;
+
+                const horaFestivoDiurno = horaDiurna * 1.10;
+                const horaFestivoNocturno = horaNocturna * 1.15;
+
+                let nombre = prompt("Ingrese el nombre del trabajador");
+                let dia = prompt("Ingrese el día de la semana");
+
+                let turno = prompt("Elija su turno:\n1 - Diurno\n2 - Nocturno");
+                let cantHoras = Number(prompt("Ingrese la cantidad de horas trabajadas"));
+
+                let esFestivo = prompt("¿Era un día festivo? (SI / NO)").toUpperCase();
+
+                let jornal = 0;
+
+                if (turno === "1") {
+                    if (esFestivo === "SI") {
+                        jornal = cantHoras * horaFestivoDiurno;
+                    } else {
+                        jornal = cantHoras * horaDiurna;
+                    }
+                } else if (turno === "2") {
+                    if (esFestivo === "SI") {
+                        jornal = cantHoras * horaFestivoNocturno;
+                    } else {
+                        jornal = cantHoras * horaNocturna;
+                    }
+                } else {
+                    alert("Turno inválido");
+                    return;
+                }
+
+                alert(
+                    "Trabajador: " + nombre +
+                    "\nDía: " + dia +
+                    "\nJornal diario: $" + jornal
+                );
+            }
+
         </script>
 </body>
 
