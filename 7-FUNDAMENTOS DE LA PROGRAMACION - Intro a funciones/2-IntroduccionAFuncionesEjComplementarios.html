@@ -49,12 +49,12 @@
     Fibonacci(n) = 1 para todo n <= 1 Crea una función que reciba el valor de n y calcule la serie hasta llegar a ese
         valor. Para más información sobre la sucesión de Fibonacci, consulta el siguiente enlace<br><br>
 
-        <button type="submit" onclick="secuenciaFibonacci()">Ejercicio 5</button>
+        <button type="submit" onclick="secuenciaFibonacci()">Ejercicio 5</button><br><br>
 
         Diseña una función que
         determine si un número ingresado por el usuario es capicúa (por ejemplo: 12321). Nota: recuerda el uso de MOD y
         Trunc. No conviertas el número a cadena para realizar el ejercicio. <br><br>
-        <button type="submit" onclick="esCapicua()">Ejercicio 6</button>
+        <button type="submit" onclick="esCapicua()">Ejercicio 6</button><br><br>
 
 
         Los empleados de una fábrica trabajan en dos
@@ -64,13 +64,15 @@
         usuario: el nombre del trabajador, el día de la semana, el turno (diurno o nocturno), y la cantidad de horas
         trabajadas. Además, debe preguntar si el día era festivo para calcular el jornal diario. <br><br>
 
-        <button type="submit" onclick="calcularJornal()">Ejercicio 7</button>
+        <button type="submit" onclick="calcularJornal()">Ejercicio 7</button> <br><br>
 
 
         Crea una función que
         convierta una temperatura de grados Celsius a grados Fahrenheit. Luego, en el programa principal, solicita al
         usuario una temperatura en Celsius y utiliza la función para convertirla y mostrar el resultado. Fórmula de
-        conversión: F=C * 9/5 + 32
+        conversión: F=C * 9/5 + 32 <br><br>
+
+        <button type="submit" onclick="ingresarTemperatura()">Ejercicio 8</button> <br><br>
 
 
         Crea una función que calcule el promedio de una lista de números. En el programa
@@ -327,6 +329,27 @@
                     "\nJornal diario: $" + jornal
                 );
             }
+
+
+            //Crea una función que convierta una temperatura de grados Celsius a grados Fahrenheit.Luego, en el programa principal, solicita al
+            //usuario una temperatura en Celsius y utiliza la función para convertirla y mostrar el resultado.Fórmula de
+            //  conversión: F = C * 9 / 5 + 32
+
+            function ingresarTemperatura(params) {
+                let temperaturaCelsius = Number(prompt("Ingrese una temperatura en grados celsius para convertirlo a Fahrenheit."));
+
+                while (isNaN(temperaturaCelsius)) {
+                    temperaturaCelsius = Number(prompt("Error: Ingrese una temperatura en grados celsius para convertirlo a Fahrenheit."))
+                };
+
+                let conversion = convertirGrados(temperaturaCelsius);
+                return alert(`F: ${conversion}`);
+            }
+
+            function convertirGrados(gradosCelcius) {
+                let fahrenheit = gradosCelcius * 9 / 5 + 32;
+                return fahrenheit;
+            };
 
         </script>
 </body>
