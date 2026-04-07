@@ -82,6 +82,9 @@
         funciones para calcular el área y el perímetro, y muestra los resultados. Fórmula del área: A=ancho * alto
         Fórmula del perímetro: P=2 * (ancho + alto) <br><br>
 
+        <button type="submit" onclick="calcularPromedio()">Calcular promedio</button> <br><br>
+        <button type="submit" onclick="calcularRectangulo()">Calcular rectangulo</button> <br><br>
+
         <script>
             // 1- Diseña una función que calcule y retorne la suma de todos los divisores de un número n, excluyendo n. El
             // valor de n
@@ -351,6 +354,58 @@
                 return fahrenheit;
             };
 
+
+            //     Crea una función que calcule el promedio de una lista de números. En el programa
+            // principal, solicita al usuario una serie de números , usa la función para calcular el promedio y muestra el
+            // resultado. Crea dos funciones: una para calcular el área y otra para calcular el perímetro de un rectángulo dado
+            // su ancho y su alto. En el programa principal, solicita al usuario el ancho y el alto del rectángulo, utiliza las
+            // funciones para calcular el área y el perímetro, y muestra los resultados. Fórmula del área: A=ancho * alto
+            // Fórmula del perímetro: P=2 * (ancho + alto)
+
+            function calcularPromedio() {
+                let numerosArray = [];
+                let suma = 0;
+                //ingresamos numeros y guardamos en array
+                for (let i = 0; i < 6; i++) {
+                    let numero = Number(prompt("Ingrese un numero"));
+
+                    numerosArray.push(numero);
+                };
+
+                //suma
+                for (let i = 0; i < numerosArray.length; i++) {
+                    suma = numerosArray[i] + suma;
+                };
+
+                //calculo promedio
+
+                let promedio = suma / numerosArray.length;
+
+                alert(`El promedio es ${promedio}`);
+            }
+
+            //area
+            function calcularArea(ancho, alto) {
+                return ancho * alto;
+            }
+
+            //perimetro
+            function calcularPerimetro(ancho, alto) {
+                return 2 * (ancho + alto);
+            }
+
+            //funcion principal para rectangulo
+
+            function calcularRectangulo() {
+                let ancho = Number(prompt("Ingrese el ancho del rectangulo"));
+                let alto = Number(prompt("Ingrese el alto del rectangulo"));
+
+                let area = calcularArea(ancho, alto);
+                let perimetro = calcularPerimetro(ancho, alto);
+
+                alert("Area: " + area);
+                alert("Perimetro: " + perimetro);
+            }
         </script>
 </body>
 
