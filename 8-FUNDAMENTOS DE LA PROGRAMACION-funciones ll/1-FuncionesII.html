@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones 2</title>
+</head>
+
+<body>
+    Actividad 1: Intercambio de valores
+    Diseña un subproceso que permita intercambiar los valores de dos variables enteras. Al finalizar la ejecución del
+    subprograma, la variable A debe contener el valor original de la variable B, y la variable B debe contener el valor
+    original de la variable A. Este intercambio debe realizarse de forma permanente, es decir, los valores originales
+    deben sobrescribirse.
+
+    Nota: Recuerda utilizar el paso por referencia, ya que te permite modificar directamente los valores de las
+    variables definidas en el algoritmo principal. <br><br>
+
+    <button type="submit" onclick="ejecutar()">Ejercicio 1</button> <br><br>
+
+    ✏️ Actividad 2: Cálculo de temperatura media diaria
+    Crea un procedimiento que calcule la temperatura media de un día, a partir de dos valores: la temperatura máxima y
+    la temperatura mínima.
+
+    Luego, implementa un algoritmo principal que:
+
+    Solicite al usuario la cantidad de días a registrar.
+
+    Para cada día, pida al usuario que ingrese la temperatura máxima y mínima.
+
+    Utilice el procedimiento desarrollado para calcular la media diaria.
+
+    Muestre la temperatura media correspondiente a cada día.
+
+    Sugerencia: Puedes usar un bucle que se repita según la cantidad de días ingresada por el usuario. El cálculo de la
+    media debe realizarse dentro del procedimiento, y el resultado debe ser devuelto mediante un parámetro por
+    referencia para que pueda ser mostrado desde el algoritmo principal.
+
+
+    ✏️ Actividad 3: División por restas sucesivas
+    Crea un procedimiento que permita dividir dos números enteros utilizando el método de restas sucesivas. Este
+    procedimiento debe mostrar tanto el cociente como el residuo de la división.
+
+    ¿En qué consiste este método? Consiste en restar el divisor del dividendo de forma repetida hasta que el resultado
+    sea menor que el divisor.
+
+    El cociente corresponde a la cantidad de restas realizadas.
+
+    El residuo es el valor restante al finalizar las restas.
+
+    Para dividir 50 entre 13:
+
+    50 – 13 = 37 → primera resta
+
+    37 – 13 = 24 → segunda resta
+
+    24 – 13 = 11 → tercera resta
+
+    Como 11 es menor que 13, se detiene el proceso. Resultado: Cociente = 3, Residuo = 11
+
+
+    ✏️ Actividad 4: Codificador de vocales
+    Escribe un programa que procese una secuencia de caracteres ingresada por teclado. El programa deberá convertir la
+    frase a mayúsculas y luego codificarla aplicando una transformación, en la cual cada vocal sea reemplazada por un
+    carácter especial, según la siguiente tabla:
+
+    Vocal Carácter codificado
+    a @
+    e #
+    i $
+    o %
+    u *
+
+    Para ello, implementa un subprograma que reciba la secuencia de texto y devuelva la frase codificada
+    correspondiente. Utiliza la estructura “según” para realizar las sustituciones de las vocales.
+
+    Recuerda que puedes apoyarte en la función concatenar de PSeInt para construir progresivamente la frase resultante.
+
+    Ejemplo
+
+    Entrada del usuario: "Ayer, lunes, salimos a las once y 10."
+
+    Salida esperada: "@y#r, l*n#s, s@l$m%s @ l@s %nc# y 10.
+
+
+    <script>
+        //     Actividad 1: Intercambio de valores
+        // Diseña un subproceso que permita intercambiar los valores de dos variables enteras. Al finalizar la ejecución del
+        // subprograma, la variable A debe contener el valor original de la variable B, y la variable B debe contener el valor
+        // original de la variable A. Este intercambio debe realizarse de forma permanente, es decir, los valores originales
+        // deben sobrescribirse.
+
+        // Nota: Recuerda utilizar el paso por referencia, ya que te permite modificar directamente los valores de las
+        // variables definidas en el algoritmo principal.
+
+        function ejercicio1() {
+
+            let numA = 1;
+            let numB = 2;
+
+            function intercambiarValores() {
+                alert(`NumeroA: ${numA}\nNumeroB: ${numB}`);
+                alert("Intercambiando valores...");
+                aPorB();
+                alert(`NumeroA: ${numA}\nNumeroB: ${numB}`);
+            }
+
+            function aPorB() {
+                let saveNum = numA;
+
+                numA = numB;
+                numB = saveNum;
+            };
+
+            return intercambiarValores;
+        }
+
+        const ejecutar = ejercicio1();
+    </script>
+</body>
+
+</html>
