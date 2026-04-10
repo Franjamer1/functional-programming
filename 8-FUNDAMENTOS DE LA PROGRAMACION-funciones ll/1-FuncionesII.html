@@ -35,7 +35,9 @@
 
     Sugerencia: Puedes usar un bucle que se repita según la cantidad de días ingresada por el usuario. El cálculo de la
     media debe realizarse dentro del procedimiento, y el resultado debe ser devuelto mediante un parámetro por
-    referencia para que pueda ser mostrado desde el algoritmo principal.
+    referencia para que pueda ser mostrado desde el algoritmo principal. <br><br>
+
+    <button type="submit" onclick="ejercicio2()">Ejercicio 2</button> <br><br>
 
 
     ✏️ Actividad 3: División por restas sucesivas
@@ -117,6 +119,70 @@
         }
 
         const ejecutar = ejercicio1();
+
+
+
+        //     Actividad 2: Cálculo de temperatura media diaria
+        // Crea un procedimiento que calcule la temperatura media de un día, a partir de dos valores: la temperatura máxima y
+        // la temperatura mínima.
+
+        // Luego, implementa un algoritmo principal que:
+
+        // Solicite al usuario la cantidad de días a registrar.
+
+        // Para cada día, pida al usuario que ingrese la temperatura máxima y mínima.
+
+        // Utilice el procedimiento desarrollado para calcular la media diaria.
+
+        // Muestre la temperatura media correspondiente a cada día.
+
+        // Sugerencia: Puedes usar un bucle que se repita según la cantidad de días ingresada por el usuario. El cálculo de la
+        // media debe realizarse dentro del procedimiento, y el resultado debe ser devuelto mediante un parámetro por
+        // referencia para que pueda ser mostrado desde el algoritmo principal.
+
+        function ejercicio2() {
+
+            let dayAmount = 0;
+
+            //promedio
+            function averageTemperature(max, min) {
+                let average = (max + min) / 2;
+                return average;
+            }
+
+            //cantidad de dias input
+            function dayAmountInput() {
+                dayAmount = Number(prompt("Ingrese la cantidad de dias a registrar."));
+
+                while (dayAmount < 1) {
+                    alert("Error el minimo de dias a registrar es 1");
+
+                    dayAmount = Number(prompt("Ingrese la cantidad de dias a registrar."));
+                }
+            }
+
+            dayAmountInput();
+
+
+            //bucle por dia
+            for (let i = 0; i < dayAmount; i++) {
+                let minTemp = Number(prompt(`Ingrese la teperatura minima para el dia ${i + 1}`));
+                let maxTemp = Number(prompt(`Ingrese la temperatura maxima del dia ${i + 1}`));
+
+
+                while (minTemp > maxTemp) {
+                    alert("Error la temperatura minima no puede ser mayor que la temperatura maxima");
+                    minTemp = Number(prompt(`Ingrese la teperatura minima para el dia ${i + 1}`));
+                    maxTemp = Number(prompt(`Ingrese la temperatura maxima del dia ${i + 1}`));
+
+                }
+
+                let average = averageTemperature(maxTemp, minTemp);
+
+                alert(`El promedio de temperatura del dia ${i + 1} es de : ${average}`)
+
+            }
+        }
     </script>
 </body>
 
