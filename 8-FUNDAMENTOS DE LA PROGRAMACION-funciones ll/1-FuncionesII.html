@@ -59,7 +59,8 @@
 
     24 – 13 = 11 → tercera resta
 
-    Como 11 es menor que 13, se detiene el proceso. Resultado: Cociente = 3, Residuo = 11
+    Como 11 es menor que 13, se detiene el proceso. Resultado: Cociente = 3, Residuo = 11 <br><br>
+    <button type="submit" onclick="ejercicio3()">Ejercicio 3</button>
 
 
     ✏️ Actividad 4: Codificador de vocales
@@ -182,6 +183,50 @@
                 alert(`El promedio de temperatura del dia ${i + 1} es de : ${average}`)
 
             }
+        }
+
+
+        //     ✏️ Actividad 3: División por restas sucesivas
+        // Crea un procedimiento que permita dividir dos números enteros utilizando el método de restas sucesivas. Este
+        // procedimiento debe mostrar tanto el cociente como el residuo de la división.
+
+        // ¿En qué consiste este método? Consiste en restar el divisor del dividendo de forma repetida hasta que el resultado
+        // sea menor que el divisor.
+
+        // El cociente corresponde a la cantidad de restas realizadas.
+
+        // El residuo es el valor restante al finalizar las restas.
+
+        // Para dividir 50 entre 13:
+
+        // 50 – 13 = 37 → primera resta
+
+        // 37 – 13 = 24 → segunda resta
+
+        // 24 – 13 = 11 → tercera resta
+
+        // Como 11 es menor que 13, se detiene el proceso. Resultado: Cociente = 3, Residuo = 11
+
+        function ejercicio3() {
+
+            let cociente = 0;
+            let residuo = 0;
+
+            let number1 = Number(prompt("Ingrese el primer numero."));
+
+            let number2 = Number(prompt("Ingrese el segundo numero ()."));
+
+
+            let parcial = number1;
+
+            while (parcial > number2) {
+                parcial = parcial - number2;
+                cociente++;
+            };
+
+            residuo = parcial;
+
+            alert(`Cociente: ${cociente}.\nResiduo: ${residuo}`);
         }
     </script>
 </body>
