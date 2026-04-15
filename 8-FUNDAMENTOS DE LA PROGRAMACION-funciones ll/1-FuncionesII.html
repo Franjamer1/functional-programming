@@ -84,7 +84,8 @@
 
     Entrada del usuario: "Ayer, lunes, salimos a las once y 10."
 
-    Salida esperada: "@y#r, l*n#s, s@l$m%s @ l@s %nc# y 10.
+    Salida esperada: "@y#r, l*n#s, s@l$m%s @ l@s %nc# y 10. <br><br>
+    <button type="submit" onclick="ejercicio4()">Ejercicio 4</button> <br><br>
 
 
     <script>
@@ -228,6 +229,77 @@
 
             alert(`Cociente: ${cociente}.\nResiduo: ${residuo}`);
         }
+
+        //     Escribe un programa que procese una secuencia de caracteres ingresada por teclado. El programa deberá convertir la
+        // frase a mayúsculas y luego codificarla aplicando una transformación, en la cual cada vocal sea reemplazada por un
+        // carácter especial, según la siguiente tabla:
+
+        // Vocal Carácter codificado
+        // a @
+        // e #
+        // i $
+        // o %
+        // u *
+
+        // Para ello, implementa un subprograma que reciba la secuencia de texto y devuelva la frase codificada
+        // correspondiente. Utiliza la estructura “según” para realizar las sustituciones de las vocales.
+
+        // Recuerda que puedes apoyarte en la función concatenar de PSeInt para construir progresivamente la frase resultante.
+
+        // Ejemplo
+
+        // Entrada del usuario: "Ayer, lunes, salimos a las once y 10."
+
+        // Salida esperada: "@y#r, l*n#s, s@l$m%s @ l@s %nc# y 10.
+
+        function ejercicio4() {
+
+            let caracterIngresado = (String(prompt("Ingrese una secuencia de caracteres."))).toUpperCase();
+
+
+            while (!caracterIngresado || caracterIngresado.length < 1) {
+
+                caracterIngresado = (String(prompt("Error: Ingrese una secuencia de caracteres."))).toUpperCase();
+            }
+
+            let palabraReemplazada = "";
+
+            codification();
+
+            function codification() {
+                for (let i = 0; i < caracterIngresado.length; i++) {
+                    let caracterActual = caracterIngresado[i];
+
+                    console.log(caracterActual);
+
+                    switch (caracterActual) {
+                        case "A": caracterActual = "@"
+
+                            break;
+
+                        case "E": caracterActual = "#"
+                            break;
+                        case "I": caracterActual = "$"
+                            break;
+                        case "O": caracterActual = "%"
+                            break;
+                        case "U": caracterActual = "*"
+                            break;
+
+                        default: caracterActual = caracterActual;
+                            break;
+                    }
+                    palabraReemplazada = palabraReemplazada + caracterActual;
+                }
+                console.log(palabraReemplazada);
+
+                return palabraReemplazada;
+            }
+
+
+            alert("La palabra codificada queda de la siguiente manera:" + palabraReemplazada);
+        }
+
     </script>
 </body>
 
