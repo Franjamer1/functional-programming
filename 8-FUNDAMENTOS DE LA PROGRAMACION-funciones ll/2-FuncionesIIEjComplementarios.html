@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Crea un procedimiento llamado “convertirEspaciado” que reciba como argumento un texto y muestre una cadena con un
+    espacio adicional tras cada letra. Por ejemplo, “Hola, tú” debería devolver “H o l a , t ú”. Desarrolla un programa
+    principal que utilice este procedimiento. <br><br>
+
+    <button type="submit" onclick="ejercicio1()">ejercicio1</button> <br><br>
+
+
+    Realiza un subproceso que reciba una letra y muestre un mensaje si esa letra está entre las letras “M” y “T”.
+    Recuerda que PSeInt asigna un valor numérico a cada letra a través del Código ASCII, permitiendo el uso de
+    operadores relacionales con letras y cadenas.
+
+    Crea un programa que dibuje una escalera de números, donde cada línea comience en uno y termine en el número de la
+    línea. Solicita al usuario la altura de la escalera al comenzar. Ejemplo: si se ingresa el número 3:
+
+    1
+    12
+    123
+    Realiza un algoritmo que solicite al usuario una fecha y muestre en pantalla la fecha anterior. Para ello, utiliza
+    un procedimiento llamado diaAnterior que reciba una fecha representada por tres enteros (día, mes y año) y retorne
+    la fecha anterior. Asume que la fecha ingresada es válida. Realiza pruebas de escritorio para los valores: día=5,
+    mes=10, año=2012 y día=1, mes=3, año=2004.
+
+    Diseña un procedimiento que reciba una frase y elimine todas las vocales repetidas. El procedimiento, en caso de
+    encontrar una vocal repetida, mantendrá en la frase solamente la primera aparición y eliminará las siguientes. Al
+    final, el procedimiento mostrará la frase resultante. Por ejemplo:
+
+    Entrada: “Había una vez un barco”
+
+    Salida: “Habi un vez n brco”
+
+    Las vocales repetidas se marcan solo para explicar la consigna. Las vocales ‘e’, ‘i’ y ‘o’ se conservan al no estar
+    repetidas.
+
+    Crea una función recursiva que devuelva el término n de la sucesión de Fibonacci. La sucesión de Fibonacci es: 1, 1,
+    2, 3, 5, 8, 13, 21, 34, ... donde cada número se calcula sumando los dos anteriores. Por ejemplo:
+
+    Fibonacci(2) = 1 + 1
+
+    Fibonacci(3) = 1 + 2
+
+    Fibonacci(5) = 2 + 3
+
+    La sucesión de Fibonacci se define como:
+
+    Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2) para todo n > 1
+
+    <!-- Fibonacci(n) = 1 para todo n <= 1 Crea una función que reciba el valor de n y calcule la serie hasta llegar a ese
+        valor. Para más información sobre la sucesión de Fibonacci, consulta el siguiente enlace Implemente de forma
+        recursiva una función que le dé la vuelta a una cadena de caracteres. NOTA: Si la cadena es un palíndromo, la
+        cadena y su inversa coincidirán. Realizar una función que reciba un número ingresado por el usuario y averigüe
+        si el número es capicúa o no (Por ejemplo: 12321). Nota: recordar el uso del MOD y el Trunc. No podemos
+        transformar el número a cadena para realizar el ejercicio. -->
+
+
+    <script>
+        //     Crea un procedimiento llamado “convertirEspaciado” que reciba como argumento un texto y muestre una cadena con un
+        //     espacio adicional tras cada letra. Por ejemplo, “Hola, tú” debería devolver “H o l a , t ú”. Desarrolla un programa
+        //     principal que utilice este procedimiento.
+
+        function ejercicio1() {
+
+            function mainFunction() {
+                let textInput = (prompt("Ingrese un texto."));
+                textInput.toString();
+
+                while (textInput === "") {
+
+                    textInput = String(prompt("Error: Ingrese un texto."));
+                }
+
+                convertirEspaciado(textInput);
+            }
+
+            function convertirEspaciado(texto) {
+                let length = texto.length;
+                let textoFinal = "";
+
+                for (let i = 0; i < length; i++) {
+                    textoFinal = textoFinal + texto[i] + " ";
+                }
+
+                return alert(`${textoFinal}`);
+
+            }
+
+            mainFunction();
+        }
+    </script>
+</body>
+
+</html>
