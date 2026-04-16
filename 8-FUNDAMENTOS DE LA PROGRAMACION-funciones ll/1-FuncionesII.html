@@ -87,6 +87,18 @@
     Salida esperada: "@y#r, l*n#s, s@l$m%s @ l@s %nc# y 10. <br><br>
     <button type="submit" onclick="ejercicio4()">Ejercicio 4</button> <br><br>
 
+    En esta actividad, deberás crear una función recursiva que calcule la suma de los primeros N números enteros
+    positivos.
+
+    El programa principal solicitará al usuario un número entero, y la función se encargará de calcular la suma de todos
+    los números desde 1 hasta ese número utilizando recursividad.
+
+    Ejemplo:Si el usuario ingresa el número 5, la función recursiva deberá calcular: 1 + 2 + 3 + 4 + 5 = 15
+
+    Esta actividad te permitirá practicar el uso de llamadas recursivas y comprender mejor cómo se descompone un
+    problema en pasos más simples hasta alcanzar la condición base. <br><br>
+    <button type="submit" onclick="ejercicio5()">Ejercicio5</button>
+
 
     <script>
         //     Actividad 1: Intercambio de valores
@@ -300,6 +312,45 @@
             alert("La palabra codificada queda de la siguiente manera:" + palabraReemplazada);
         }
 
+
+        //     En esta actividad, deberás crear una función recursiva que calcule la suma de los primeros N números enteros
+        // positivos.
+
+        // El programa principal solicitará al usuario un número entero, y la función se encargará de calcular la suma de todos
+        // los números desde 1 hasta ese número utilizando recursividad.
+
+        // Ejemplo:Si el usuario ingresa el número 5, la función recursiva deberá calcular: 1 + 2 + 3 + 4 + 5 = 15
+
+        // Esta actividad te permitirá practicar el uso de llamadas recursivas y comprender mejor cómo se descompone un
+        // problema en pasos más simples hasta alcanzar la condición base.
+
+        function ejercicio5() {
+
+            function calcularN() {
+
+                let numInput = Number(prompt("Ingrese un numero entero."));
+
+                while (isNaN(numInput) || !Number.isInteger(numInput) || numInput < 0) {
+
+                    numInput = Number(prompt("Error: Ingrese un numero entero positivo."));
+                }
+
+                let resultado = sumaRecursiva(numInput);
+
+                alert(`Suma: ${resultado}`);
+            }
+
+            function sumaRecursiva(n) {
+
+                if (n === 0) {
+                    return 0;
+                }
+
+                return n + sumaRecursiva(n - 1);
+            }
+
+            calcularN();
+        }
     </script>
 </body>
 
