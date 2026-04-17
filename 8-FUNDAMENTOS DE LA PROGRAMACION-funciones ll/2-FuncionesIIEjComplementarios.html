@@ -17,7 +17,8 @@
 
     Realiza un subproceso que reciba una letra y muestre un mensaje si esa letra está entre las letras “M” y “T”.
     Recuerda que PSeInt asigna un valor numérico a cada letra a través del Código ASCII, permitiendo el uso de
-    operadores relacionales con letras y cadenas.
+    operadores relacionales con letras y cadenas. <br><br>
+    <button type="submit" onclick="ejercicio2()">ejercicio2</button> <br><br>
 
     Crea un programa que dibuje una escalera de números, donde cada línea comience en uno y termine en el número de la
     línea. Solicita al usuario la altura de la escalera al comenzar. Ejemplo: si se ingresa el número 3:
@@ -94,6 +95,26 @@
             }
 
             mainFunction();
+        }
+
+        // Realiza un subproceso que reciba una letra y muestre un mensaje si esa letra está entre las letras “M” y “T”.
+        // Recuerda que PSeInt asigna un valor numérico a cada letra a través del Código ASCII, permitiendo el uso de
+        // operadores relacionales con letras y cadenas.
+        function ejercicio2() {
+            let letterInput = (prompt("Ingrese una letra.")).toString();
+
+            while (!/^[a-zA-Z]$/.test(letterInput)) {
+                letterInput = prompt("Error: Ingrese SOLO una letra (no números ni símbolos):");
+            }
+
+            letterInput = letterInput.toUpperCase();
+
+            if (letterInput >= "M" && letterInput <= "T") {
+                alert("La letra esta entre M y T");
+            } else {
+                alert("La letra no esta entre M y T");
+            }
+
         }
     </script>
 </body>
