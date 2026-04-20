@@ -25,7 +25,9 @@
 
     1
     12
-    123
+    123 <br><br>
+    <button type="submit" onclick="ejercicio3()">Ejercicio3</button> <br><br>
+
     Realiza un algoritmo que solicite al usuario una fecha y muestre en pantalla la fecha anterior. Para ello, utiliza
     un procedimiento llamado diaAnterior que reciba una fecha representada por tres enteros (día, mes y año) y retorne
     la fecha anterior. Asume que la fecha ingresada es válida. Realiza pruebas de escritorio para los valores: día=5,
@@ -115,6 +117,37 @@
                 alert("La letra no esta entre M y T");
             }
 
+        }
+
+
+        //     Crea un programa que dibuje una escalera de números, donde cada línea comience en uno y termine en el número de la
+        // línea. Solicita al usuario la altura de la escalera al comenzar. Ejemplo: si se ingresa el número 3:
+
+        // 1
+        // 12
+        // 123
+
+        function ejercicio3() {
+            let numInput = Number(prompt("Ingrese un numero entero positivo."));
+
+
+            console.log(numInput.valueOf);
+
+            while (isNaN(numInput) || numInput < 1) {
+
+                numInput = Number(prompt("Error: Ingrese un numero entero positivo."));
+            }
+
+            let resultado = "";
+            for (let i = 1; i <= numInput; i++) {
+                let linea = "";
+                for (let j = 1; j <= i; j++) {
+                    linea = linea + j;
+                }
+                resultado = resultado + linea + "\n";
+            }
+
+            alert(resultado);
         }
     </script>
 </body>
