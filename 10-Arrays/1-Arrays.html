@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Actividad 1: Ejemplo guiado - Uso de vector
+    Crea un programa que solicite al usuario ingresar 5 valores numéricos, los almacene en un único arreglo (vector) y
+    luego los muestre por pantalla.
+
+
+    Declara el tipo de dato que almacenará el vector (en este caso, números enteros).
+
+    Define la dimensión del arreglo (en este caso, debe tener capacidad para 5 elementos).
+
+    Utiliza un bucle para recorrer el vector posición por posición y pedir al usuario que introduzca un dato. Puedes
+    utilizar una estructura de repetición "Para" para esta tarea.
+
+    Una vez cargado el vector, recórrelo nuevamente para mostrar los valores almacenados por pantalla. <br><br>
+    <button type="submit" onclick="ejercicio1()">Ejercicio1</button>
+
+    <script>
+        //     Actividad 1: Ejemplo guiado - Uso de vector
+        //     Crea un programa que solicite al usuario ingresar 5 valores numéricos, los almacene en un único arreglo (vector) y
+        //     luego los muestre por pantalla.
+
+
+        //     Declara el tipo de dato que almacenará el vector (en este caso, números enteros).
+
+        //     Define la dimensión del arreglo (en este caso, debe tener capacidad para 5 elementos).
+
+        //     Utiliza un bucle para recorrer el vector posición por posición y pedir al usuario que introduzca un dato. Puedes
+        //     utilizar una estructura de repetición "Para" para esta tarea.
+
+        //     Una vez cargado el vector, recórrelo nuevamente para mostrar los valores almacenados por pantalla.
+
+
+        function ejercicio1() {
+            let numArray = [];
+            let numInput = 0;
+
+            let numerosImpresos = "";
+
+            for (let i = 0; i < 5; i++) {
+
+                numInput = Number(prompt(`Ingrese un numero para ubicar en la posicion ${i + 1}`));
+
+                while (isNaN(numInput)) {
+                    numInput = Number(prompt(`Error:Ingrese un numero para ubicar en la posicion ${i + 1}`));
+                }
+
+                numArray.push(numInput);
+            }
+
+            function imprimirNumeros() {
+                for (let i = 0; i < numArray.length; i++) {
+                    numerosImpresos = numerosImpresos + `Numero ${i + 1}: ${numArray[i]}\n`
+                };
+
+                alert(numerosImpresos)
+            }
+            // console.log(numArray);
+
+            imprimirNumeros()
+        }
+    </script>
+</body>
+
+</html>
