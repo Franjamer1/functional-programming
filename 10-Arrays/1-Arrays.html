@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    Actividad 1: Ejemplo guiado - Uso de vector
+    ✏️ Actividad 1: Ejemplo guiado - Uso de vector
     Crea un programa que solicite al usuario ingresar 5 valores numéricos, los almacene en un único arreglo (vector) y
     luego los muestre por pantalla.
 
@@ -23,6 +23,66 @@
     Una vez cargado el vector, recórrelo nuevamente para mostrar los valores almacenados por pantalla. <br><br>
     <button type="submit" onclick="ejercicio1()">Ejercicio1</button>
 
+    ✏️ Actividad 2: Operaciones con arreglos
+    Desarrolla un programa que permita al usuario ingresar 10 números reales desde el teclado. Los valores ingresados
+    deberán ser almacenados en un arreglo unidimensional.
+
+    Una vez cargados todos los datos, el programa debe realizar y mostrar por pantalla:
+
+    La suma total de los valores almacenados.
+
+    La multiplicación total de todos los elementos del arreglo.
+
+    Para resolver esta actividad, deberás:
+
+    Declarar un arreglo de tipo real con capacidad para 10 elementos.
+
+    Utilizar un bucle Para para solicitar los datos e ir almacenándolos secuencialmente en el arreglo.
+
+    Implementar una variable acumuladora para la suma y otra para la multiplicación.
+
+    Recorrer nuevamente el arreglo para calcular los resultados requeridos. <br><br>
+    <button type="submit" onclick="ejercicio2()">Ejercicio2</button>
+
+    ✏️ Actividad 3: Búsqueda de elemento específico
+    Desarrolla un programa que permita definir un vector cuyo tamaño sea determinado por el usuario.
+
+    Para ello, el programa deberá:
+
+    Solicitar al usuario, por teclado, el tamaño del arreglo y almacenar este valor en una variable.
+
+    Utilizar dicha variable para dimensionar dinámicamente el vector.
+
+    Llenar el arreglo con valores aleatorios entre 1 y 25, recorriendo cada una de sus posiciones.
+
+    Solicitar luego al usuario que ingrese un número para buscar dentro del arreglo.
+
+    A continuación, el programa debe:
+
+    Recorrer el arreglo en busca del número ingresado.
+
+    Si el número se encuentra, mostrar únicamente la última posición en la que aparece (considerando que puede estar
+    repetido).
+
+    Si el número no se encuentra, mostrar un mensaje que lo indique claramente.
+
+    ✏️ Actividad 4: Búsqueda de elemento de mayor valor
+    Desarrolla un programa que rellene un vector de tamaño N, con valores numéricos ingresados por el usuario. A
+    continuación, se deberá crear una función que reciba el vector y devuelva el valor más grande del arreglo.
+
+    Desarrolla un programa que permita trabajar con un vector de tamaño N, determinado por el usuario.
+
+    El programa deberá realizar las siguientes acciones:
+
+    Solicitar al usuario, por teclado, la cantidad de elementos que tendrá el vector.
+
+    Crear un vector con esa dimensión.
+
+    Llenar el arreglo con valores aleatorios entre 0 y 100, recorriendo cada una de sus posiciones.
+
+    Crear una función que reciba como parámetro el vector completo y retorne el valor más grande contenido en él.
+
+    Finalmente, mostrar por pantalla cuál fue el valor máximo encontrado en el vector.
     <script>
         //     Actividad 1: Ejemplo guiado - Uso de vector
         //     Crea un programa que solicite al usuario ingresar 5 valores numéricos, los almacene en un único arreglo (vector) y
@@ -66,6 +126,49 @@
             // console.log(numArray);
 
             imprimirNumeros()
+        }
+
+        //     ✏️ Actividad 2: Operaciones con arreglos
+        // Desarrolla un programa que permita al usuario ingresar 10 números reales desde el teclado. Los valores ingresados
+        // deberán ser almacenados en un arreglo unidimensional.
+
+        // Una vez cargados todos los datos, el programa debe realizar y mostrar por pantalla:
+
+        // La suma total de los valores almacenados.
+
+        // La multiplicación total de todos los elementos del arreglo.
+
+        // Para resolver esta actividad, deberás:
+
+        // Declarar un arreglo de tipo real con capacidad para 10 elementos.
+
+        // Utilizar un bucle Para para solicitar los datos e ir almacenándolos secuencialmente en el arreglo.
+
+        // Implementar una variable acumuladora para la suma y otra para la multiplicación.
+
+        // Recorrer nuevamente el arreglo para calcular los resultados requeridos.
+
+        function ejercicio2() {
+
+            let numArray = [];
+            let suma = 0;
+            let mult = 1;
+
+            for (let i = 0; i < 10; i++) {
+                let num = Number(prompt("Ingrese un numero real"));
+
+                while (isNaN(num)) {
+                    num = Number(prompt("Error:Ingrese un numero"));
+                }
+                numArray.push(num);
+                suma = suma + numArray[i];
+                mult = mult * num;
+            };
+
+            console.log(numArray);
+
+            alert(`Suma: ${suma}\nMultiplicacion: ${mult}`);
+
         }
     </script>
 </body>
