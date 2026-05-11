@@ -64,7 +64,8 @@
     Si el número se encuentra, mostrar únicamente la última posición en la que aparece (considerando que puede estar
     repetido).
 
-    Si el número no se encuentra, mostrar un mensaje que lo indique claramente.
+    Si el número no se encuentra, mostrar un mensaje que lo indique claramente. <br><br>
+    <button type="submit" onclick="ejercicio3()">EJercicio3</button>
 
     ✏️ Actividad 4: Búsqueda de elemento de mayor valor
     Desarrolla un programa que rellene un vector de tamaño N, con valores numéricos ingresados por el usuario. A
@@ -169,6 +170,66 @@
 
             alert(`Suma: ${suma}\nMultiplicacion: ${mult}`);
 
+        }
+
+        // ✏️ Actividad 3: Búsqueda de elemento específico
+        //     Desarrolla un programa que permita definir un vector cuyo tamaño sea determinado por el usuario.
+
+        //     Para ello, el programa deberá:
+
+        //     Solicitar al usuario, por teclado, el tamaño del arreglo y almacenar este valor en una variable.
+
+        //     Utilizar dicha variable para dimensionar dinámicamente el vector.
+
+        //     Llenar el arreglo con valores aleatorios entre 1 y 25, recorriendo cada una de sus posiciones.
+
+        //     Solicitar luego al usuario que ingrese un número para buscar dentro del arreglo.
+
+        // A continuación, el programa debe:
+
+        // Recorrer el arreglo en busca del número ingresado.
+
+        // Si el número se encuentra, mostrar únicamente la última posición en la que aparece (considerando que puede estar
+        // repetido).
+
+        // Si el número no se encuentra, mostrar un mensaje que lo indique claramente. 
+
+
+        function ejercicio3() {
+
+            let tamanoArray = Number(prompt("Ingrese un numero para dar dimension al arreglo."));
+
+            while (isNaN(tamanoArray) || tamanoArray < 1) {
+                tamanoArray = Number(prompt("Error: Ingrese un numero valido y mayor a 0 para dar dimension al arreglo."));
+            }
+
+            let numarrayEj3 = new Array(tamanoArray);
+            let printFinal = "";
+
+            for (let i = 0; i < numarrayEj3.length; i++) {
+                numarrayEj3[i] = Math.floor(Math.random() * (25 - 1 + 1)) + 1;
+            }
+
+            for (let j = 0; j < numarrayEj3.length; j++) {
+                printFinal = printFinal + "\n" + numarrayEj3[j];
+
+            }
+            console.log(printFinal);
+
+            //
+
+            let numberFind = Number(prompt("Ingrese un numero para buscar la posicion en el array"));
+
+            let indiceNumber = numarrayEj3.lastIndexOf(numberFind);
+
+            if (indiceNumber === -1) {
+                alert("El numero no se encuentra en el array.")
+            } else {
+                alert(`el numero buscado se encuentra por ultima vez en la posicion: ${indiceNumber}`)
+            }
+
+
+            // alert(`${printFinal}`);
         }
     </script>
 </body>
