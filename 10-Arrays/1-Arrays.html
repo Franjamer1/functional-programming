@@ -21,7 +21,7 @@
     utilizar una estructura de repetición "Para" para esta tarea.
 
     Una vez cargado el vector, recórrelo nuevamente para mostrar los valores almacenados por pantalla. <br><br>
-    <button type="submit" onclick="ejercicio1()">Ejercicio1</button>
+    <button type="submit" onclick="ejercicio1()">Ejercicio1</button> <br><br><br><br>
 
     ✏️ Actividad 2: Operaciones con arreglos
     Desarrolla un programa que permita al usuario ingresar 10 números reales desde el teclado. Los valores ingresados
@@ -42,7 +42,7 @@
     Implementar una variable acumuladora para la suma y otra para la multiplicación.
 
     Recorrer nuevamente el arreglo para calcular los resultados requeridos. <br><br>
-    <button type="submit" onclick="ejercicio2()">Ejercicio2</button>
+    <button type="submit" onclick="ejercicio2()">Ejercicio2</button> <br><br><br><br>
 
     ✏️ Actividad 3: Búsqueda de elemento específico
     Desarrolla un programa que permita definir un vector cuyo tamaño sea determinado por el usuario.
@@ -65,7 +65,7 @@
     repetido).
 
     Si el número no se encuentra, mostrar un mensaje que lo indique claramente. <br><br>
-    <button type="submit" onclick="ejercicio3()">EJercicio3</button>
+    <button type="submit" onclick="ejercicio3()">EJercicio3</button> <br><br><br><br>
 
     ✏️ Actividad 4: Búsqueda de elemento de mayor valor
     Desarrolla un programa que rellene un vector de tamaño N, con valores numéricos ingresados por el usuario. A
@@ -83,7 +83,8 @@
 
     Crear una función que reciba como parámetro el vector completo y retorne el valor más grande contenido en él.
 
-    Finalmente, mostrar por pantalla cuál fue el valor máximo encontrado en el vector.
+    Finalmente, mostrar por pantalla cuál fue el valor máximo encontrado en el vector. <br><br>
+    <button type="submit" onclick="ejercicio4()">Ejercicio4</button> <br><br><br><br>
     <script>
         //     Actividad 1: Ejemplo guiado - Uso de vector
         //     Crea un programa que solicite al usuario ingresar 5 valores numéricos, los almacene en un único arreglo (vector) y
@@ -230,6 +231,60 @@
 
 
             // alert(`${printFinal}`);
+        }
+
+
+        //     Actividad 4: Búsqueda de elemento de mayor valor
+        // Desarrolla un programa que rellene un vector de tamaño N, con valores numéricos ingresados por el usuario. A
+        // continuación, se deberá crear una función que reciba el vector y devuelva el valor más grande del arreglo.
+
+        // Desarrolla un programa que permita trabajar con un vector de tamaño N, determinado por el usuario.
+
+        // El programa deberá realizar las siguientes acciones:
+
+        // Solicitar al usuario, por teclado, la cantidad de elementos que tendrá el vector.
+
+        // Crear un vector con esa dimensión.
+
+        // Llenar el arreglo con valores aleatorios entre 0 y 100, recorriendo cada una de sus posiciones.
+
+        // Crear una función que reciba como parámetro el vector completo y retorne el valor más grande contenido en él.
+
+        // Finalmente, mostrar por pantalla cuál fue el valor máximo encontrado en el vector.
+
+        function ejercicio4() {
+
+            let longitudArray = Number(prompt("Ingrese un numero para definir el tamaño del array"));
+
+            while (isNaN(longitudArray) || longitudArray < 1) {
+
+                longitudArray = Number(prompt("Error: Ingrese un numero para definir el tamaño del array"));
+            }
+
+            let arrayEjercicio4 = new Array(longitudArray);
+
+            for (let i = 0; i < longitudArray; i++) {
+                arrayEjercicio4[i] = Math.floor(Math.random() * (100 - 0 + 1)) + 0;
+            }
+
+            console.log(arrayEjercicio4);
+
+
+
+            function devolverValorMayor(array) {
+
+                let numMayor = arrayEjercicio4[0]
+
+                for (let i = 0; i < array.length; i++) {
+                    if (array[i] > numMayor) {
+                        numMayor = array[i];
+                    }
+                }
+
+                return alert(`El numero mas grande del array es: ${numMayor}`);
+            }
+
+            devolverValorMayor(arrayEjercicio4);
         }
     </script>
 </body>
