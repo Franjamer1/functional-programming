@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays Ej complementarios</title>
+</head>
+
+<body>
+    Desarrolla un programa con un menú de opciones que permita al usuario realizar diversas operaciones con vectores
+    hasta que elija la opción 'Salir'. El menú contempla las siguientes opciones:
+
+    Llenar Vector A: Este vector, de tamaño N, se llena de manera aleatoria utilizando la función
+    Aleatorio(valorMin, valorMax) de PSeInt.
+
+    Llenar Vector B: Este vector, de tamaño N, se llena de manera aleatoria utilizando la función
+    Aleatorio(valorMin, valorMax) de PSeInt.
+
+    Llenar Vector C con la suma de los vectores A y B: La suma se realiza elemento a elemento (es decir, C[i] = A[i]
+    + B[i]). Esto quiere decir, por ejemplo, que la posición 1 del vector C será el número resultante de la suma de
+    la posición 1 del vector A y la posición 1 del vector B.
+
+    Llenar Vector C con la resta de los vectores B y A: La resta se realiza elemento a elemento (es decir, C[i] =
+    B[i] - A[i]). Esto quiere decir, por ejemplo, que la posición 1 del vector C será el número resultante de la
+    resta de la posición 1 del vector A y la posición 1 del vector B.
+
+    Mostrar: Esta opción permite al usuario decidir qué vector desea mostrar: Vector A, B o C.
+
+    Salir.
+
+    Tener en cuenta:
+
+    El rango de los números aleatorios para los vectores será de -100 a 100. La longitud para todos los vectores
+    será la misma, por lo tanto, esa información solo se solicitará una vez.
+
+    Utiliza funciones o subprocesos para mejorar la reutilización de código.
+
+    <br><br>
+    <button type="submit" onclick="ejComplementario1()">Ejercicio complementario 1</button>
+
+    2. Se requiere desarrollar un programa que maneje un vector unidimensional de 20 elementos de tipo carácter. El
+    programa debe realizar las siguientes tareas:
+
+    Solicita al usuario una frase y luego ingresa cada una de sus letras en el arreglo, asegurándote de que se
+    consideren los espacios en blanco como caracteres. Para facilitar esta tarea, puedes utilizar la función
+    Subcadena de PSeInt. Asegúrate también de validar que la frase tenga como máximo 20 caracteres.
+
+    Posteriormente, solicitar al usuario un carácter y una posición dentro del arreglo. El programa debe intentar
+    insertar el carácter en la posición indicada, siempre y cuando haya espacio disponible (es decir, la posición
+    esté vacía o contenga un espacio en blanco). Si la operación es exitosa, se mostrará el vector con la frase y el
+    carácter ingresado. En caso contrario, se emitirá un mensaje al usuario indicando que la posición está ocupada.
+
+    Por ejemplo, suponiendo la siguiente frase y los subíndices del vector:
+
+
+    B i e n v e n i d o u s u a r i o !
+    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+
+
+
+    Si se desea ingresar el carácter “%” en la posición 10, entonces el resultado sería:
+
+
+    B i e n v e n i d o % u s u a r i o !
+    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+    3. Crea un subproceso que llene dos arreglos de tamaño n con números aleatorios. Luego, desarrollar una función
+    que tome como argumentos los dos arreglos y determine si todos sus valores son iguales o no. Esta función debe
+    devolver un valor booleano que indique el resultado de la validación. Finalmente, en el algoritmo principal,
+    mostrar un mensaje según el resultado obtenido. Se recomienda utilizar variables de tipo lógico para facilitar
+    la implementación.
+
+    <script>
+
+        //     Desarrolla un programa con un menú de opciones que permita al usuario realizar diversas operaciones con vectores
+        // hasta que elija la opción 'Salir'. El menú contempla las siguientes opciones:
+
+        // Llenar Vector A: Este vector, de tamaño N, se llena de manera aleatoria utilizando la función
+        // Aleatorio(valorMin, valorMax) de PSeInt.
+
+        // Llenar Vector B: Este vector, de tamaño N, se llena de manera aleatoria utilizando la función
+        // Aleatorio(valorMin, valorMax) de PSeInt.
+
+        // Llenar Vector C con la suma de los vectores A y B: La suma se realiza elemento a elemento (es decir, C[i] = A[i]
+        // + B[i]). Esto quiere decir, por ejemplo, que la posición 1 del vector C será el número resultante de la suma de
+        // la posición 1 del vector A y la posición 1 del vector B.
+
+        // Llenar Vector C con la resta de los vectores B y A: La resta se realiza elemento a elemento (es decir, C[i] =
+        // B[i] - A[i]). Esto quiere decir, por ejemplo, que la posición 1 del vector C será el número resultante de la
+        // resta de la posición 1 del vector A y la posición 1 del vector B.
+
+        // Mostrar: Esta opción permite al usuario decidir qué vector desea mostrar: Vector A, B o C.
+
+        // Salir.
+
+        // Tener en cuenta:
+
+        // El rango de los números aleatorios para los vectores será de -100 a 100. La longitud para todos los vectores
+        // será la misma, por lo tanto, esa información solo se solicitará una vez.
+
+        // Utiliza funciones o subprocesos para mejorar la reutilización de código.
+
+        function ejComplementario1() {
+            let opcion;
+            let opcionMostrar;
+
+            let tamanoVectores = tamanoArray();
+
+            let vectorA;
+            let vectorB;
+            let vectorC;
+
+            // alert(`tamaño vectores: ${tamanoVectores}\nvector A longitud: ${vectorA.length}\nVectorB longitud: ${vectorB.length}`)
+
+            do {
+                opcion = Number(prompt("Ingrese un numero del 1 al 6.\n1-Llenar vector A\n2-Llenar vector B\n3-Llenar vector C (sumando vector A + B)\n4-Llenar vector C(restando A - B)\n5-Mostrar Vectores\n6-Salir"));
+
+                switch (opcion) {
+                    case 1: alert("Llenando arreglo A");
+
+                        vectorA = new Array(tamanoVectores);
+
+                        for (let i = 0; i < vectorA.length; i++) {
+                            vectorA[i] = Math.floor(Math.random() * (100 - (-100) + 1)) + (-100);
+                        }
+
+                        break;
+                    case 2: alert("Llenando arreglo B")
+
+                        vectorB = new Array(tamanoVectores);
+
+                        for (let j = 0; j < vectorB.length; j++) {
+                            vectorB[j] = Math.floor(Math.random() * (100 - (-100) + 1)) + (-100);
+                        }
+
+                        break;
+                    case 3: alert("Sumando elementos de Arreglos A + B y llenando Arreglo C");
+
+                        if (!vectorA || !vectorB) {
+
+                            alert("Error: primero debe rellenar los vectores A y B.")
+                            break;
+
+                        }
+
+                        if (!vectorC) {
+                            vectorC = new Array(tamanoVectores);
+
+                        } else {
+                            for (let f = 0; f < vectorC.length; f++) {
+                                vectorC[f] = vectorA[f] + vectorB[f];
+                            }
+                        }
+
+                        break;
+                    case 4: alert("Restando elementos de Arreglos A + B y llenando Arreglo C")
+
+                        if (!vectorA || !vectorB) {
+
+                            alert("Error primero debe llenar los vectores A y B");
+                            break;
+
+                        }
+
+                        if (!vectorC) {
+                            vectorC = new Array(tamanoVectores);
+                        } else {
+                            for (let k = 0; k < vectorC.length; k++) {
+                                vectorC[k] = vectorB[k] - vectorA[k];
+                            }
+                        }
+
+                        break;
+                    case 5: opcionMostrar = Number(prompt("Ingrese un numero para seleccionar una opcion:\n1-Mostrar Vector A\n2-Mostrar Vector B\n3-Mostrar vector C"));
+
+                        switch (opcionMostrar) {
+                            case 1:
+                                let mostrarVectorA = "";
+
+                                if (!vectorA) {
+                                    alert("Error: el vector A esta vacio")
+                                    break
+                                }
+
+                                for (let l = 0; l < vectorA.length; l++) {
+                                    mostrarVectorA = mostrarVectorA + "," + vectorA[l]
+                                }
+
+                                alert(`Vector A : ${mostrarVectorA}`)
+
+                                break;
+                            case 2:
+                                let mostrarVectorB = "";
+
+                                if (!vectorB) {
+                                    alert("Error: el vector B esta vacio")
+                                    break;
+                                }
+
+                                for (let h = 0; h < vectorB.length; h++) {
+                                    mostrarVectorB = mostrarVectorB + "," + vectorB[h];
+                                }
+
+                                alert(`Vector B: ${mostrarVectorB}`);
+
+                                break;
+
+                            case 3:
+                                let mostrarVectorC = "";
+
+                                if (!vectorC) {
+                                    alert("Error: el vector C esta vacio");
+
+                                    break;
+                                }
+
+                                for (let g = 0; g < vectorC.length; g++) {
+                                    mostrarVectorC = mostrarVectorC + "," + vectorC[g];
+                                }
+
+                                alert(`Vector C: ${mostrarVectorC}`);
+
+                                break;
+                            default:
+                                alert("Error: Ingrese un numero entre 1 y 3");
+                                break;
+                        }
+
+                        break;
+                    case 6: alert("Saliendo...")
+
+                        break;
+
+
+                    default:
+
+                        alert("Error: Ingrese un numero entre 1 y 6");
+                        break;
+                }
+            } while (opcion !== 6);
+
+            function tamanoArray() {
+                return Number(prompt("Ingrese un numero para determinar la longitud de los arreglos"));
+            }
+
+        }
+    </script>
+</body>
+
+</html>
