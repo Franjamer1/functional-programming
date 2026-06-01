@@ -63,7 +63,10 @@
 
 
     B i e n v e n i d o % u s u a r i o !
-    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 <br><br>
+    <button type="submit" onclick="ejComplementario2()">Ejercicio Complementario 2</button> <br><br>
+
+
     3. Crea un subproceso que llene dos arreglos de tamaño n con números aleatorios. Luego, desarrollar una función
     que tome como argumentos los dos arreglos y determine si todos sus valores son iguales o no. Esta función debe
     devolver un valor booleano que indique el resultado de la validación. Finalmente, en el algoritmo principal,
@@ -243,6 +246,72 @@
                 return Number(prompt("Ingrese un numero para determinar la longitud de los arreglos"));
             }
 
+        }
+
+        //     2. Se requiere desarrollar un programa que maneje un vector unidimensional de 20 elementos de tipo carácter. El
+        // programa debe realizar las siguientes tareas:
+
+        // Solicita al usuario una frase y luego ingresa cada una de sus letras en el arreglo, asegurándote de que se
+        // consideren los espacios en blanco como caracteres. Para facilitar esta tarea, puedes utilizar la función
+        // Subcadena de PSeInt. Asegúrate también de validar que la frase tenga como máximo 20 caracteres.
+
+        // Posteriormente, solicitar al usuario un carácter y una posición dentro del arreglo. El programa debe intentar
+        // insertar el carácter en la posición indicada, siempre y cuando haya espacio disponible (es decir, la posición
+        // esté vacía o contenga un espacio en blanco). Si la operación es exitosa, se mostrará el vector con la frase y el
+        // carácter ingresado. En caso contrario, se emitirá un mensaje al usuario indicando que la posición está ocupada.
+
+        // Por ejemplo, suponiendo la siguiente frase y los subíndices del vector:
+
+
+        // B i e n v e n i d o u s u a r i o !
+        // 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+
+
+
+        // Si se desea ingresar el carácter “%” en la posición 10, entonces el resultado sería:
+
+
+        // B i e n v e n i d o % u s u a r i o !
+        // 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+
+        function ejComplementario2() {
+            let arregloCaracteres = new Array(20).fill(" ");
+            let fraseFinal = "";
+
+            let frase = String(prompt("Ingrese una frase de 20 caracteres como maximo"));
+
+            while (frase.length > 20 || frase.length < 1) {
+                frase = String(prompt("Error: Ingrese una frase de 20 caracteres como maximo"));
+
+            }
+
+            for (let i = 0; i < frase.length; i++) {
+                arregloCaracteres[i] = frase[i];
+            }
+
+
+            let charInput = String(prompt("Ingrese un caracter para ingresar en el Array"));
+
+            let indexInput = Number(prompt("Ingrese un indice donde desea ubicar el caracter ingresado"));
+
+            if (indexInput > 19 || indexInput < 0 || isNaN(indexInput)) {
+                alert("Error, el arreglo solo tiene 20 lugares disponibles");
+                return;
+            }
+
+            if (arregloCaracteres[indexInput] !== " ") {
+                alert(`El indice que desea cambiar ya esta ocupado por el caracter: ${arregloCaracteres[indexInput]}`);
+                return
+            }
+
+
+            arregloCaracteres[indexInput] = charInput;
+
+            for (let j = 0; j < arregloCaracteres.length; j++) {
+                fraseFinal = fraseFinal + arregloCaracteres[j];
+            }
+
+            alert(`Frase final: ${fraseFinal}`);
         }
     </script>
 </body>
