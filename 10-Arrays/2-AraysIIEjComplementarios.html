@@ -51,7 +51,7 @@
     esté vacía o contenga un espacio en blanco). Si la operación es exitosa, se mostrará el vector con la frase y el
     carácter ingresado. En caso contrario, se emitirá un mensaje al usuario indicando que la posición está ocupada.
 
-    Por ejemplo, suponiendo la siguiente frase y los subíndices del vector: 
+    Por ejemplo, suponiendo la siguiente frase y los subíndices del vector:
 
 
     B i e n v e n i d o u s u a r i o !
@@ -71,7 +71,9 @@
     que tome como argumentos los dos arreglos y determine si todos sus valores son iguales o no. Esta función debe
     devolver un valor booleano que indique el resultado de la validación. Finalmente, en el algoritmo principal,
     mostrar un mensaje según el resultado obtenido. Se recomienda utilizar variables de tipo lógico para facilitar
-    la implementación.
+    la implementación. <br><br>
+
+    <button type="submit" onclick="ejComplementario3()">Ejercicio Complementario 3</button>
 
     <script>
 
@@ -314,6 +316,31 @@
 
             alert(`Frase final: ${fraseFinal}`);
         }
+
+        //     3. Crea un subproceso que llene dos arreglos de tamaño n con números aleatorios. Luego, desarrollar una función
+        // que tome como argumentos los dos arreglos y determine si todos sus valores son iguales o no. Esta función debe
+        // devolver un valor booleano que indique el resultado de la validación. Finalmente, en el algoritmo principal,
+        // mostrar un mensaje según el resultado obtenido. Se recomienda utilizar variables de tipo lógico para facilitar
+        // la implementación.
+
+        function ejComplementario3() {
+            let arr1 = new Array(10).fill(null).map(() => Math.floor(Math.random() * 10) + 1)
+            let arr2 = new Array(10).fill(null).map(() => Math.floor(Math.random() * 10) + 1)
+
+            function sonIguales(ArrayA, ArrayB) {
+                const SonIguales = ArrayA.length === ArrayB.length &&
+                    ArrayA.every((value, i) => value === ArrayB[i]);
+
+                return SonIguales;
+            }
+
+            if (sonIguales(arr1, arr2) === true) {
+                alert("Todos los elementos de ambos arreglos son iguales.")
+            } else {
+                alert("Los elementos de ambos arreglos son diferentes.")
+            }
+        }
+
     </script>
 </body>
 
