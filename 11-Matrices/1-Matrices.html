@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Actividad 1: Ejemplo guiado - Uso de matriz
+    Crea un programa que solicite al usuario ingresar 9 valores, los cuales deben almacenarse en una matriz (arreglo
+    bidimensional) y mostrarse por pantalla una vez finalizada la carga de datos. Para lograrlo, sigue los pasos que se
+    indican a continuación:
+
+    Declara el tipo de dato que almacenará la matriz.
+
+    Define las dimensiones del arreglo: en este caso, una matriz de 3 filas por 3 columnas (3×3), ya que se necesitan 9
+    espacios.
+
+    Utiliza bucles anidados para recorrer la matriz posición por posición y solicitar al usuario que introduzca un dato
+    en cada una. Puedes emplear la estructura de bucle "Para", donde:
+
+    El bucle externo recorre las filas.
+
+    El bucle interno recorre las columnas.
+
+    Aquí tienes un ejemplo de como resolverlo:
+
+    <button type="submit" onclick="ejMatricesUno()">ejercicio 1</button>
+    <script>
+
+
+        // Actividad 1: Ejemplo guiado - Uso de matriz
+        // Crea un programa que solicite al usuario ingresar 9 valores, los cuales deben almacenarse en una matriz (arreglo
+        // bidimensional) y mostrarse por pantalla una vez finalizada la carga de datos. Para lograrlo, sigue los pasos que se
+        // indican a continuación:
+
+        // Declara el tipo de dato que almacenará la matriz.
+
+        // Define las dimensiones del arreglo: en este caso, una matriz de 3 filas por 3 columnas (3×3), ya que se necesitan 9
+        // espacios.
+
+        // Utiliza bucles anidados para recorrer la matriz posición por posición y solicitar al usuario que introduzca un dato
+        // en cada una. Puedes emplear la estructura de bucle "Para", donde:
+
+        // El bucle externo recorre las filas.
+
+        // El bucle interno recorre las columnas.
+
+        // Aquí tienes un ejemplo de como resolverlo:
+
+        function ejMatricesUno() {
+
+            let ArrayA;
+
+            let ArrayInternoB = [0, 0, 0];
+            let ArrayInternoC = [0, 0, 0];
+            let ArrayInternoD = [0, 0, 0];
+
+
+            ArrayA = [
+                ArrayInternoB,
+                ArrayInternoC,
+                ArrayInternoD
+            ];
+
+
+            for (let i = 0; i < 3; i++) {
+
+                for (let j = 0; j < 3; j++) {
+                    let valores = Number(prompt(`Ingrese un numero para asignar a la posicion ${j}`));
+
+                    if (ArrayA[i[j]] > 2) {
+                        continue
+                    }
+
+                    ArrayA[i][j] = valores;
+
+                }
+                // if (i < 3) {
+                //     ArrayA[ArrayInternoB[i]].push;
+                // } else if (i > 2 && i < 5) {
+                //     ArrayA[ArrayInternoC[i]].push;
+                // } else {
+                //     ArrayA[ArrayInternoD[i]].push;
+                // }
+            };
+
+            console.log(ArrayA);
+
+        }
+    </script>
+</body>
+
+</html>
