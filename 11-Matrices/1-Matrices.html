@@ -29,6 +29,23 @@
     Aquí tienes un ejemplo de como resolverlo:
 
     <button type="submit" onclick="ejMatricesUno()">ejercicio 1</button>
+
+    Actividad 2: Matriz aleatoria y suma de elementos
+    En esta actividad trabajarás con una matriz de tamaño variable, cuyo número de filas y columnas será ingresado por
+    el usuario. Tu objetivo será automatizar tanto la carga como el procesamiento de los datos utilizando subprogramas.
+
+    ¿Qué debes hacer?
+
+    Solicita al usuario que indique cuántas filas (n) y cuántas columnas (m) tendrá la matriz.
+
+    Crea dos subprogramas:
+
+    El primero debe llenar la matriz automáticamente con números aleatorios, por ejemplo, del 1 al 100.
+
+    El segundo debe calcular y mostrar la suma de todos los elementos que contiene la matriz.
+
+    Finalmente, muestra en pantalla la matriz completa y el resultado de la suma total. <br><br>
+    <button type="submit" onclick="ejMatricesDos()">Ejercicio 2</button>
     <script>
 
 
@@ -79,18 +96,64 @@
                     ArrayA[i][j] = valores;
 
                 }
-                // if (i < 3) {
-                //     ArrayA[ArrayInternoB[i]].push;
-                // } else if (i > 2 && i < 5) {
-                //     ArrayA[ArrayInternoC[i]].push;
-                // } else {
-                //     ArrayA[ArrayInternoD[i]].push;
-                // }
             };
 
             console.log(ArrayA);
-
         }
+
+        // Actividad 2: Matriz aleatoria y suma de elementos
+        // En esta actividad trabajarás con una matriz de tamaño variable, cuyo número de filas y columnas será ingresado por el usuario.
+
+        // Tu objetivo será automatizar tanto la carga como el procesamiento de los datos utilizando subprogramas.
+
+        // ¿Qué debes hacer ?
+
+        // Solicita al usuario que indique cuántas filas(n) y cuántas columnas(m) tendrá la matriz.
+
+        // Crea dos subprogramas:
+
+        // El primero debe llenar la matriz automáticamente con números aleatorios, por ejemplo, del 1 al 100.
+
+        // El segundo debe calcular y mostrar la suma de todos los elementos que contiene la matriz.
+
+        // Finalmente, muestra en pantalla la matriz completa y el resultado de la suma total.
+
+        function ejMatricesDos() {
+
+            let matrizA = [];
+
+            filas = Number(prompt`Ingresa la cantidad de filas que tendra la matriz`);
+
+            columnas = Number(prompt`Ingrese la cantidad de columnas que tendra la matriz`);
+
+            for (let i = 0; i < filas; i++) {
+
+                let matrizInterna = [];
+
+                for (let j = 0; j < columnas; j++) {
+                    matrizInterna[j] = Math.floor(Math.random() * 100) + 1;
+                };
+
+                matrizA[i] = matrizInterna;
+            };
+
+            console.log(matrizA);
+
+            function SumarValoresArray() {
+                let suma = 0;
+
+                for (let i = 0; i < filas; i++) {
+                    for (let j = 0; j < columnas; j++) {
+                        suma += matrizA[i][j]
+                    };
+                };
+
+                alert(`Suma: ${suma}`);
+            };
+
+            console.table(matrizA);
+            SumarValoresArray();
+        };
     </script>
 </body>
 
