@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Se desea crear un programa que realice dos subprocesos:
+
+    En el primer subproceso se rellenará una matriz cuadrada con números aleatorios, excepto en la diagonal principal,
+    la cual estará compuesta por ceros. La dimensión de la matriz será elegida por el desarrollador mientras sea
+    cuadrada.
+
+    En el segundo subproceso se imprimirá la matriz resultante.
+
+    Después de ejecutar ambos subprocesos, se mostrará la matriz generada por pantalla. <br><br>
+    <button type="submit" onclick="ejercicioComplementarioUno()">Ejercicio complementario 1</button>
+
+    2. Desarrolla un programa para rellenar una matriz de tamaño 3 x 3 con los caracteres de una palabra de longitud 9
+    proporcionada por el usuario, asegurando que la palabra se muestre de manera continua en la matriz.
+
+    Primero, se debe validar que la palabra ingresada por el usuario tenga exactamente 9 caracteres. Luego, se insertará
+    un carácter en cada posición de la matriz. Finalmente, se imprimirá la matriz rellenada por pantalla.
+
+    Por ejemplo, si el usuario ingresa la palabra "habilidad", la matriz resultante se vería así:
+    H A B
+    I L I
+    D A D<br><br>
+    <button type="submit" onclick="ejercicioComplementarioDos()">Ejercicio complementario 2</button>
+
+
+
+    <script>
+        // Se desea crear un programa que realice dos subprocesos:
+
+        // En el primer subproceso se rellenará una matriz cuadrada con números aleatorios, excepto en la diagonal principal, la cual estará compuesta por ceros. La dimensión de la matriz será elegida por el desarrollador mientras sea cuadrada.
+
+        // En el segundo subproceso se imprimirá la matriz resultante.
+
+        // Después de ejecutar ambos subprocesos, se mostrará la matriz generada por pantalla.
+
+        function ejercicioComplementarioUno() {
+
+            let matrizA = [
+                [],
+                [],
+                [],
+                [],
+            ];
+
+            function fillMatrix() {
+
+                let matrizInternaLenght = 4;
+
+                for (let i = 0; i < matrizA.length; i++) {
+                    let diag = i;
+
+                    for (let j = 0; j < matrizInternaLenght; j++) {
+
+                        if (j === diag) {
+                            matrizA[i][j] = 0;
+                        } else {
+                            matrizA[i][j] = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+                        };
+                    }
+                }
+            }
+
+            function printMatrix() {
+                console.table(matrizA);
+            }
+
+            fillMatrix();
+            printMatrix();
+        }
+
+
+        // 2. Desarrolla un programa para rellenar una matriz de tamaño 3 x 3 con los caracteres de una palabra de longitud 9 proporcionada por el usuario, asegurando que la palabra se muestre de manera continua en la matriz.
+
+        // Primero, se debe validar que la palabra ingresada por el usuario tenga exactamente 9 caracteres. Luego, se insertará un carácter en cada posición de la matriz. Finalmente, se imprimirá la matriz rellenada por pantalla.
+
+        // Por ejemplo, si el usuario ingresa la palabra "habilidad", la matriz resultante se vería así:
+
+
+        // H	A	B
+        // I	L	I
+        // D	A	D
+
+        function ejercicioComplementarioDos() {
+
+            let count = 0;
+
+            let matrixA = [
+                [],
+                [],
+                [],
+            ]
+
+            let matrixInternaLength = 3;
+
+            let word = String(prompt("ingrese una palabra de 9 letras."));
+
+            while (word.length !== 9) {
+                word = String(prompt("ERROR:ingrese una palabra de 9 letras."));
+            };
+
+            for (let i = 0; i < matrixA.length; i++) {
+                let letter;
+
+                for (let j = 0; j < matrixInternaLength; j++) {
+                    letter = word.charAt(count).toUpperCase();
+                    matrixA[i][j] = letter;
+                    count++
+                }
+            }
+
+            console.table(matrixA);
+        }
+    </script>
+</body>
+
+</html>
