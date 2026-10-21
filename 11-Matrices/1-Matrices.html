@@ -66,7 +66,7 @@
     Si el número no se encuentra en la matriz, informa esta situación con un mensaje adecuado.
 
     Si lo consideras útil, puedes imprimir la matriz para validar visualmente su contenido y facilitar la verificación
-    de los resultados. <br><br>
+    de los resultados. <br><br> <button type="submit" onclick="ejMatricesTres()">Ejercicio 3</button>
 
     <script>
 
@@ -210,8 +210,61 @@
             var indexCant = 5;
 
             for (let i = 0; i < matrizA.length; i++) {
-                matrizA[i].length = indexCant;
+
+                for (let j = 0; j < indexCant; j++) {
+                    matrizA[i][j] = Math.floor(Math.random() * (40 - 10 + 1)) + 10;
+                }
             };
+
+            console.table(matrizA);
+
+            function searchNumber() {
+                let numberInput = Number(
+                    prompt("Ingrese un número entero para buscar en la matriz")
+                );
+
+                while (!Number.isInteger(numberInput)) {
+                    numberInput = Number(
+                        prompt("Error: ingrese un número ENTERO")
+                    );
+                }
+
+                for (let i = 0; i < matrizA.length; i++) {
+                    for (let j = 0; j < indexCant; j++) {
+                        if (matrizA[i][j] === numberInput) {
+                            alert(
+                                `El número ${numberInput} se encuentra en la fila ${i + 1}, columna ${j + 1}`
+                            );
+                            return;
+                        }
+                    }
+                }
+
+                alert("El número no se encuentra en la matriz");
+            }
+            // function searchNumber() {
+            //     let numberInput = Number(prompt("Ingrese un numero entero para verificar si esta incluido en la matriz"));
+
+
+            //     // while (numberInput % 2 !== 0 || numberInput < 0 || isNaN(numberInput)) {
+            //     //     numberInput = Number(prompt("Error:Ingrese un numero ENTERO para verificar si esta incluido en la matriz"));
+            //     // };
+
+            //     for (let i = 0; i < matrizA.length; i++) {
+            //         for (let j = 0; j < indexCant; j++) {
+            //             if (matrizA.includes(numberInput)) {
+            //                 alert(`El numero que usted ingreso se encuentra en la posicion ${matrizA[i][j] + 1}`);
+            //             } else {
+            //                 alert("El numero no se encuentra en la matriz");
+            //                 return;
+            //             }
+
+            //         }
+            //     }
+            // }
+
+            searchNumber();
+
         }
     </script>
 </body>
