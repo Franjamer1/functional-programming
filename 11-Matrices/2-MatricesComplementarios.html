@@ -17,7 +17,7 @@
     En el segundo subproceso se imprimirá la matriz resultante.
 
     Después de ejecutar ambos subprocesos, se mostrará la matriz generada por pantalla. <br><br>
-    <button type="submit" onclick="ejercicioComplementarioUno()">Ejercicio complementario 1</button>
+    <button type="submit" onclick="ejercicioComplementarioUno()">Ejercicio complementario 1</button> <br><br>
 
     2. Desarrolla un programa para rellenar una matriz de tamaño 3 x 3 con los caracteres de una palabra de longitud 9
     proporcionada por el usuario, asegurando que la palabra se muestre de manera continua en la matriz.
@@ -29,7 +29,20 @@
     H A B
     I L I
     D A D<br><br>
-    <button type="submit" onclick="ejercicioComplementarioDos()">Ejercicio complementario 2</button>
+    <button type="submit" onclick="ejercicioComplementarioDos()">Ejercicio complementario 2</button> <br><br>
+
+    3. Crea una matriz mágica. Una matriz mágica es una matriz cuadrada, es decir, donde el número de filas es igual al
+    número de columnas, y tiene la propiedad especial de que la suma de los elementos de cada fila, cada columna y las
+    dos diagonales es igual. Por ejemplo, la siguiente matriz es mágica:
+
+    2 7 6
+    9 5 1
+    4 3 8
+    En este ejemplo, la suma de las filas, columnas y diagonales siempre da como resultado 15. El objetivo del ejercicio
+    es construir un algoritmo que verifique si una matriz de enteros es mágica. Si la matriz es mágica, el programa debe
+    mostrar la suma total. Además, el programa debe validar que los números introducidos estén en el rango de 1 a 9. El
+    usuario podrá definir el tamaño de la matriz, el cual no debe exceder un orden de 10. <br><br>
+    <button type="submit" onclick="ejercicioComplementarioTres()">Ejercicio complementario 3</button>
 
 
 
@@ -119,6 +132,61 @@
 
             console.table(matrixA);
         }
+
+        //         3. Crea una matriz mágica.Una matriz mágica es una matriz cuadrada, es decir, donde el número de filas es igual al número de columnas, y tiene la propiedad especial de que
+        //  la suma de los elementos de cada fila, cada columna y las dos diagonales es igual.Por ejemplo, la siguiente matriz es mágica:
+        //         2	7	6
+        //         9	5	1
+        //         4	3	8
+        // En este ejemplo, la suma de las filas, columnas y diagonales siempre da como resultado 15. El objetivo del ejercicio es construir un algoritmo que verifique si una matriz de
+        // enteros es mágica.Si la matriz es mágica, el programa debe mostrar la suma total.Además, el programa debe validar que los números
+        // introducidos estén en el rango de 1 a 9. El usuario podrá definir el tamaño de la matriz, el cual no debe exceder un orden de 10.
+
+
+        function ejercicioComplementarioTres() {
+            let matrixA = [];
+
+            let matrixLength = Number(prompt("Ingrese un numero para definir la cantidad de filas y columnas de la matriz"));
+
+            matrixA.length = matrixLength;
+
+            let arraysLength = matrixLength;
+
+            let firstDiag;
+
+            let additionFirstDiag = 0;
+
+            let additionSecondDiag = 0;
+
+            for (let i = 0; i < matrixA.length; i++) {
+                matrixA[i] = []
+                for (let j = 0; j < arraysLength; j++) {
+                    matrixA[i][j] = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
+                }
+            };
+
+            console.table(matrixA);
+
+            for (let i = 0; i < matrixA.length; i++) {
+                for (let j = 0; j < arraysLength; j++) {
+                    if (i === j) {
+                        firstDiag = matrixA[i][j];
+
+                        additionFirstDiag += firstDiag;
+                    };
+
+                    if (i + j === matrixLength - 1) {
+                        additionSecondDiag += matrixA[i][j];
+                    }
+                }
+            };
+
+            if (additionFirstDiag === additionSecondDiag) {
+                alert("La matriz es magica");
+            } else {
+                alert("La matriz no es magica");
+            }
+        };
     </script>
 </body>
 
