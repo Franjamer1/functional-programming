@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Actividad 1:Generación y trasposición de una matriz
+    Llenar la matriz con números aleatorios comprendidos entre 1 y 100, luego mostrar su traspuesta. En caso de no estar
+    familiarizado con el concepto de traspuesta, puedes consultar la siguiente referencia:
+
+    En esta actividad, deberás implementar un programa que realice las siguientes acciones:
+
+    Solicita al usuario ingresar dos valores numéricos enteros:
+
+    n: cantidad de filas
+
+    m: cantidad de columnas
+
+    Declara y dimensiona una matriz de tamaño n x m (n filas por m columnas) que almacene valores enteros. Rellena
+    automáticamente la matriz con números aleatorios entre 25 y 75 inclusive.
+
+    Muestra la matriz original por pantalla, respetando su estructura de filas y columnas.
+
+    Genera y muestra la matriz traspuesta. La matriz traspuesta se obtiene intercambiando las filas por las columnas. Es
+    decir, el elemento que originalmente está en la posición [i,j] pasará a la posición [j,i].
+
+    💡 Si no estás familiarizado con el concepto de matriz traspuesta, puedes consultar el siguiente recurso de apoyo:
+    Matriz Traspuesta. <br><br>
+    <button type="submit" onclick="ejerciciosAvanzadosUno()">ejercicios Avanzados Uno</button>
+    <script>
+        //  Actividad 1:Generación y trasposición de una matriz
+        //     Llenar la matriz con números aleatorios comprendidos entre 1 y 100, luego mostrar su traspuesta. En caso de no estar
+        //     familiarizado con el concepto de traspuesta, puedes consultar la siguiente referencia:
+
+        //     En esta actividad, deberás implementar un programa que realice las siguientes acciones:
+
+        //     Solicita al usuario ingresar dos valores numéricos enteros:
+
+        //     n: cantidad de filas
+
+        //     m: cantidad de columnas
+
+        //     Declara y dimensiona una matriz de tamaño n x m (n filas por m columnas) que almacene valores enteros. Rellena
+        //     automáticamente la matriz con números aleatorios entre 25 y 75 inclusive.
+
+        //     Muestra la matriz original por pantalla, respetando su estructura de filas y columnas.
+
+        //     Genera y muestra la matriz traspuesta. La matriz traspuesta se obtiene intercambiando las filas por las columnas. Es
+        //     decir, el elemento que originalmente está en la posición [i,j] pasará a la posición [j,i].
+
+        //     💡 Si no estás familiarizado con el concepto de matriz traspuesta, puedes consultar el siguiente recurso de apoyo:
+        //     Matriz Traspuesta.
+
+        function ejerciciosAvanzadosUno() {
+            let numeroFilas = Number(prompt("Ingrese un numero entero para indicar la cantidad de filas"));
+
+            while (!Number.isInteger(numeroFilas) || isNaN(numeroFilas)) {
+                numeroFilas = Number(prompt("Ingrese un numero entero para indicar la cantidad de filas"));
+            };
+
+            let numeroColumnas = Number(prompt("Ingrese un numero entero para indicar la cantidad de columnas"));
+
+            while (!Number.isInteger(numeroColumnas) || isNaN(numeroColumnas)) {
+                numeroColumnas = Number(prompt("Ingrese un numero entero para indicar la cantidad de columnas"));
+
+            };
+
+            let matrizA = [];
+
+            let matrizB = [];
+
+            for (let i = 0; i < numeroFilas; i++) {
+                matrizA[i] = [];
+
+                for (let j = 0; j < numeroColumnas; j++) {
+                    matrizA[i][j] = Math.floor(Math.random() * (75 - 25 + 1)) + 25;
+                };
+            }
+
+            console.table(matrizA);
+
+
+            // [10, 20],
+            // [30, 40],
+            // [50, 60]
+
+            for (let i = 0; i < numeroColumnas; i++) {
+                matrizB[i] = [];
+                for (let j = 0; j < numeroFilas; j++) {
+                    matrizB[i][j] = matrizA[j][i];
+                }
+            }
+
+            console.log("--------------MATRIZ TRANSPUESTA---------------");
+
+            console.table(matrizB);
+        };
+    </script>
+</body>
+
+</html>
