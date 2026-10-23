@@ -52,9 +52,40 @@
     Resultado esperado:
 
     El contenido de la matriz generada debe visualizarse de la siguiente forma: <br><br>
-    <button type="submit" onclick="ejerciciosAvanzadosDos()">Ejercicio Avanzados Dos</button>
+    <button type="submit" onclick="ejerciciosAvanzadosDos()">Ejercicio Avanzados Dos</button> <br><br>
 
-    imgps
+    ctividad 3: Suma de columnas en una matriz
+    En esta actividad, desarrollarás un programa que trabaje con una matriz de 3 columnas y una cantidad de filas
+    definida por el usuario. La finalidad es calcular la suma de valores entre columnas y reflejar el resultado en una
+    estructura organizada.
+
+    Instrucciones:
+
+    Solicita al usuario la cantidad de filas que desea utilizar para la matriz.
+
+    Declara y dimensiona una matriz con 3 columnas y la cantidad de filas ingresada por el usuario previamente.
+
+    Rellena las dos primeras columnas de la matriz: Puedes hacerlo pidiendo los valores manualmente al usuario, O bien,
+    utilizar números aleatorios si prefieres automatizar la carga de datos (recomendado).
+
+    Completa la tercera columna con la suma de los valores correspondientes de la primera y la segunda columna.
+
+    Muestra por pantalla la matriz resultante, indicando claramente cómo se obtuvo cada valor de la tercera columna.
+
+    Ejemplo de salida esperada:
+
+
+    3 | 5 | 8 → 8 se obtuvo de sumar 3 + 5
+
+    4 | 3 | 7 → 7 se obtuvo de sumar 4 + 3
+
+    1 | 4 | 5 → 5 se obtuvo de sumar 1 +4
+
+    💡 Consejo: Si lo consideras conveniente, puedes emplear un único bucle para recorrer las filas de la matriz y
+    calcular la suma en el mismo momento en que se ingresan los valores. Esta estrategia permite optimizar el uso de
+    recursos y simplificar la estructura del código, haciendo el programa más eficiente y fácil de entender. <br><br>
+    <button type="submit" onclick="ejerciciosAvanzadosTres()">Ejercicio Avanzado Tres</button>
+
     <script>
         //  Actividad 1:Generación y trasposición de una matriz
         //     Llenar la matriz con números aleatorios comprendidos entre 1 y 100, luego mostrar su traspuesta. En caso de no estar
@@ -162,6 +193,61 @@
             console.table(matrizA);
         }
 
+
+        // Actividad 3: Suma de columnas en una matriz
+        // En esta actividad, desarrollarás un programa que trabaje con una matriz de 3 columnas y una cantidad de filas
+        // definida por el usuario. La finalidad es calcular la suma de valores entre columnas y reflejar el resultado en una
+        // estructura organizada.
+
+        // Instrucciones:
+
+        // Solicita al usuario la cantidad de filas que desea utilizar para la matriz.
+
+        // Declara y dimensiona una matriz con 3 columnas y la cantidad de filas ingresada por el usuario previamente.
+
+        // Rellena las dos primeras columnas de la matriz: Puedes hacerlo pidiendo los valores manualmente al usuario, O bien,
+        // utilizar números aleatorios si prefieres automatizar la carga de datos (recomendado).
+
+        // Completa la tercera columna con la suma de los valores correspondientes de la primera y la segunda columna.
+
+        // Muestra por pantalla la matriz resultante, indicando claramente cómo se obtuvo cada valor de la tercera columna.
+
+        // Ejemplo de salida esperada:
+
+
+        // 3 | 5 | 8 → 8 se obtuvo de sumar 3 + 5
+
+        // 4 | 3 | 7 → 7 se obtuvo de sumar 4 + 3
+
+        // 1 | 4 | 5 → 5 se obtuvo de sumar 1 +4
+
+        // 💡 Consejo: Si lo consideras conveniente, puedes emplear un único bucle para recorrer las filas de la matriz y
+        // calcular la suma en el mismo momento en que se ingresan los valores. Esta estrategia permite optimizar el uso de
+        // recursos y simplificar la estructura del código, haciendo el programa más eficiente y fácil de entender.
+
+        function ejerciciosAvanzadosTres() {
+            let matrixA = [];
+
+            let matrixAColumns = 3;
+
+            let rowsCant = Number(prompt("Ingrese la cantidad de filas que desea que tenga la matriz"));
+
+            for (let i = 0; i < rowsCant; i++) {
+                matrixA[i] = [];
+
+                for (let j = 0; j < matrixAColumns; j++) {
+                    if (j == 0 || j == 1) {
+                        matrixA[i][j] = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+                    } else {
+                        matrixA[i][j] = matrixA[i][0] + matrixA[i][1];
+
+                        console.log(`${matrixA[i][2]} se obtuvo de sumar ${matrixA[i][0]} + ${matrixA[i][1]}`);
+                    };
+                };
+            };
+
+            console.table(matrixA);
+        }
     </script>
 </body>
 
