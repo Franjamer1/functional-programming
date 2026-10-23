@@ -32,6 +32,29 @@
     💡 Si no estás familiarizado con el concepto de matriz traspuesta, puedes consultar el siguiente recurso de apoyo:
     Matriz Traspuesta. <br><br>
     <button type="submit" onclick="ejerciciosAvanzadosUno()">ejercicios Avanzados Uno</button>
+
+    Actividad 2: Crear una matriz con borde de unos
+    En esta actividad, desarrollarás un programa que construya una matriz de 5 filas por 15 columnas, la cual deberá
+    presentar un patrón específico:
+
+    Requisitos del programa:
+
+    Declara y dimensiona una matriz de tamaño 5 x 15 que almacene valores enteros.
+
+    Rellena la matriz de modo que:
+
+    Los bordes (es decir, la primera y última fila, así como la primera y última columna) estén compuestos por unos (1).
+
+    El interior de la matriz (todas las posiciones que no pertenecen al borde) contenga ceros (0).
+
+    Muestra la matriz resultante por pantalla, respetando su estructura de filas y columnas.
+
+    Resultado esperado:
+
+    El contenido de la matriz generada debe visualizarse de la siguiente forma: <br><br>
+    <button type="submit" onclick="ejerciciosAvanzadosDos()">Ejercicio Avanzados Dos</button>
+
+    imgps
     <script>
         //  Actividad 1:Generación y trasposición de una matriz
         //     Llenar la matriz con números aleatorios comprendidos entre 1 y 100, luego mostrar su traspuesta. En caso de no estar
@@ -95,6 +118,50 @@
 
             console.table(matrizB);
         };
+
+
+        //         Actividad 2: Crear una matriz con borde de unos
+        // En esta actividad, desarrollarás un programa que construya una matriz de 5 filas por 15 columnas, la cual deberá presentar un patrón específico:
+
+        // Requisitos del programa:
+
+        // Declara y dimensiona una matriz de tamaño 5 x 15 que almacene valores enteros.
+
+        // Rellena la matriz de modo que:
+
+        // Los bordes (es decir, la primera y última fila, así como la primera y última columna) estén compuestos por unos (1).
+
+        // El interior de la matriz (todas las posiciones que no pertenecen al borde) contenga ceros (0).
+
+        // Muestra la matriz resultante por pantalla, respetando su estructura de filas y columnas.
+
+        // Resultado esperado:
+
+        // El contenido de la matriz generada debe visualizarse de la siguiente forma:
+
+        function ejerciciosAvanzadosDos() {
+            let matrizA = [];
+
+            let lengthInsideArrays = 15;
+
+            let matrizALength = 5;
+
+
+            for (let i = 0; i < matrizALength; i++) {
+                matrizA[i] = [];
+
+
+                for (let j = 0; j < lengthInsideArrays; j++) {
+                    if (i == 0 || j == 0 || i == matrizALength - 1 || j == lengthInsideArrays - 1) {
+                        matrizA[i][j] = 1;
+                    } else {
+                        matrizA[i][j] = 0;
+                    }
+                }
+            }
+            console.table(matrizA);
+        }
+
     </script>
 </body>
 
