@@ -84,7 +84,18 @@
     💡 Consejo: Si lo consideras conveniente, puedes emplear un único bucle para recorrer las filas de la matriz y
     calcular la suma en el mismo momento en que se ingresan los valores. Esta estrategia permite optimizar el uso de
     recursos y simplificar la estructura del código, haciendo el programa más eficiente y fácil de entender. <br><br>
-    <button type="submit" onclick="ejerciciosAvanzadosTres()">Ejercicio Avanzado Tres</button>
+    <button type="submit" onclick="ejerciciosAvanzadosTres()">Ejercicio Avanzado Tres</button> br*2
+
+    Actividad 4: Multiplicación de matrices
+    Desarrolla un programa que calcule la multiplicación elemento a elemento (también conocida como producto Hadamard)
+    de dos matrices de enteros de tamaño 3x3. Para facilitar el desarrollo del ejercicio, inicializa previamente las dos
+    matrices con valores fijos, evitando así el ingreso manual de datos por teclado.
+
+    El resultado de la multiplicación se almacenará en una tercera matriz, donde cada elemento se obtendrá multiplicando
+    los valores que ocupan la misma posición en las matrices originales A y B. Por ejemplo, el valor en la posición
+    (0,0) de la matriz resultante C será igual al producto del valor en la posición (0,0) de la matriz A por el valor en
+    la posición (0,0) de la matriz B. <br><br>
+    <button type="submit" onclick="ejerciciosAvanzadosCuatro()">Ejercicio Avanzado Cuatro</button>
 
     <script>
         //  Actividad 1:Generación y trasposición de una matriz
@@ -247,6 +258,50 @@
             };
 
             console.table(matrixA);
+        }
+
+
+        //         Actividad 4: Multiplicación de matrices
+        // Desarrolla un programa que calcule la multiplicación elemento a elemento (también conocida como producto Hadamard)
+        // de dos matrices de enteros de tamaño 3x3. Para facilitar el desarrollo del ejercicio, inicializa previamente las dos
+        // matrices con valores fijos, evitando así el ingreso manual de datos por teclado.
+
+        // El resultado de la multiplicación se almacenará en una tercera matriz, donde cada elemento se obtendrá multiplicando
+        // los valores que ocupan la misma posición en las matrices originales A y B. Por ejemplo, el valor en la posición
+        // (0,0) de la matriz resultante C será igual al producto del valor en la posición (0,0) de la matriz A por el valor en
+        // la posición (0,0) de la matriz B.
+
+        // Por ejemplo:
+
+        function ejerciciosAvanzadosCuatro() {
+
+            let matrixA = [
+                [10, 20, 30],
+                [40, 50, 60],
+                [70, 80, 90],
+            ];
+
+            let matrixB = [
+                [10, 20, 30],
+                [40, 50, 60],
+                [70, 80, 90],
+            ];
+
+            let matrixC = [];
+
+            let matrixColumns = 3;
+
+            let matrixRows = 3;
+
+            for (let i = 0; i < matrixColumns; i++) {
+                matrixC[i] = [];
+
+                for (let j = 0; j < matrixRows; j++) {
+                    matrixC[i][j] = matrixA[i][j] * matrixB[i][j];
+                }
+            }
+
+            console.table(matrixC);
         }
     </script>
 </body>
