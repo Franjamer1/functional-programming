@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Actividad: Procesamiento de una frase
+    Diseña un algoritmo que realice las siguientes acciones:
+
+    Solicita al usuario que ingrese una frase, asegurándote de que no exceda los 100 caracteres de longitud. Si la frase
+    supera este límite, el programa deberá mostrar un mensaje de advertencia y volver a solicitar el ingreso hasta que
+    se cumpla la condición.
+
+    Una vez ingresada una frase válida, el algoritmo debe recorrerla carácter por carácter y separar su contenido en dos
+    vectores:
+
+    Un vector para almacenar únicamente las vocales (A, E, I, O, U), en mayúsculas o minúsculas.
+
+    Otro vector para almacenar las consonantes, espacios y caracteres especiales, manteniendo el mismo orden en que
+    aparecen en la frase original.
+
+    El programa debe incluir un subprograma que se encargue de:
+
+    Mostrar el contenido de cada vector.
+
+    Indicar la cantidad total de elementos almacenados en cada uno. <br><br>
+    <button type="submit" onclick="ejercicioComplementarioUno()">ejercicio complementario 1</button>
+
+    <script>
+        //         Actividad: Procesamiento de una frase
+        // Diseña un algoritmo que realice las siguientes acciones:
+
+        // Solicita al usuario que ingrese una frase, asegurándote de que no exceda los 100 caracteres de longitud. Si la frase supera este límite, el programa deberá mostrar un mensaje de advertencia y volver a solicitar el ingreso hasta que se cumpla la condición.
+
+        // Una vez ingresada una frase válida, el algoritmo debe recorrerla carácter por carácter y separar su contenido en dos vectores:
+
+        // Un vector para almacenar únicamente las vocales (A, E, I, O, U), en mayúsculas o minúsculas.
+
+        // Otro vector para almacenar las consonantes, espacios y caracteres especiales, manteniendo el mismo orden en que aparecen en la frase original.
+
+        // El programa debe incluir un subprograma que se encargue de:
+
+        // Mostrar el contenido de cada vector.
+
+        // Indicar la cantidad total de elementos almacenados en cada uno.
+
+
+        function ejercicioComplementarioUno() {
+            let phrase = String(prompt("Ingrese una frase de hasta 100 caracteres."));
+
+            let vowels = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"];
+            let vowelsInput = [];
+            let consonants = [];
+
+            while (phrase.length > 100) {
+                phrase = String(prompt("Ingrese una frase de hasta 100 caracteres."));
+            };
+
+            for (let i = 0; i < phrase.length; i++) {
+                let isVowel = false;
+
+                for (let j = 0; j < vowels.length; j++) {
+                    if (phrase[i] === vowels[j]) {
+                        isVowel = true;
+                    }
+
+                };
+
+                if (isVowel === true) {
+                    vowelsInput.push(phrase[i]);
+                } else {
+                    consonants.push(phrase[i]);
+                };
+            };
+
+            function showContent() {
+                alert(`Vowels (${vowelsInput.length})${vowelsInput} \nConsonants(${consonants.length}) ${consonants}`);
+
+            };
+
+            showContent();
+        };
+    </script>
+
+
+</body>
+
+</html>
