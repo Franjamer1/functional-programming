@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Actividad: Usando la Clase Scanner
+    Para entender mejor el concepto de esta clase, practicarás con los siguientes ejercicios:
+
+    Solicita al usuario que ingrese su nombre (cadena de texto), guárdalo en una variable e imprime el dato por
+    consola..
+
+    Solicita al usuario que ingrese su edad (número), guárdalo en una variable e imprime el dato por consola..
+
+    Luego imprime en pantalla un mensaje que diga “Su nombres es [nombre del usuario] y su edad es [edad del usuario]”.
+    <br><br>
+    <button type="submit" onclick="ejercicio1()">ejercicio 1</button>
+
+    Actividad: Operaciones básicas
+    En esta actividad, practicarás el uso de operaciones aritméticas en Java. A través de la realización de diversas
+    operaciones entre números, fortalecerás tu conocimiento sobre las operaciones básicas disponibles en el lenguaje,
+    como la suma (+), resta (-), multiplicación (*), división (/) y módulo (%).
+
+    Realizarás operaciones tanto con valores predeterminados como con valores ingresados por el usuario por teclado.
+
+    Aplica lo aprendido resolviendo los siguientes ejercicios:
+
+    Declara dos variables, y asígnales un valor a cada una de ellas.
+
+    Realiza las 5 operaciones básicas posibles en Java y muestra el resultado en consola. Te animamos a mostrar el
+    resultado dentro de un texto para que se vea ordenado el resultado, Ej: La suma de las 2 variables es :
+    “[resultado]”;
+
+    Posteriormente, pide al usuario que ingrese dos números, guardarlos en variables previamente declaradas, realiza la
+    suma de los números y muestra el resultado en la consola. <br><br>
+    <button type="submit" onclick="ejercicio2()">ejercicio 2</button>
+    <script>
+        // Actividad: Usando la Clase Scanner
+        // Para entender mejor el concepto de esta clase, practicarás con los siguientes ejercicios:
+
+        // Solicita al usuario que ingrese su nombre (cadena de texto), guárdalo en una variable e imprime el dato por
+        // consola..
+
+        // Solicita al usuario que ingrese su edad (número), guárdalo en una variable e imprime el dato por consola..
+
+        // Luego imprime en pantalla un mensaje que diga “Su nombres es [nombre del usuario] y su edad es [edad del usuario]”.
+
+        function ejercicio1() {
+            let nombre = String(prompt("Ingrese su nombre"));
+
+            while (!nombre) {
+                nombre = String(prompt("Error: Ingrese su nombre"));
+            };
+
+            let edad = Number(prompt("Ingrese su edad"));
+
+            while (!edad || edad < 1 || isNaN(edad)) {
+                edad = Number(prompt("Ingrese su edad"));
+            };
+
+            console.log(`Su nombre es ${nombre} y su edad es ${edad}`);
+
+        };
+
+        //     Actividad: Operaciones básicas
+        // En esta actividad, practicarás el uso de operaciones aritméticas en Java.A través de la realización de diversas
+        // operaciones entre números, fortalecerás tu conocimiento sobre las operaciones básicas disponibles en el lenguaje,
+        //         como la suma(+), resta(-), multiplicación(*), división(/) y módulo(%).
+
+        // Realizarás operaciones tanto con valores predeterminados como con valores ingresados por el usuario por teclado.
+
+        // Aplica lo aprendido resolviendo los siguientes ejercicios:
+
+        // Declara dos variables, y asígnales un valor a cada una de ellas.
+
+        // Realiza las 5 operaciones básicas posibles en Java y muestra el resultado en consola.Te animamos a mostrar el
+        // resultado dentro de un texto para que se vea ordenado el resultado, Ej: La suma de las 2 variables es:
+        // “[resultado]”;
+
+        //     Posteriormente, pide al usuario que ingrese dos números, guardarlos en variables previamente declaradas, realiza la
+        // suma de los números y muestra el resultado en la consola.
+
+        function ejercicio2() {
+            let firstValue = 200;
+
+            let secondValue = 100;
+
+            operacionesAritmeticas();
+
+            firstValue = Number(prompt("Ingrese un numero para realizar las operaciones nuevamente"));
+
+            while (!firstValue || isNaN(firstValue)) {
+                firstValue = Number(prompt("Error:Ingrese un numero para realizar las operaciones nuevamente"));
+            };
+
+            secondValue = Number(prompt("Ingrese un segundo numero para realizar las operaciones nuevamente"));
+
+            while (!secondValue || isNaN(secondValue)) {
+                secondValue = Number(prompt("Error:Ingrese un segundo numero para realizar las operaciones nuevamente"));
+
+            };
+
+
+            function operacionesAritmeticas() {
+
+                let suma = firstValue + secondValue;
+
+                let resta = firstValue - secondValue;
+
+                let multiplicación = firstValue * secondValue;
+
+                let division = firstValue / secondValue;
+
+                let resto = firstValue % secondValue;
+
+                alert(`numero 1: ${firstValue}\nnumero 2: ${secondValue}\n
+                ----------OPERACIONES---------\n
+                Suma: ${suma}\n
+                Resta: ${resta}\n
+                Multiplicacion: ${multiplicación}\n
+                Division: ${division}\n
+                Modulo: ${resto}`);
+            };
+
+            operacionesAritmeticas();
+        };
+    </script>
+</body>
+
+</html>

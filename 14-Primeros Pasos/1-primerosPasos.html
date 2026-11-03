@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    1 - Crea un programa que imprima "Bienvenido a tu curso de Java" en la consola. <br><br>
+    <button type="submit" onclick="ejercicio1()">Ejercicio1</button> <br><br>
+
+    2 - Crea un programa que imprima "Mi nombre es [colocaAquiTuNombre]" en la consola.<br><br>
+    <button type="submit" onclick="ejercicio2()">Ejercicio2</button> <br><br>
+
+    3 - Crea un programa que imprima "Mi edad es [colocaAquiTuEdad]" en la consola.<br><br>
+    <button type="submit" onclick="ejercicio3()">Ejercicio3</button> <br><br>
+
+    . Declara una variable por cada uno de los siguientes tipos de dato, asignando un valor (nombre y valor de tu
+    preferencia):
+
+    boolean
+
+    char
+
+    String
+
+    Int
+
+    long
+
+    float
+
+    2. Imprime en consola el contenido de al menos tres de las variables que declaraste en el paso anterior.
+
+    3. Declara una nueva variable para almacenar tu edad y otra para almacenar tu nombre e imprimir en pantalla un texto
+    que diga “Mi nombre es [nombre], y tengo [edad] años”.<br><br>
+    <button type="submit" onclick="ejercicio4()">Ejercicio4</button> <br><br>
+
+    Actividad: Ejercicio Complementario
+    ✨ Este ejercicio es de tipo complementario. Esto quiere decir que te ayudará a avanzar en profundidad en el tema
+    visto anteriormente.
+
+    Refinando la definición del tipo de variable más adecuado:
+
+    De acuerdo a la naturaleza de los datos, procede a declarar una variable utilizando el tipo más apropiado. NO
+    utilizar constantes.
+
+    Declara una variable llamada mensajeBienvenida y asigna como valor "Bienvenido a Java". Asegúrate de elegir el tipo
+    de variable más apropiado para almacenar un mensaje de texto.
+
+    Declara una variable llamada temperaturaActual y asigna como valor "19". Selecciona el tipo de variable que permita
+    representar la temperatura de manera precisa.
+
+    Declara una variable llamada datoLogico y asigna como valor "true". Elige el tipo de variable adecuado para
+    almacenar valores lógicos.
+
+    Utiliza la función System.out.println() para imprimir cada variable declarada, concatenándola con un mensaje
+    descriptivo que aporte contexto.<br><br>
+    <button type="submit" onclick="ejercicio5()">Ejercicio5</button> <br><br>
+
+    <script>
+        function ejercicio1() {
+            console.log("Bienvenido a Tu curso de Java");
+        };
+
+        function ejercicio2() {
+            console.log("Mi nombre es Francisco");
+        }
+
+        function ejercicio3() {
+            console.log("Mi edad es 31");
+        }
+
+        function ejercicio4() {
+            let varBoolean = true;
+
+            let varChar = "a";
+
+            let varString = "string";
+
+            let varInt = 1;
+
+            let varLong = 100000000000000000;
+
+            let varFloat = 1.5;
+
+            let edad = 31;
+
+            let nombre = "Francisco";
+
+            console.log(varBoolean, varLong, varString);
+
+            console.log(`Mi nombre es ${nombre}, y tengo ${edad} años`);
+
+
+        }
+
+        // Actividad: Ejercicio Complementario
+        // ✨ Este ejercicio es de tipo complementario. Esto quiere decir que te ayudará a avanzar en profundidad en el tema visto anteriormente.
+
+        // Refinando la definición del tipo de variable más adecuado:
+
+        // De acuerdo a la naturaleza de los datos, procede a declarar una variable utilizando el tipo más apropiado. NO utilizar constantes. 
+
+        // Declara una variable llamada mensajeBienvenida y asigna como valor "Bienvenido a Java". Asegúrate de elegir el tipo de variable más apropiado para almacenar un mensaje de texto.
+
+        // Declara una variable llamada temperaturaActual y asigna como valor "19". Selecciona el tipo de variable que permita representar la temperatura de manera precisa.
+
+        // Declara una variable llamada datoLogico y asigna como valor "true". Elige el tipo de variable adecuado para almacenar valores lógicos.
+
+        // Utiliza la función System.out.println() para imprimir cada variable declarada, concatenándola con un mensaje descriptivo que aporte contexto.
+
+
+        function ejercicio5() {
+            let mensajeBienvenida = "Bienvenido a Java";
+
+            let temperaturaActual = 19;
+
+            let datoLogico = true;
+
+            console.log(`Mensaje: ${mensajeBienvenida}\nLa temperatura actual es: ${temperaturaActual}\nVerdadero o falso: ${datoLogico}`);
+
+        }
+    </script>
+</body>
+
+</html>
