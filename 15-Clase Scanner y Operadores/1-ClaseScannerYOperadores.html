@@ -38,6 +38,16 @@
     Posteriormente, pide al usuario que ingrese dos números, guardarlos en variables previamente declaradas, realiza la
     suma de los números y muestra el resultado en la consola. <br><br>
     <button type="submit" onclick="ejercicio2()">ejercicio 2</button>
+
+    1. Pide al usuario que ingrese dos números, y:
+
+    A. Compara si el primer número ingresado es mayor al segundo número ingresado. Debería verse así:
+    <!-- Ingresa un numero entero: 4
+    Ingresa otro numero entero: 5
+    El numero 4 es mayor a 5? = false; -->
+    B. Verifica si el primer número ingresado es distinto al segundo número ingresado . Muestra el resultado en consola.
+    C. Verifica si el primer número ingresado es divisible por 2 . Muestra el resultado en consola.<br><br>
+    <button type="submit" onclick="ejercicio3()">ejercicio 3</button>
     <script>
         // Actividad: Usando la Clase Scanner
         // Para entender mejor el concepto de esta clase, practicarás con los siguientes ejercicios:
@@ -127,6 +137,47 @@
             };
 
             operacionesAritmeticas();
+        };
+
+        //     1. Pide al usuario que ingrese dos números, y:
+
+        // A. Compara si el primer número ingresado es mayor al segundo número ingresado. Debería verse así:
+        // <!-- Ingresa un numero entero: 4
+        // Ingresa otro numero entero: 5
+        // El numero 4 es mayor a 5? = false; -->
+        // B. Verifica si el primer número ingresado es distinto al segundo número ingresado . Muestra el resultado en consola.
+        // C. Verifica si el primer número ingresado es divisible por 2 . Muestra el resultado en consola.
+
+        function ejercicio3() {
+            let numberA = Number(prompt("Ingrese un numero entero"));
+
+            while (isNaN(numberA) || !Number.isInteger(numberA)) {
+                numberA = Number(prompt("Error: Ingrese un numero entero"));
+
+            };
+
+            let numberB = Number(prompt("Ingrese otro numero entero"));
+
+            while (isNaN(numberB) || !Number.isInteger(numberB)) {
+                numberB = Number(prompt("Ingrese otro numero entero"));
+            };
+
+            let isTrue = numberA > numberB;
+
+            console.log(`El numero ${numberA} es mayor que ${numberB}? = ${isTrue};`);
+
+            if (numberA === numberB) {
+                console.log("Los number A y B son iguales;");
+            } else {
+                console.log(("Los numeros A y B son diferentes"));
+            };
+
+            if (numberA % 2 === 0) {
+                console.log("El numero A es divisible por 2");
+            } else {
+                console.log("El numero A no es divisible por 2");
+            }
+
         };
     </script>
 </body>
